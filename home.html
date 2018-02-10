@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta charset="utf-8" />
+<link rel="stylesheet" href="scpCSS.css">
+<script src="scpJS.js"></script>
+<title> SCP2018 | Home </title>
+<style>
+table{
+	style="font-size:xx-large;
+}
+
+.checkboxes li{
+  display: block;
+  position: middle;
+  padding-left: 60px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  float: left;
+  width: 25%;
+}
+
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+</style>
+</head>
+
+<body>
+  <div class="site_container">
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dd_button" onclick="myFunction()">Contacts</button>
+        <div class="dd_content" id="myDropdown">
+          <a href="addContact.html">Add</a>
+          <a href="searchContact.html">Search</a>
+        </div>
+      </div>
+      <a href="home.html">Home</a>
+    </div>
+
+    <main>
+      <div class="site_heading">
+        <h1>Emergency Responder Management System</h1>
+      </div>
+
+      Home
+      Home
+      Home
+	  
+	  <fieldset>
+  <legend><h2>Emergency Scenarios</h2></legend>
+	
+	<ul class="checkboxes">
+	<li><label> <input type="checkbox" name="groups" value="Fire"> Fire </label></li>
+	<li><label> <input type="checkbox" name="groups" value="Hurricane"> Hurricane </label></li>
+	<li><label> <input type="checkbox" name="groups" value="Flood" checked> Flood</label></li>
+	<li><label> <input type="checkbox" name="groups" value="Earthquake"> Earthquake</label></li>
+	<li><label> <input type="checkbox" name="groups" value="Tornado"> Tornado </label></li>
+	<li><label> <input type="checkbox" name="groups" value="Snow"> Snow Storm </label></li>
+	<li><label> <input type="checkbox" name="groups" value="Terrorist" checked> Terrorist</label></li>
+	<li><label> <input type="checkbox" name="groups" value="Wildfire"> Wildfire</label></li>
+	<li><a href="#" class="next">Next &raquo;</a></li>
+	</ul>
+	
+	
+
+</fieldset>
+
+
+    </main>
+
+    <footer>
+      Copyright &copy; 2018, Intermedix<br>
+      <hr>
+      Team 4 Senior Capstone Project<br>
+      Augusta University<br>
+    </footer>
+  </div>
+
+</body>
+</html>
