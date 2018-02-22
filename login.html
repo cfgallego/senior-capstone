@@ -5,12 +5,15 @@
 <meta charset="utf-8" />
 <link rel="stylesheet" href="scpCSS.css">
 <script src="scpJS.js"></script>
-<title> SCP2018 | Search Contact </title>
+<title> SCP2018 | Home </title>
+
+
 </head>
 
 <body>
   <div class="site_container">
     <div class="navbar">
+
       <a href="home.html">Home</a>
       <div class="dropdown">
         <button class="dd_button" onclick="myFunction()">Contacts</button>
@@ -20,6 +23,10 @@
         </div>
       </div>
       <a href="history.html">History</a>
+
+      <div class="login">
+        <a href="#">Login</a>
+      </div>
     </div>
 
     <main>
@@ -27,9 +34,12 @@
         <h1>Responder Management System</h1>
       </div>
 
-      <form class="searchID" action="#" method="post">
-        <label>Search</label>
-        <input type="text" name="searchName">
+      <form class="loginID" action="home.html" method="post">
+        <label>Username: </label>
+        <input type="text" name="username">
+
+        <label>Password: </label>
+        <input type="text" name="password">
 
         <input type="submit">
       </form>

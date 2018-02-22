@@ -30,7 +30,7 @@ footer hr {
 }
 
 .navbar a {
-    float: right;
+    float: left;
     font-size: 16px;
     color: white;
     text-align: center;
@@ -39,8 +39,12 @@ footer hr {
     min-width: 120px;
 }
 
+.navbar .login {
+  float: right;
+}
+
 .dropdown {
-    float: right;
+    float: left;
     overflow: hidden;
 }
 
@@ -132,6 +136,49 @@ a:hover {
 }
 
 .formID input, select {
+  display: block;
+  width: 300px;
+  margin-bottom: 5px;
+  margin-left: 150px;
+}
+/* --------------------------------------------------------------------------- */
+
+/* -- search contact form ------------------------------------------------------- */
+
+.searchID {
+
+}
+/* --------------------------------------------------------------------------- */
+
+
+/* -- next form ------------------------------------------------------- */
+
+.nextID label {
+  display: block;
+  float: left;
+  width: 150px;
+  font-weight: bold;
+}
+
+.nextID input {
+  display: block;
+  width: 300px;
+  margin-bottom: 5px;
+  margin-left: 150px;
+}
+/* --------------------------------------------------------------------------- */
+
+
+/* -- login form ------------------------------------------------------- */
+
+.loginID label {
+  display: block;
+  float: left;
+  width: 150px;
+  font-weight: bold;
+}
+
+.loginID input {
   display: block;
   width: 300px;
   margin-bottom: 5px;
