@@ -88,9 +88,11 @@ footer hr {
     display: block;
 }
 
-/* --------------------------------------------------------------------------- */
+
+
+
 table {
-	font-size:xx-large;
+	style="font-size:xx-large;
 }
 
 .checkboxes li{
@@ -119,19 +121,17 @@ a:hover {
     background-color: #4CAF50;
     color: white;
 }
-/* --------------------------------------------------------------------------- */
-
 
 
 /* -- add contact form ------------------------------------------------------- */
-label {
+.formID label {
   display: block;
   float: left;
   width: 150px;
   font-weight: bold;
 }
 
-input, select {
+.formID input, select {
   display: block;
   width: 300px;
   margin-bottom: 5px;

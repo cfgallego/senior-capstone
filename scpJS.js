@@ -14,8 +14,3 @@ window.onclick = function(e) {
       }
   }
 }
-
-
-// -- addContact form validation -------------------------------------------------------
-
-// -- end addContact form validation ---------------------------------------------------
