@@ -11,6 +11,10 @@
 <body>
   <div class="site_container">
     <div class="navbar">
+      <div class="site_heading">
+        <h1>Responder Management System</h1>
+      </div>
+
       <a href="home.html">Home</a>
       <div class="dropdown">
         <button class="dd_button" onclick="myFunction()">Contacts</button>
@@ -23,17 +27,21 @@
     </div>
 
     <main>
-      <div class="site_heading">
-        <h1>Responder Management System</h1>
-      </div>
-
+      <h3>Search</h3>
       <form class="searchID" action="#" method="post">
-        <label>Search</label>
-        <input type="text" name="searchName">
+
+        <select>
+          <option value="">All</option>
+          <option value="name">Name</option>
+          <option value="group">Group</option>
+        </select>
+
+        <input type="text" name="searchName" class="searchBar">
 
         <input type="submit">
       </form>
 
+      <br><br><br><br><br>
     </main>
 
     <footer>

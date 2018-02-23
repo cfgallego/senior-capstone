@@ -1,6 +1,9 @@
 .site_container {
   width: 1000px;
-  margin: 10px auto auto;
+  /* margin: 10px auto auto; */
+  margin: 10px auto -60px;
+  height: auto !important;
+  height: 100%;
 }
 
 footer {
@@ -9,10 +12,12 @@ footer {
   padding: 8px 10px;
   font-size: 10pt;
   font-family: Arial;
-  position: absolute;
-  width: 1000px;
-  bottom: 0;
+  /* position: absolute; */
+  position: relative;
+  /* width: 1000px; */
+  /* bottom: 0; */
   text-align: center;
+  height: 60px;
 }
 
 footer hr {
@@ -22,6 +27,10 @@ footer hr {
   background-color: white;
 }
 
+.site_heading {
+  color: white;
+  margin-left: 50px;
+}
 
 .navbar {
     overflow: hidden;
@@ -93,8 +102,7 @@ footer hr {
 }
 
 
-
-
+/* -- emergency list ------------------------------------------------------- */
 table {
 	style="font-size:xx-large;
 }
@@ -108,7 +116,6 @@ table {
   float: left;
   width: 25%;
 }
-
 
 a {
     text-decoration: none;
@@ -133,6 +140,7 @@ a:hover {
   float: left;
   width: 150px;
   font-weight: bold;
+  margin-left: 30px;
 }
 
 .formID input, select {
@@ -141,18 +149,21 @@ a:hover {
   margin-bottom: 5px;
   margin-left: 150px;
 }
-/* --------------------------------------------------------------------------- */
 
-/* -- search contact form ------------------------------------------------------- */
-
-.searchID {
-
+.certSkills input {
+  display: block;
+  float: left;
+  margin-left: 30px;
 }
-/* --------------------------------------------------------------------------- */
+
+.certSkills label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
 
 
 /* -- next form ------------------------------------------------------- */
-
 .nextID label {
   display: block;
   float: left;
@@ -166,15 +177,17 @@ a:hover {
   margin-bottom: 5px;
   margin-left: 150px;
 }
-/* --------------------------------------------------------------------------- */
 
 
 /* -- login form ------------------------------------------------------- */
+.loginID {
+    margin-left: 250px;
+}
 
 .loginID label {
   display: block;
   float: left;
-  width: 150px;
+  width: 100px;
   font-weight: bold;
 }
 
@@ -182,6 +195,18 @@ a:hover {
   display: block;
   width: 300px;
   margin-bottom: 5px;
-  margin-left: 150px;
+  margin-left: 100px;
 }
-/* --------------------------------------------------------------------------- */
+
+
+/* -- search form ------------------------------------------------------- */
+.searchID select {
+  display: block;
+  float: left;
+  width: 80px;
+}
+
+.searchID .searchBar {
+  margin-left: 5px;
+  width: 300px
+}

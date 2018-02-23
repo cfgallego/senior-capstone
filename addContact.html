@@ -11,6 +11,10 @@
 <body>
   <div class="site_container">
     <div class="navbar">
+      <div class="site_heading">
+        <h1>Responder Management System</h1>
+      </div>
+
       <a href="home.html">Home</a>
       <div class="dropdown">
         <button class="dd_button" onclick="myFunction()">Contacts</button>
@@ -23,9 +27,10 @@
     </div>
 
     <main>
-      <h3>Add Contact</h3>
+      <!-- <h3>Add Contact</h3> -->
       <!-- <form class="formID" action="http://webdevbasics.net/scripts/demo.php" method="post"> -->
       <form class="formID" action="#" method="post">
+        <h3>Contact Information</h3>
         <label for="firstName">First Name </label>
         <input type="text" name="firstName" class="firstName" maxlength="50" required>
 
@@ -111,8 +116,35 @@
         <label for="zipCode">Zip Code </label>
         <input type="text" name="zipCode" class="zipCode" maxlength="5" required>
 
-        <input type="submit">
+        <!-- <input type="submit"> -->
       </form>
+
+      <div class="certSkills">
+        <h3>Certified Skills</h3>
+        <input type="checkbox" name="skills" value="fireSafety" label="Fire Safety">
+        <label>Fire Safety </label>
+
+        <input type="checkbox" name="skills" value="emsTraining">
+        <label> EMS Training </label>
+
+        <input type="checkbox" name="skills" value="lifeguardTraining">
+        <label>Lifeguard Training</label>
+
+        <input type="checkbox" name="skills" value="firstaidTraining">
+        <label>First-aid Training</label>
+
+        <input type="checkbox" name="skills" value="leadershipTraining">
+        <label>Leadership Training</label>
+
+        <input type="checkbox" name="skills" value="redcross">
+        <label>Redcross Certification</label>
+      </div>
+
+      <br>
+
+      <input type="submit">
+
+      <br><br><br><br><br>
     </main>
 
     <footer>
