@@ -112,7 +112,7 @@ table {
   position: middle;
   padding-left: 60px;
   margin-bottom: 30px;
-  font-size: 30px;
+  font-size: 20px;
   float: left;
   width: 25%;
 }
@@ -169,13 +169,14 @@ a:hover {
   float: left;
   width: 150px;
   font-weight: bold;
+  margin-left: 30px;
 }
 
 .nextID input {
   display: block;
   width: 300px;
   margin-bottom: 5px;
-  margin-left: 150px;
+  margin-left: 180px;
 }
 
 
@@ -204,9 +205,10 @@ a:hover {
   display: block;
   float: left;
   width: 80px;
+  margin-left: 250px;
 }
 
 .searchID .searchBar {
   margin-left: 5px;
-  width: 300px
+  width: 400px
 }
