@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="getGroups()">
   <div class="site_container">
     <div class="navbar">
       <div class="site_heading">
@@ -33,16 +33,16 @@
 
       <form class="nextID" action="#" method="post">
         <label>Emergency:</label>
-        <input type="text" name="" value="What Emergency">
+        <input type="text" id="emergency" name="" value="">
 
         <label>Date:</label>
-        <input type="text" name="" value="Emergency Date">
+        <input type="text" id="date" name="" value="">
 
         <label>Time:</label>
-        <input type="text" name="" value="Emergency Time">
+        <input type="text" id="time" name="" value="">
 
         <label>Where:</label>
-        <input type="text" name="emergencyAddress" required>
+        <input type="text" name="emergencyAddress">
 
         <label>Additional Comments:</label>
         <textarea name="name" rows="4" cols="40"></textarea>
