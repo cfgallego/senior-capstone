@@ -19,14 +19,22 @@ window.onclick = function(e) {
 function selectedGroups() {
 	var checkedboxx ="";
 	var sgroups = document.getElementsByTagName('input');
+	
 	for(var i =0; sgroups[i]; i++){
 		if(sgroups[i].checked){
-			checkedboxx += sgroups[i].value += ", ";
-				
-		}
+			checkedboxx += sgroups[i].value += ", ";		
+		}	
 	}
 	checkedboxx = checkedboxx.slice(0,-2);
-	window.location.href = "next.html?" + checkedboxx;
+	
+	if(checkedboxx != ""){
+		
+		window.location.href = "next.html?" + checkedboxx;
+	}
+	else{
+		
+	}
+		
 }
 
 //Preloads all the text boxes with the information

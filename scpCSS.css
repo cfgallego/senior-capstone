@@ -123,7 +123,7 @@ a {
     padding: 8px 16px;
 }
 
-a:hover {
+.next:hover {
     background-color: #ddd;
     color: black;
 }
@@ -131,6 +131,8 @@ a:hover {
 .next {
     background-color: #4CAF50;
     color: white;
+	width: 100px;
+	height: 40px;
 }
 
 
