@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/Content/scpCSS.css">
+    <script src="~/Scripts/scpJS.js"></script>
+    <title> SCP2018 | @ViewBag.Title </title>
+</head>
+
+<body>
+    <div class="site_container">
+        <div class="navbar">
+            <div class="site_heading">
+                <h1>Responder Management System</h1>
+            </div>
+
+            <a href="~/Home/Home">Home</a>
+            <div class="dropdown">
+                <button class="dd_button" onclick="myFunction()">Contacts</button>
+                <div class="dd_content" id="myDropdown">
+                    <a href="~/Contact/AddContact">Add</a>
+                    <a href="~/Contact/SearchContact">Search</a>
+
+                </div>
+            </div>
+            <a href="~/History/ViewHistory">History</a>
+            <a href="~/Contact/ShowContacts">Show Contacts</a>
+
+            <div class="login">
+                <a href="login.html">Log In</a>
+            </div>
+        </div>
+
+        <main>
+            @RenderBody()
+
+            <br><br><br><br><br>
+        </main>
+
+        <footer>
+            Copyright &copy; 2018, Intermedix<br>
+            <hr>
+            Team 4 Senior Capstone Project<br>
+            Augusta University<br>
+        </footer>
+    </div>
+
+</body>
+</html>

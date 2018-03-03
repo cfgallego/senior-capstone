@@ -1,0 +1,36 @@
+﻿@using ResponderManagement.Models;
+
+@{
+    ViewBag.Title = "Show Contacts";
+}
+
+<h3>Contacts</h3>
+
+<table>
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var contact in Model.Contacts)
+    {
+        <tr>
+            <td>@contact.FirstName</td>
+            <td>@contact.LastName</td>
+            <td>@contact.Emain</td>
+            <td>@contact.PhoneNumber</td>
+            <td>@contact.StreetAddress</td>
+            <td>@contact.City</td>
+            <td>@contact.State</td>
+            <td>@contact.ZipCode</td>
+            <td>Edit | Delete</td>
+        </tr>
+    }
+</table>

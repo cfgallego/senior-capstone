@@ -1,0 +1,122 @@
+﻿@model ResponderManagement.Models.AddContact
+
+@{
+    ViewBag.Title = "Add Contact";
+}
+
+@Html.ValidationSummary()
+
+<form class="formID" action="~/Contact/AddContact" method="post">
+    <h3>Contact Information</h3>
+    <label for="firstName">First Name </label>
+    <input type="text" name="firstName" class="firstName" maxlength="50" required>
+
+    <label for="lastName">Last Name </label>
+    <input type="text" name="lastName" class="lastName" maxlength="50" required>
+
+    <label for="email">Email </label>
+    <input type="email" name="email" class="email" maxlength="50" required>
+
+    <label for="phoneNumber">Phone Number </label>
+    <input type="tel" name="phoneNumber" class="phoneNumber" maxlength="50" required>
+
+    <label for="streetAddress">Street Address </label>
+    <input type="text" name="streetAddress" class="streetAddress" maxlength="50" required>
+
+    <label for="city">City </label>
+    <input type="text" name="city" class="city" maxlength="50" required>
+
+    <label for="state">State </label>
+    <select class="state" name="state">
+        <option value="">-Select-</option>
+        <option value="al">AL - Alabama</option>
+        <option value="ak">AK - Alaska</option>
+        <option value="az">AZ - Arizona</option>
+        <option value="ar">AR - Arkansas</option>
+        <option value="ca">CA - California</option>
+
+        <option value="co">CO - Colorado</option>
+        <option value="ct">CT - Connecticut</option>
+        <option value="de">DE - Delaware</option>
+        <option value="fl">FL - Florida</option>
+        <option value="ga">GA - Georgia</option>
+
+        <option value="hi">HI - Hawaii</option>
+        <option value="id">ID - Idaho</option>
+        <option value="il">IL - Illinois</option>
+        <option value="in">IN - Indianna</option>
+        <option value="ia">IA - Iowa</option>
+
+        <option value="ks">KS - Kansas</option>
+        <option value="ky">KY - Kentucky</option>
+        <option value="la">LA - Louisiana</option>
+        <option value="me">ME - Maine</option>
+        <option value="md">MD - Maryland</option>
+
+        <option value="ma">MA - Massachusetts</option>
+        <option value="mi">MI - Michigan</option>
+        <option value="mn">MN - Minnesota</option>
+        <option value="ms">MS - Mississippi</option>
+        <option value="mo">MO - Missouri</option>
+
+        <option value="mt">MT - Montana</option>
+        <option value="ne">NE - Nebraska</option>
+        <option value="nv">NV - Nevada</option>
+        <option value="nh">NH - New Hampshire</option>
+        <option value="nj">NJ - New Jersey</option>
+
+        <option value="nm">NM - New Mexico</option>
+        <option value="ny">NY - New York</option>
+        <option value="nc">NC - North Carolina</option>
+        <option value="nd">ND - North Dakota</option>
+        <option value="oh">OH - Ohio</option>
+
+        <option value="ok">OK - Oklahoma</option>
+        <option value="or">OR - Oregon</option>
+        <option value="pa">PA - Pennsylvania</option>
+        <option value="ri">RI - Rhode Island</option>
+        <option value="sc">SC - South Carolina</option>
+
+        <option value="sd">SD - South Dakota</option>
+        <option value="tn">TN - Tennessee</option>
+        <option value="tx">TX - Texas</option>
+        <option value="ut">UT - Utah</option>
+        <option value="vt">VT - Vermont</option>
+
+        <option value="va">VA - Virginia</option>
+        <option value="wa">WA - Washington</option>
+        <option value="wv">WV- West Virginia</option>
+        <option value="wi">WI - Wisconsin</option>
+        <option value="wy">WY - Wyoming</option>
+    </select>
+
+    <label for="zipCode">Zip Code </label>
+    <input type="text" name="zipCode" class="zipCode" maxlength="5" required>
+
+    <input type="submit">
+</form>
+
+@*<div class="certSkills">
+    <h3>Certified Skills</h3>
+    <input type="checkbox" name="skills" value="fireSafety" label="Fire Safety">
+    <label>Fire Safety </label>
+
+    <input type="checkbox" name="skills" value="emsTraining">
+    <label> EMS Training </label>
+
+    <input type="checkbox" name="skills" value="lifeguardTraining">
+    <label>Lifeguard Training</label>
+
+    <input type="checkbox" name="skills" value="firstaidTraining">
+    <label>First-aid Training</label>
+
+    <input type="checkbox" name="skills" value="leadershipTraining">
+    <label>Leadership Training</label>
+
+    <input type="checkbox" name="skills" value="redcross">
+    <label>Redcross Certification</label>
+</div>
+
+<br>
+
+<input type="submit">*@
