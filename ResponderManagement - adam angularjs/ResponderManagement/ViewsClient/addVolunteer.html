@@ -1,0 +1,57 @@
+﻿<h1>Add Volunteer</h1>
+
+<h3>{{self.lesson}}</h3>
+<h2>{{begin}}</h2> <!--does not work because {{begin}} is from the $scope of the home controller-->
+
+
+<div>
+    <form name="form" ng-submit="form.$valid">
+        <!--<div>
+            <label>ID: </label>
+            <input type="text" ng-model="self.member.id" />
+        </div>-->
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">First Name </label>
+            <input type="text" ng-model="self.member.firstName" placeholder="First Name" />
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">Last Name </label>
+            <input type="text" ng-model="self.member.lastName" placeholder="Last Name" />
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">Email </label>
+            <input type="text" ng-model="self.member.email" placeholder="Email" />
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">Phone Number </label>
+            <input type="text" ng-model="self.member.phoneNumber" placeholder="Phone Number" />
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">Street Address </label>
+            <input type="text" ng-model="self.member.streetAddress" placeholder="Street Address" />
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">City </label>
+            <input type="text" ng-model="self.member.city" placeholder="City" />
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">State </label>
+            <input type="text" ng-model="self.member.state" placeholder="Select??" />
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label-sm">Zip Code </label>
+            <input type="text" ng-model="self.member.zipCode" placeholder="Zip Code" />
+        </div>
+        
+        <div>
+            <button type="button" class="btn btn-primary" ng-click="self.submitForm(true);">Submit</button>   <!--should be self.submitForm(form.$valid) when error checking gets implemented-->
+        </div>
+    </form>
+</div>
