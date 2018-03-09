@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="Database1Model.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="DirectorId" ColumnName="DirectorId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="passWord" ColumnName="passWord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emergencies">
+      <EntityTypeMapping TypeName="Database1Model.Emergency">
+        <MappingFragment StoreEntitySet="Emergency">
+          <ScalarProperty Name="EmergencyId" ColumnName="EmergencyId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Histories">
+      <EntityTypeMapping TypeName="Database1Model.History">
+        <MappingFragment StoreEntitySet="History">
+          <ScalarProperty Name="hisoryId" ColumnName="hisoryId" />
+          <ScalarProperty Name="emailDate" ColumnName="emailDate" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="emergency" ColumnName="emergency" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="streetAddress" ColumnName="streetAddress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zipcode" ColumnName="zipcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="Database1Model.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="SkillId" ColumnName="SkillId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Volunteers">
+      <EntityTypeMapping TypeName="Database1Model.Volunteer">
+        <MappingFragment StoreEntitySet="Volunteer">
+          <ScalarProperty Name="VolunteerId" ColumnName="VolunteerId" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="streetAdress" ColumnName="streetAdress" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
