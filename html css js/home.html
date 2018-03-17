@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta charset="utf-8" />
+<link rel="stylesheet" href="scpCSS.css">
+<script src="scpJS.js"></script>
+<title> SCP2018 | Home </title>
+
+
+</head>
+
+<body>
+  <div class="site_container">
+    <div class="navbar">
+      <div class="site_heading">
+        <h1>Responder Management System</h1>
+      </div>
+
+      <a href="home.html">Home</a>
+      <div class="dropdown">
+        <button class="dd_button" onclick="myFunction()">Contacts</button>
+        <div class="dd_content" id="myDropdown">
+          <a href="addContact.html">Add</a>
+          <a href="searchContact.html">Search</a>
+        </div>
+      </div>
+      <a href="history.html">History</a>
+
+      <div class="login">
+        <a href="login.html">Log In</a>
+      </div>
+    </div>
+
+    <main>
+
+      <fieldset>
+        <legend><h3>Emergency Scenarios</h3></legend>
+        <ul class="checkboxes">
+          <li><label> <input type="checkbox" name="groups" value="Fire"> Fire </label></li>
+          <li><label> <input type="checkbox" name="groups" value="Hurricane"> Hurricane </label></li>
+          <li><label> <input type="checkbox" name="groups" value="Flood"> Flood</label></li>
+          <li><label> <input type="checkbox" name="groups" value="Earthquake"> Earthquake</label></li>
+          <li><label> <input type="checkbox" name="groups" value="Tornado"> Tornado </label></li>
+          <li><label> <input type="checkbox" name="groups" value="Snow Storm"> Snow Storm </label></li>
+          <li><label> <input type="checkbox" name="groups" value="Terrorist"> Terrorist</label></li>
+          <li><label> <input type="checkbox" name="groups" value="Wildfire"> Wildfire</label></li>
+          <li><button onclick="selectedGroups()" class="next">Next &raquo;</button></li>
+        </ul>
+      </fieldset>
+
+      <br><br><br><br><br>
+    </main>
+
+    <footer>
+      Copyright &copy; 2018, Intermedix<br>
+      <hr>
+      Team 4 Senior Capstone Project<br>
+      Augusta University<br>
+    </footer>
+  </div>
+
+</body>
+</html>
