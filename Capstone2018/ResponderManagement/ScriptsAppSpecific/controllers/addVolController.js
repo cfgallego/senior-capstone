@@ -1,11 +1,11 @@
 ﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', function ($scope, appServices) {
     var self = this
-    console.log("TEST");
+    console.log("TEST - addVolunteer");
 
     self.volunteer = {};
 
     self.submitForm = function (v) {
-        console.log("anything1");
+        console.log("TEST - submitForm");
         if (!v)
             return;
         var newReq = {
