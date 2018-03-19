@@ -34,36 +34,44 @@ namespace ResponderManagement.Controllers.ApiControllers
         }
 
         // Read (view) Volunteer
-        [HttpGet]
-        [Route("getVolunteer")]
-        public IHttpActionResult GetVolunteerByID (int id)
+        [Route("getVolunteers")] // get all volunteers in the database 
+        public IHttpActionResult GetVolunteers()
         {
-            var vol = DataContext.Volunteers.Find(id);
-
-            if (vol != null)
-            {
-                var request = new
-                {
-                    id = vol.VolunteerID,
-                    firstName = vol.FirstName,
-                    lastName = vol.LastName,
-                    phoneNumber = vol.PhoneNumber,
-                    email = vol.Email,
-                    streetAddress = vol.StreetAddress,
-                    city = vol.City,
-                    state = vol.State,
-                    zipCode = vol.ZipCode
-                };
-
-                return Ok(request);
-            }
-
-            else
-            {
-                var error = "No match found";
-                return Ok(error);
-            }
+            // pulls all volunteers from database
+            var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ToList();
+            return Ok(volunteers);
         }
+
+        //[HttpGet]
+        //[Route("getVolunteer")]
+        //public IHttpActionResult GetVolunteerByName (string name)
+        //{
+        //    var vol = DataContext.Volunteers.Find(name);
+
+        //    if (vol != null)
+        //    {
+        //        var request = new
+        //        {
+        //            id = vol.VolunteerID,
+        //            firstName = vol.FirstName,
+        //            lastName = vol.LastName,
+        //            phoneNumber = vol.PhoneNumber,
+        //            email = vol.Email,
+        //            streetAddress = vol.StreetAddress,
+        //            city = vol.City,
+        //            state = vol.State,
+        //            zipCode = vol.ZipCode
+        //        };
+
+        //        return Ok(request);
+        //    }
+
+        //    else
+        //    {
+        //        var error = "No match found";
+        //        return Ok(error);
+        //    }
+        //}
 
         // Update (edit) Volunteer
 

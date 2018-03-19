@@ -1,44 +1,26 @@
 ﻿<h3>View All</h3>
 
-<!--<div>
-    <div ng-repeat="name in self.names">{{name}}</div>
-    <br />
-    <div ng-repeat="x in self.data">{{x}}</div>
-    <br />
-    <div ng-repeat="(key, value) in self.names"><b>{{key}}:</b> {{value}}</div>
-    <br />
-    <div ng-repeat="(key, value) in self.data"><b>{{key}}:</b> {{value}}</div>
-</div>-->
-
-<!--{{self.testData}}-->
-<br /><br />
-<table>
-    <tr>
-        <th>VolunteerID</th>
-        <th>FirstName</th>
-        <th>LastName</th>
-        <th>Email</th>
-        <th>PhoneNumber</th>
-        <th>StreetAddress</th>
-        <th>City</th>
-        <th>State</th>
-        <th>ZipCode</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr ng-repeat="volunteer in self.testData">
-        <td>{{volunteer.VolunteerID}}</td>
-        <td>{{volunteer.FirstName}}</td>
-        <td>{{volunteer.LastName}}</td>
-        <td>{{volunteer.Email}}</td>
-        <td>{{volunteer.PhoneNumber}}</td>
-        <td>{{volunteer.StreetAddress}}</td>
-        <td>{{volunteer.City}}</td>
-        <td>{{volunteer.State}}</td>
-        <td>{{volunteer.ZipCode}}</td>
-        <td><button type="button" class="btn btn-primary"><a href="#" style="color:white;">Update</a></button></td>
-        <td><button type="button" class="btn btn-primary"><a href="#" style="color:white;">Delete</a></button></td>
-    </tr>
+<table class="table" ng-model="volSources">
+    <thead>
+        <tr>
+            <!--<th>ID</th>-->
+            <th style="width: 300px;">Name</th>
+            <th style="width: 250px;">Email</th>
+            <th style="width: 250px;">Phone Number</th>
+            <th style="width: 550px;">Address</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="v in volunteers">
+            <!--<td>{{v.id}}</td>-->
+            <td>{{v.firstName}} {{v.lastName}}</td>
+            <td>{{v.email}}</td>
+            <td>{{v.phoneNumber}}</td>
+            <td>{{v.streetAddress}}, {{v.city}}, {{v.state}} {{v.zipCode}}</td>
+            <td><a href="#" class="btn btn-primary btn-sm" role="button">Update</a></td>
+            <td><a href="#" class="btn btn-primary btn-sm" role="button">Delete</a></td>
+        </tr>
+    </tbody>
 </table>
-<br /><br />
-<div class="grid" ui-grid="self.gridOptions"></div>
