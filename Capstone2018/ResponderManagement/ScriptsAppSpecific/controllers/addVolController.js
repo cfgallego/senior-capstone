@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', function ($scope, appServices) {
+﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', '$window', function ($scope, appServices, $window) {
     var self = this
     console.log("TEST - addVolunteer");
 
@@ -22,6 +22,7 @@
         console.log(newReq);
         appServices.addNewVolunteer(newReq).then(function () {
             self.volunteer = {};
+            $window.alert("Volunteer added!");
         });
 
         //SweetAlert.swal("Good job!", "You clicked the button!", "success");

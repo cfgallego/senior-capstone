@@ -7,16 +7,16 @@ angular.module("app").controller("viewVolunteerController", ['$scope', 'AppServi
     var self = this;
     console.log("TEST - viewVolunteer");
 
-    $scope.deletePopup = function () {
-        //$window.alert("Do you want to continue deletion?");
-        if ($window.confirm("Do you want to continue deletion?"))
-        {
-            console.log("Confirm Delete"); // if ok, delete
-            // call appServices...
-        }
-        else
-            console.log("Cancel Delete"); // if cancel, return to view
-    }
+    //$scope.deletePopup = function () {
+    //    //$window.alert("Do you want to continue deletion?");
+    //    if ($window.confirm("Do you want to continue deletion?"))
+    //    {
+    //        console.log("Confirm Delete"); // if ok, delete
+    //        // call appServices...
+    //    }
+    //    else
+    //        console.log("Cancel Delete"); // if cancel, return to view
+    //}
 
     //$scope.deletePopup = function () {
     //    SweetAlert.swal({

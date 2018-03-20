@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("initialController", ['$scope', 'AppServices', '$http', function ($scope, appServices, $http) {
+﻿angular.module("app").controller("initialController", ['$scope', 'AppServices', '$http', '$window', function ($scope, appServices, $http, $window) {
     var self = this;
     console.log("initial controller");
 
@@ -27,6 +27,18 @@
             }
         });
     };
+
+    // delete volunteer
+    $scope.deletePopup = function () {
+        //$window.alert("Do you want to continue deletion?");
+        if ($window.confirm("Do you want to continue deletion?")) {
+            console.log("Confirm Delete"); // if ok, delete
+            appServices.deleteVolunteer($scope.volItem.id); // samok na kaayo
+        }
+        else
+            console.log("Cancel Delete"); // if cancel, return to view
+    }
+
 
     $scope.loadVolunteers();
     console.log($scope.volSources);

@@ -39,7 +39,9 @@
 
             // deleteVolunteer
             deleteVolunteer: function (id) {
-                return $http.post("api/ResponderManagement/volunteers/deleteVolunteer?id=" + id);
+                return $http.delete("api/ResponderManagement/volunteers/deleteVolunteer?id=" + id, {
+                    cache: true
+                });
             }
         }
     }]);
