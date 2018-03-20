@@ -76,5 +76,14 @@ namespace ResponderManagement.Controllers.ApiControllers
         // Update (edit) Volunteer
 
         // Delete Volunteer
+        [HttpDelete]
+        [Route("deleteVolunteer")]
+        public void DeleteVolunteer(int id)
+        {
+            var vol = DataContext.Volunteers.Find(id);
+
+            DataContext.Volunteers.Remove(vol);
+            DataContext.SaveChanges();
+        }
     }
 }

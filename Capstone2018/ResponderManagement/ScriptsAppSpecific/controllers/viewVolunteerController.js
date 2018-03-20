@@ -3,7 +3,11 @@
 //}]);
 
 
-angular.module("app").controller("viewVolunteerController", ['$scope', 'AppServices', function ($scope, appServices, $http) {
+angular.module("app").controller("viewVolunteerController", ['$scope', 'AppServices', function ($scope, appServices, $http, $window) {
     var self = this;
     console.log("TEST - viewVolunteer");
+
+    //$scope.deletePopup = function () {
+    //    $window.alert("Do you want to continue deletion?");
+    //}
 }]);

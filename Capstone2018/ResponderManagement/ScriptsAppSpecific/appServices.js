@@ -1,12 +1,12 @@
 ﻿angular.module("app").factory("AppServices", [
     '$http', function ($http) {
         return {
-            //ListController functions
+            //ListController functions - from Adam's template
             getList: function (listName) {
                 return $http.get("api/AngularTemplate/lists/" + listName);
             },
 
-            //MemberController functions
+            //MemberController functions - from Adam's template
             getMemberById: function (id) {
                 return $http.get("api/AngularTemplate/members/getMember?id=" + id);
             },
@@ -25,7 +25,7 @@
                 return $http.get("api/ResponderManagement/volunteers/getVolunteers", {
                     cache: true
                 });
-            }
+            },
 
             //getVolunteerByGroup: function (group) {
             //    return $http.get("api/ResponderManagement/volunteers/getVolunteer?group=" + group);
@@ -36,6 +36,10 @@
             //}
 
             // updateVolunteer
+
             // deleteVolunteer
+            deleteVolunteer: function (id) {
+                return $http.post("api/ResponderManagement/volunteers/deleteVolunteer?id=" + id);
+            }
         }
     }]);

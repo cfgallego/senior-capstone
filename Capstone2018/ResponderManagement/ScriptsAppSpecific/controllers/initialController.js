@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("initialController", ['$scope', 'AppServices', function ($scope, appServices, $http) {
+﻿angular.module("app").controller("initialController", ['$scope', 'AppServices', function ($scope, appServices, $http, $window) {
     var self = this;
     console.log("initial controller");
 
@@ -30,4 +30,12 @@
 
     $scope.loadVolunteers();
     console.log($scope.volSources);
+
+    // delete
+    $scope.deletePopup = function () {
+        if ($window.confirm("Do you want to continue deletion?"))
+            $scope.result = "Yes"; // if ok, delete - call appServices...
+        else
+            $scope.result = "No"; // if cancel, return to view
+    }
 }]);
