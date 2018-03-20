@@ -24,6 +24,7 @@
             self.volunteer = {};
         });
 
+        //SweetAlert.swal("Good job!", "You clicked the button!", "success");
     };
 }]);
 //angular.module("app").controller("addVolunteerController", ['$scope', 'AppServices', '$http', '$location', function ($scope, appServices, $http, $location) {

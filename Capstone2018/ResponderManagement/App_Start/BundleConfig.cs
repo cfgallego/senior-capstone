@@ -15,6 +15,7 @@ namespace ResponderManagement
                 "~/Content/ui-bootstrap-csp.css",
                 "~/Content/ui-grid.css",
                 "~/Content/bootstrap.css",
+                "~/Content/sweetalert/sweet-alert.css",
                 "~/Content/Site.css"
                 ));
 
