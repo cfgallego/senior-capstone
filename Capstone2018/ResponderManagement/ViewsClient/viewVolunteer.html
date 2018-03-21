@@ -19,8 +19,9 @@
             <td>{{v.email}}</td>
             <td>{{v.phoneNumber}}</td>
             <td>{{v.streetAddress}}, {{v.city}}, {{v.state}} {{v.zipCode}}</td>
-            <td><a href="#" class="btn btn-primary btn-sm" role="button" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></a></td>
-            <td><button type="submit" class="btn btn-primary btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></button></td>
+            <!--<td><a href="#" class="btn btn-outline-danger" role="button" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></a></td>-->
+            <td><button href="#" type="submit" class="btn btn-outline-danger btn-sm" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></button></td>
+            <td><button type="submit" class="btn btn-outline-danger btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></button></td>
         </tr>
     </tbody>
 </table>
