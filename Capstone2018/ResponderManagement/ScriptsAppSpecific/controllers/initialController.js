@@ -28,18 +28,17 @@
         });
     };
 
+    $scope.loadVolunteers();
+    console.log($scope.volSources);
+
     // delete volunteer
-    $scope.deletePopup = function () {
+    $scope.deletePopup = function (id) {
         //$window.alert("Do you want to continue deletion?");
         if ($window.confirm("Do you want to continue deletion?")) {
             console.log("Confirm Delete"); // if ok, delete
-            appServices.deleteVolunteer($scope.volItem.id); // samok na kaayo
+            appServices.deleteVolunteer(id);
         }
         else
             console.log("Cancel Delete"); // if cancel, return to view
     }
-
-
-    $scope.loadVolunteers();
-    console.log($scope.volSources);
 }]);
