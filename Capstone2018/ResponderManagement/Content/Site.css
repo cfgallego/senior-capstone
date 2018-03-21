@@ -60,7 +60,7 @@ textarea {
 }
 
 nav {
-    background-color: #f08080;
+    background-color: #cd5c5c; /*lightcoral #f08080, dodgerblue #1e90ff, indianred #cd5c5c*/
     /*color: white;*/
 }
 
@@ -110,7 +110,7 @@ footer hr {
     border: none;
     height: 2px;
     width: 350px;
-    background-color: #f08080;
+    background-color: #cd5c5c;
 }
 
 #main {

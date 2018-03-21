@@ -17,8 +17,8 @@
 
             // michelle
             // VolunteerController functions
-            addNewVolunteer: function (request) {
-                return $http.post("api/ResponderManagement/volunteers/addVolunteer", request)
+            addNewVolunteer: function (newVol) {
+                return $http.post("api/ResponderManagement/volunteers/addVolunteer", newVol)
             },
 
             getVolunteers: function () {
@@ -33,9 +33,14 @@
 
             //getVolunteerByName: function (name) {
             //    return $http.get("api/ResponderManagement/volunteers/getVolunteer?name=" + name);
-            //}
+            //},
 
             // updateVolunteer
+            editVolunteer: function (id) {
+                return $http.put("api/ResponderManagement/volunteers/editVolunteer?id=" + id, {
+                    cache: true
+                });
+            },
 
             // deleteVolunteer
             deleteVolunteer: function (id) {

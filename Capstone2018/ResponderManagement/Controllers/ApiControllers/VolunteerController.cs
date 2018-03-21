@@ -43,7 +43,7 @@ namespace ResponderManagement.Controllers.ApiControllers
         }
 
         //[HttpGet]
-        //[Route("getVolunteer")]
+        //[Route("getVolunteerByName")]
         //public IHttpActionResult GetVolunteerByName (string name)
         //{
         //    var vol = DataContext.Volunteers.Find(name);
@@ -76,32 +76,21 @@ namespace ResponderManagement.Controllers.ApiControllers
         // Update (edit) Volunteer
         [HttpPut]
         [Route("editVolunteer")]
-        public IHttpActionResult EditVolunteer(Volunteer v)
+        public void EditVolunteer(Volunteer v)
         {
             Volunteer vol = DataContext.Volunteers.Find(v.VolunteerID);
 
-            if (vol != null)
-            {
-                vol.FirstName = v.FirstName;
-                vol.LastName = v.LastName;
-                vol.PhoneNumber = v.PhoneNumber;
-                vol.Email = v.Email;
-                vol.StreetAddress = v.StreetAddress;
-                vol.City = v.City;
-                vol.State = v.State;
-                vol.ZipCode = v.ZipCode;
+            vol.FirstName = v.FirstName;
+            vol.LastName = v.LastName;
+            vol.PhoneNumber = v.PhoneNumber;
+            vol.Email = v.Email;
+            vol.StreetAddress = v.StreetAddress;
+            vol.City = v.City;
+            vol.State = v.State;
+            vol.ZipCode = v.ZipCode;
 
-                DataContext.SaveChanges();
-                return Ok(GetVolunteers());
-            }
-
-            else
-            {
-                var error = "no match";
-                return Ok(error);
-            }
+            DataContext.SaveChanges();
         }
-
 
         // Delete Volunteer
         [HttpDelete]
@@ -112,8 +101,6 @@ namespace ResponderManagement.Controllers.ApiControllers
 
             DataContext.Volunteers.Remove(vol);
             DataContext.SaveChanges();
-
-            //return Ok(GetVolunteers());
         }
     }
 }

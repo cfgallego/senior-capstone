@@ -33,12 +33,17 @@
 
     // delete volunteer
     $scope.deletePopup = function (id) {
-        //$window.alert("Do you want to continue deletion?");
         if ($window.confirm("Do you want to continue deletion?")) {
             console.log("Confirm Delete"); // if ok, delete
             appServices.deleteVolunteer(id);
         }
         else
             console.log("Cancel Delete"); // if cancel, return to view
+    }
+
+    // update volunteer
+    $scope.editVol = function (id) {
+        console.log("Edit volunteer");
+        appServices.editVolunteer(id);
     }
 }]);
