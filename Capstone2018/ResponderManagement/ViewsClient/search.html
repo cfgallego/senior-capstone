@@ -1,8 +1,9 @@
 ﻿<h3>Search</h3>
 
+
 <div>
-    <form>
-        <div class="form-row" style="align-content:center">
+    <form id="searchForm">
+        <div class="form-row align-items-center">
             <div class="col-md-2">
                 <select class="custom-select">
                     <option selected>-Select-</option>
@@ -10,18 +11,13 @@
                     <option value="group">Group</option>
                 </select>
             </div>
-            <div class="col-md-4">
-                <div class="custom-control">
-                    <input type="text" class="form-control" placeholder="Search" />
-                </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" placeholder="Search" />
             </div>
-
-            <!--<button type="submit" class="btn btn-primary">Search</button>-->
-            <!--<button type="button" class="btn btn-outline-danger"><a href="/searchResult" style="color:white;">Search</a></button>-->
-
-            <button href="/searchResult" type="button" class="btn btn-outline-danger">Search</button>
-
-            <!--<button type="button" class="btn btn-primary"><a href="/viewVolunteer" style="color:white;">Search</a></button>-->
+            <div class="col-md-1">
+                <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                <a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>
+            </div>
         </div>
     </form>
 </div>

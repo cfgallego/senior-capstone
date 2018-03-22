@@ -20,8 +20,15 @@
             <td>{{v.phoneNumber}}</td>
             <td>{{v.streetAddress}}, {{v.city}}, {{v.state}} {{v.zipCode}}</td>
             <!--<td><a href="#" class="btn btn-outline-danger" role="button" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></a></td>-->
-            <td><button href="#" type="submit" class="btn btn-outline-danger btn-sm" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></button></td>
-            <td><button type="submit" class="btn btn-outline-danger btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></button></td>
+
+            <!--<td><button href="#" type="submit" class="btn btn-outline-danger btn-sm" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></button></td>
+            <td><button type="submit" class="btn btn-outline-danger btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></button></td>-->
+
+            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></a></td>
+            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></a></td>
+
+
+            <!--<a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>-->
         </tr>
     </tbody>
 </table>

@@ -30,7 +30,10 @@ textarea {
 body {
     padding-top: 120px;
     padding-bottom: 20px;
-    max-width: 1920px;
+    /*max-width: 1920px;*/
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 
     @media (min-width: 992px) {
         body {
@@ -53,11 +56,11 @@ body {
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 nav {
     background-color: #cd5c5c; /*lightcoral #f08080, dodgerblue #1e90ff, indianred #cd5c5c*/
@@ -130,6 +133,22 @@ footer hr {
     font-size: 20px;
     float: left;
     width: 25%;
+}
+
+
+#loginForm {
+    width: 350px;
+    margin: auto;
+}
+
+#addvolForm {
+    width: 1000px;
+    margin: auto;
+}
+
+#searchForm {
+    width: 1000px;
+    margin: auto;
 }
 
 

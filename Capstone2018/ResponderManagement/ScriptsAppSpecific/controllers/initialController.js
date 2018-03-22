@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("initialController", ['$scope', 'AppServices', '$http', '$window', function ($scope, appServices, $http, $window) {
+﻿angular.module("app").controller("initialController", ['$scope', 'AppServices', '$http', '$window', '$filter', function ($scope, appServices, $http, $window, $filter) {
     var self = this;
     console.log("initial controller");
 
@@ -36,6 +36,9 @@
         if ($window.confirm("Do you want to continue deletion?")) {
             console.log("Confirm Delete"); // if ok, delete
             appServices.deleteVolunteer(id);
+
+            // to remove volunteer from view without refreshing
+            $scope.volunteers = $filter('filter')($scope.volunteers, { id: '!' + id });
         }
         else
             console.log("Cancel Delete"); // if cancel, return to view
