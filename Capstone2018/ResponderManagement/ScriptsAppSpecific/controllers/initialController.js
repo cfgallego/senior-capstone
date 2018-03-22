@@ -47,6 +47,24 @@
     // update volunteer
     $scope.editVol = function (id) {
         console.log("Edit volunteer");
-        appServices.editVolunteer(id);
+        // appServices.editVolunteer(id);
+
+        // prefills form?
+        for (v in $scope.volunteers) {
+            if ($scope.volunteers[v.id] == id) {
+                $scope.editedVol = {
+                    id: $scope.volunteers[v].id,
+                    firstName: $scope.volunteers[v].firstName,
+                    lastName: $scope.volunteers[v].lastName,
+                    email: $scope.volunteers[v].email,
+                    phoneNumber: $scope.volunteers[v].phoneNumber,
+                    streetAddress: $scope.volunteers[v].streetAddress,
+                    city: $scope.volunteers[v].city,
+                    state: $scope.volunteers[v].state,
+                    zipCode: $scope.volunteers[v].zipCode
+                }
+            }
+            // $scope.volunteers.push($scope.editedVol);
+        }
     }
 }]);

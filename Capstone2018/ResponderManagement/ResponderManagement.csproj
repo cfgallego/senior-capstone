@@ -375,6 +375,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="ViewsClient\addVolunteer.html" />
+    <Content Include="ViewsClient\editVolunteer.html" />
     <Content Include="ViewsClient\emergencyDetail.html" />
     <Content Include="ViewsClient\history.html" />
     <Content Include="ViewsClient\home.html" />
