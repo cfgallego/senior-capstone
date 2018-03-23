@@ -11,5 +11,12 @@ namespace ResponderManagement.Models
         [Key]
         public int EmergencyID { get; set; }
         public string Name { get; set; }
+
+        public virtual ICollection<Skill> Skills { get; set; }
+
+        public Emergency()
+        {
+            Skills = new List<Skill>();
+        }
     }
 }
