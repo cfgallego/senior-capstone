@@ -21,6 +21,13 @@
             controllerAs: "self"
         })
 
+        .when("/editVolunteer/:param1",
+        {
+            templateUrl: "ViewsClient/editVolunteer.html",
+            controller: "editVolController",
+            controllerAs: "self"
+        })
+
         .when("/search",
         {
             templateUrl: "ViewsClient/search.html",
@@ -55,7 +62,6 @@
             controller: "searchResultController",
             controllerAs: "self"
         })
-
 
         .otherwise({
             redirectTo: "/"

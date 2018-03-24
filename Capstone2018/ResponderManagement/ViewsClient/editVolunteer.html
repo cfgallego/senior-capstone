@@ -6,38 +6,38 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>First Name</label>
-                <input type="text" class="form-control" placeholder="First Name" ng-model="self.volunteer.firstName">
+                <input type="text" class="form-control" placeholder="First Name" ng-model="self.vol.FirstName">
             </div>
             <div class="form-group col-md-6">
                 <label>Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name" ng-model="self.volunteer.lastName">
+                <input type="text" class="form-control" placeholder="Last Name" ng-model="self.vol.LastName">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" ng-model="self.volunteer.email">
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email" ng-model="self.vol.Email">
             </div>
             <div class="form-group col-md-6">
                 <label>Phone Number</label>
-                <input type="tel" class="form-control" placeholder="###-###-####" ng-model="self.volunteer.phoneNumber">
+                <input type="tel" class="form-control" placeholder="###-###-####" ng-model="self.vol.PhoneNumber">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputAddress">Street Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Street Address" ng-model="self.volunteer.streetAddress">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Street Address" ng-model="self.vol.StreetAddress">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="City" ng-model="self.volunteer.city">
+                <input type="text" class="form-control" id="inputCity" placeholder="City" ng-model="self.vol.City">
             </div>
             <div class="form-group col-md-3">
                 <label for="inputState">State</label>
-                <select id="inputState" class="form-control" ng-model="self.volunteer.state">
+                <select id="inputState" class="form-control" ng-model="self.vol.State">
                     <option selected>-Select-</option>
 
                     <option value="AL">AL - Alabama</option>
@@ -103,7 +103,7 @@
             </div>
             <div class="form-group col-md-3">
                 <label for="inputZip">Zip Code</label>
-                <input type="text" class="form-control" id="inputZip" placeholder="#####" ng-model="self.volunteer.zipCode">
+                <input type="text" class="form-control" id="inputZip" placeholder="#####" ng-model="self.vol.ZipCode">
             </div>
         </div>
 
@@ -135,7 +135,9 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(true)">Update</button> <!--should be self.submitForm(form.$valid) when error checking gets implemented-->
+        <button type="submit" class="btn btn-outline-danger">Cancel</button>
+        <button type="submit" class="btn btn-outline-danger">Update</button>
+        <!--<button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(true)">Update</button> <!--should be self.submitForm(form.$valid) when error checking gets implemented-->
     </form>
 </div>
 

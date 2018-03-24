@@ -15,7 +15,7 @@ namespace ResponderManagement.Controllers.ApiControllers
         // Create (add) Volunteer
         [HttpPost]
         [Route("addVolunteer")]
-        public void AddVolunteer(Volunteer v)
+        public IHttpActionResult AddVolunteer(Volunteer v)
         {
             var vol = new Volunteer();
             {
@@ -27,19 +27,30 @@ namespace ResponderManagement.Controllers.ApiControllers
                 vol.City = v.City;
                 vol.State = v.State;
                 vol.ZipCode = v.ZipCode;
+                // vol.Skills = v.Skills;
             }
 
-            DataContext.Volunteers.Add(vol);
+            DataContext.Volunteers.Add(v);
             DataContext.SaveChanges();
+            return Ok(v);
         }
 
         // Read (view) Volunteer
+        [HttpGet]
         [Route("getVolunteers")] // get all volunteers in the database 
         public IHttpActionResult GetVolunteers()
         {
             // pulls all volunteers from database
             var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ToList();
             return Ok(volunteers);
+        }
+
+        [HttpGet]
+        [Route("getVolunteerByID")]
+        public IHttpActionResult GetVolunteerByID(int id)
+        {
+            var vol = DataContext.Volunteers.First(x => x.VolunteerID == id);
+            return Ok(vol);
         }
 
         //[HttpGet]

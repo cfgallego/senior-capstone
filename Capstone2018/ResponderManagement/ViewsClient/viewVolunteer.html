@@ -1,6 +1,6 @@
 ﻿<h3>View All</h3>
 
-<table class="table" ng-model="volSources">
+<table class="table" ng-model="self.volunteers" ng-if="self.test===false">
     <thead>
         <tr>
             <th>ID</th>
@@ -13,22 +13,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="v in volunteers">
-            <td>{{v.id}}</td>
-            <td>{{v.firstName}} {{v.lastName}}</td>
-            <td>{{v.email}}</td>
-            <td>{{v.phoneNumber}}</td>
-            <td>{{v.streetAddress}}, {{v.city}}, {{v.state}} {{v.zipCode}}</td>
-            <!--<td><a href="#" class="btn btn-outline-danger" role="button" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></a></td>-->
+        <tr ng-repeat="v in self.volunteers">
+            <td>{{v.VolunteerID}}</td>
+            <td>{{v.FirstName}} {{v.LastName}}</td>
+            <td>{{v.Email}}</td>
+            <td>{{v.PhoneNumber}}</td>
+            <td>{{v.StreetAddress}}, {{v.City}}, {{v.State}} {{v.ZipCode}}</td>
 
-            <!--<td><button href="#" type="submit" class="btn btn-outline-danger btn-sm" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></button></td>
-            <td><button type="submit" class="btn btn-outline-danger btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></button></td>-->
-
-            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="editVol(v.id)"><img src="Content/images/edit.png"></a></td>
-            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="deletePopup(v.id)"><img src="Content/images/delete.png"></a></td>
-
-
-            <!--<a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>-->
+            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="self.edit(v.VolunteerID)"><img src="Content/images/edit.png"></a></td>
+            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="self.delete(v.VolunteerID)"><img src="Content/images/delete.png"></a></td>
         </tr>
     </tbody>
 </table>

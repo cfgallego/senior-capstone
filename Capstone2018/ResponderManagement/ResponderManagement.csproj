@@ -208,7 +208,6 @@
     <Compile Include="Controllers\ApiControllers\VolunteerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,10 +241,7 @@
     <Content Include="Content\images\search.png" />
     <Content Include="Content\images\truck.png" />
     <Content Include="Content\images\truck2.png" />
-    <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
-    <Content Include="Content\sweetalert\docs.css" />
-    <Content Include="Content\sweetalert\sweet-alert.css" />
-    <Content Include="Content\sweetalert\thumbs-up.jpg" />
+    <Content Include="Content\sweetalert.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Content\ui-grid.css" />
     <Content Include="Content\ui-grid.min.css" />
@@ -258,6 +254,7 @@
     </Content>
     <Content Include="ScriptsAppSpecific\appServices.js" />
     <Content Include="ScriptsAppSpecific\controllers\addVolController.js" />
+    <Content Include="ScriptsAppSpecific\controllers\editVolController.js" />
     <Content Include="ScriptsAppSpecific\controllers\emergencyDetailController.js" />
     <Content Include="ScriptsAppSpecific\controllers\historyController.js" />
     <Content Include="ScriptsAppSpecific\controllers\homeController.js" />
@@ -340,11 +337,6 @@
     <Content Include="Content\less\bootstrap\bootstrap.less" />
     <Content Include="Content\less\body.less" />
     <Content Include="Content\less\animation.less" />
-    <Content Include="Content\sweetalert\sweet-alert.less" />
-    <Content Include="Content\sweetalert\sweet-alert-combine.less" />
-    <Content Include="Content\sweetalert\sweet-alert-animations.less" />
-    <Content Include="Content\bootstrap\variables.less" />
-    <Content Include="Content\bootstrap\mixins.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -370,6 +362,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\angular-ui\ui-grid.js" />
     <Content Include="Scripts\angular-ui\ui-grid.min.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -424,7 +417,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Sweet\Alert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

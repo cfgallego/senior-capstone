@@ -116,6 +116,10 @@ footer hr {
     background-color: #cd5c5c;
 }
 
+h3 {
+    text-align: center;
+}
+
 #main {
     background-color: white;
     margin-bottom: 0px;
@@ -134,7 +138,6 @@ footer hr {
     float: left;
     width: 25%;
 }
-
 
 #loginForm {
     width: 350px;

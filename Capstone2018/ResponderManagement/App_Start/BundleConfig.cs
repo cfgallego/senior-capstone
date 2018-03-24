@@ -15,7 +15,7 @@ namespace ResponderManagement
                 "~/Content/ui-bootstrap-csp.css",
                 "~/Content/ui-grid.css",
                 "~/Content/bootstrap.css",
-                "~/Content/sweetalert/sweet-alert.css",
+                "~/Content/sweetalert.css",
                 "~/Content/Site.css"
                 ));
 
@@ -31,6 +31,7 @@ namespace ResponderManagement
                 "~/Scripts/angular-ui/calendar.js",
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/umd/popper.js",
+                "~/Scripts/sweetalert.min.js",
                 "~/ScriptsAppSpecific/main.js"
                 ));
 
