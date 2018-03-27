@@ -3,7 +3,7 @@
         return {
             // VolunteerController functions
             addNewVolunteer: function (newVol) {
-                return $http.post("api/ResponderManagement/volunteers/addVolunteer", newVol)
+                return $http.post("api/ResponderManagement/volunteers/addVolunteer", newVol);
             },
 
             getVolunteers: function () {
@@ -23,8 +23,8 @@
             //},
 
             // updateVolunteer
-            editVolunteer: function (id) {
-                return $http.put("api/ResponderManagement/volunteers/editVolunteer?id=" + id);
+            editVolunteer: function (vol) {
+                return $http.put("api/ResponderManagement/volunteers/editVolunteer", vol);
             },
 
             // deleteVolunteer

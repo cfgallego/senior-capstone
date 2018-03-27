@@ -23,5 +23,36 @@
 
     };
 
+    console.log(self.vol);
     self.fillForm();
+
+    self.update = function (v) {
+
+        console.log("TEST - update");
+        if (!v)
+            return;
+        var req = {
+            VolunteerID: self.vol.VolunteerID,
+            FirstName: self.vol.FirstName,
+            LastName: self.vol.LastName,
+            PhoneNumber: self.vol.PhoneNumber,
+            Email: self.vol.Email,
+            StreetAddress: self.vol.StreetAddress,
+            City: self.vol.City,
+            State: self.vol.State,
+            ZipCode: self.vol.ZipCode
+        };
+
+        console.log(req);
+
+        appServices.editVolunteer(req).then(function (response) {
+            swal("SUCCESS", "Volunteer information updated!", "success");
+            console.log(response);
+            // redirect back to prev page?
+        });
+    };
+
+    //self.back = function () {
+    //    console.log("TEST - cancel update")
+    //};
 }]);

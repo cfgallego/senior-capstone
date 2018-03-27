@@ -1,7 +1,7 @@
 ﻿<h3>Add Volunteer</h3>
 
 <div>
-    <form id="addvolForm" name="form" ng-submit="form.$valid">
+    <form id="addvolForm" name="form" ng-submit="form.$valid" novalidate>
         <h4>Personal Information</h4>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -38,7 +38,7 @@
             <div class="form-group col-md-3">
                 <label for="inputState">State</label>
                 <select id="inputState" class="form-control" ng-model="self.volunteer.state">
-                    <option selected>-Select-</option>
+                    <!--<option selected>-Select-</option>-->
 
                     <option value="AL">AL - Alabama</option>
                     <option value="AK">AK - Alaska</option>
@@ -106,7 +106,7 @@
                 <input type="text" class="form-control" id="inputZip" placeholder="#####" ng-model="self.volunteer.zipCode">
             </div>
         </div>
-        
+
         <h4>Certified Skills</h4>
         <div class="form-group">
             <div class="form-check">
@@ -134,7 +134,7 @@
                 <label>Redcross Certification</label>
             </div>
         </div>
-        
+
         <button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(true)">Add</button> <!--should be self.submitForm(form.$valid) when error checking gets implemented-->
     </form>
 </div>

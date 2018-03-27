@@ -85,9 +85,12 @@ namespace ResponderManagement.Controllers.ApiControllers
         //}
 
         // Update (edit) Volunteer
+
+
+
         [HttpPut]
         [Route("editVolunteer")]
-        public void EditVolunteer(Volunteer v)
+        public IHttpActionResult EditVolunteer(Volunteer v)
         {
             Volunteer vol = DataContext.Volunteers.Find(v.VolunteerID);
 
@@ -101,7 +104,9 @@ namespace ResponderManagement.Controllers.ApiControllers
             vol.ZipCode = v.ZipCode;
 
             DataContext.SaveChanges();
+            return Ok(v);
         }
+
 
         // Delete Volunteer
         [HttpDelete]

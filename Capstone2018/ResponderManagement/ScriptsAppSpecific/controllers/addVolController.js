@@ -5,7 +5,7 @@
     self.volunteer = {};
 
     self.submitForm = function (v) {
-        console.log("TEST - submitForm");
+        console.log(v, "TEST - submitForm");
         if (!v)
             return;
         var newReq = {

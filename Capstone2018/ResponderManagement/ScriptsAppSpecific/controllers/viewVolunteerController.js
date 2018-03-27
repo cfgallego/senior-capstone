@@ -28,7 +28,7 @@
         //}
         //else
         //    console.log("Cancel Delete"); // if cancel, return to view
-
+        console.log(id);
         // sweet alert
         swal({
             title: "Are you sure?",
@@ -44,12 +44,15 @@
             function (isConfirm) {
                 if (isConfirm) {
                     appServices.deleteVolunteer(id);
-                    swal("Deleted!", "Volunteer has been deleted", "success");
 
-                    // to remove volunteer from view without refreshing - di npud mugana
+                    // to remove volunteer from table without refreshing - di npud mugana
                     self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
+
+                    swal("Deleted!", "Volunteer has been deleted", "success");
+                    console.log("confirm delete");
                 } else {
                     swal("Cancelled", "Volunteer was not deleted", "error");
+                    console.log("cancel delete");
                 }
             });
     }
