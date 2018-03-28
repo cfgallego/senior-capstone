@@ -140,11 +140,17 @@
             <h4>Certified Skills</h4>
             <ul ng-repeat="s in self.skills" style="list-style-type: none;">
                 <li>
-                    <input type="checkbox" name="groups" value="{{s.Name}}">
+                    <!--<input type="checkbox" name="groups" value="{{s.Name}}" ng-model="self.volunteer.Skills">-->
+                    <input type="checkbox" name="groups" checklist-value="{{s.Name}}" checklisk-model="self.volunteer.Skills">
                     <label>{{s.Name}}</label>
                 </li>
             </ul>
         </fieldset>
+
+        <!--<h4>Certified Skills</h4>
+        <label ng-repeat="s in self.skills">
+            <input type="checkbox" checklist-model="self.volunteer.Skills"  checklist-value="{{s.Name}}" /> {{s.Name}} <br />
+        </label>-->
 
         <button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(true)">Add</button> <!--should be self.submitForm(form.$valid) when error checking gets implemented-->
     </form>

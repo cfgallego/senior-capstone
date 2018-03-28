@@ -31,8 +31,8 @@
             StreetAddress: self.volunteer.streetAddress,
             City: self.volunteer.city,
             State: self.volunteer.state,
-            ZipCode: self.volunteer.zipCode
-            //Skills??
+            ZipCode: self.volunteer.zipCode,
+            // Skills?
         };
 
         console.log(newReq);

@@ -55,7 +55,7 @@ namespace ResponderManagement.Controllers.ApiControllers
 
         //[HttpGet]
         //[Route("getVolunteerByName")]
-        //public IHttpActionResult GetVolunteerByName (string name)
+        //public IHttpActionResult GetVolunteerByName(string name)
         //{
         //    var vol = DataContext.Volunteers.Find(name);
 
