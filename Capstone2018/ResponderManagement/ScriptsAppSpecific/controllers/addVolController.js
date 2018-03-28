@@ -3,6 +3,21 @@
     console.log("TEST - addVolunteer");
 
     self.volunteer = {};
+    self.skills = [];
+    self.test = true;
+
+    self.loadSkills = function () {
+        appServices.getSkills().then(function (response) {
+            console.log(response.data);
+
+            self.skills = response.data;
+            console.log(self.skills);
+
+            self.test = false;
+        });
+    };
+
+    self.loadSkills();
 
     self.submitForm = function (v) {
         console.log(v, "TEST - submitForm");
@@ -17,6 +32,7 @@
             City: self.volunteer.city,
             State: self.volunteer.state,
             ZipCode: self.volunteer.zipCode
+            //Skills??
         };
 
         console.log(newReq);

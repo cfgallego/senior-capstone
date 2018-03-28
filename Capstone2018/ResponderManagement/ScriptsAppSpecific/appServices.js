@@ -30,6 +30,17 @@
             // deleteVolunteer
             deleteVolunteer: function (id) {
                 return $http.delete("api/ResponderManagement/volunteers/deleteVolunteer?id=" + id);
+            },
+
+
+            // EmergencyController functions
+            getEmergencies: function () {
+                return $http.get("api/ResponderManagement/emergencies/getEmergencies");
+            },
+
+            // SkillController functions
+            getSkills: function () {
+                return $http.get("api/ResponderManagement/skills/getSkills");
             }
         }
     }]);

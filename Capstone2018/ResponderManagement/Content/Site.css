@@ -139,6 +139,14 @@ h3 {
     width: 25%;
 }
 
+#emergencyChkbx2, skillsChkbx {
+    /*column-count: 4;*/
+    /*column-width: 200px;*/
+    display: block;
+    /*list-style: none;*/
+    /*list-style-type: none;*/
+}
+
 #loginForm {
     width: 350px;
     margin: auto;

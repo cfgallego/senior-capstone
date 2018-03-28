@@ -85,9 +85,6 @@ namespace ResponderManagement.Controllers.ApiControllers
         //}
 
         // Update (edit) Volunteer
-
-
-
         [HttpPut]
         [Route("editVolunteer")]
         public IHttpActionResult EditVolunteer(Volunteer v)
