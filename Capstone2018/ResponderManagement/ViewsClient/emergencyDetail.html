@@ -1,20 +1,18 @@
 ﻿<h3>Send Notification</h3>
 
 <div>
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="emergencyList">Emergency</label>
-                <input type="text" class="form-control" id="emergencyList">
-            </div>
+    <form id="emergencyForm">
+        <div class="form-group">
+            <label for="emergencies">Emergency</label>
+            <input type="text" class="form-control" id="emergencies">
         </div>
 
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="emergencyDate">Date</label>
                 <input type="text" class="form-control" id="emergencyDate">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="emergencyTime">Time</label>
                 <input type="text" class="form-control" id="emergencyTime">
             </div>
@@ -26,11 +24,11 @@
         </div>
 
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="emergencyCity">City</label>
                 <input type="text" class="form-control" id="emergencyCity">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
                 <label for="emergencyState">State</label>
                 <select id="emergencyState" class="form-control">
                     <option selected>-Select-</option>
@@ -96,12 +94,19 @@
                     <option value="wy">WY - Wyoming</option>
                 </select>
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <label for="emergencyZip">Zip Code</label>
                 <input type="text" class="form-control" id="emergencyZip">
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Send</button>
+        <div class="form-group">
+            <label for="emergencyComments">Addtional Comments</label>
+            <textarea class="form-control" id="emergencyComments" rows="4" />
+        </div>
+
+
+        <a href="/home" role="button" class="btn btn-outline-danger">Back</a>
+        <a href="#" role="button" class="btn btn-outline-danger">Send</a>
     </form>
 </div>

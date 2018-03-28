@@ -60,10 +60,16 @@
     // seach volunteer by first name or last name but not both
     self.searchText = "";
     self.searchName = function () {
+        if (self.searchText == "")
+            return;
+
         return self.volunteers.filter(function (item) {
             return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1 || item.LastName.toLowerCase().indexOf(self.searchText) > -1)
         })
     };
+
+    // ng-show function for searching groups??
+
 
     self.loadVolunteers();
 }]);
