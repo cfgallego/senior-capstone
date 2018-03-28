@@ -107,7 +107,7 @@
             </div>
         </div>
 
-        <h4>Certified Skills</h4>
+        <!--<h4>Certified Skills</h4>
         <div class="form-group">
             <div class="form-check">
                 <input type="checkbox" name="skills" value="fireSafety" label="Fire Safety">
@@ -133,7 +133,18 @@
                 <input type="checkbox" name="skills" value="redcross">
                 <label>Redcross Certification</label>
             </div>
-        </div>
+        </div>-->
+
+
+        <fieldset id="skillsChkbx">
+            <h4>Certified Skills</h4>
+            <ul ng-repeat="s in self.skills" style="list-style-type: none;">
+                <li>
+                    <input type="checkbox" name="groups" value="{{s.Name}}">
+                    <label>{{s.Name}}</label>
+                </li>
+            </ul>
+        </fieldset>
 
         <button href="#" class="btn btn-outline-danger" ng-click="self.back()">Cancel</button>
         <button type="submit" class="btn btn-outline-danger" ng-click="self.update(true)">Update</button>

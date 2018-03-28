@@ -71,14 +71,14 @@
 
 <fieldset id="emergencyChkbx2">
     <legend>Emergency Scenarios</legend>
-    <ul class="checkbox" ng-repeat="e in self.emergencies">
+    <ul ng-repeat="e in self.emergencies" style="list-style-type: none;">
         <li>
             <input type="checkbox" name="groups" value="{{e.Name}}">
             <label>{{e.Name}}</label>
         </li>
     </ul>
 
-    <ul>
+    <ul style="list-style-type: none;">
         <li>
             <a role="button" href="#" class="btn btn-outline-danger btn-sm">Next</a>
         </li>

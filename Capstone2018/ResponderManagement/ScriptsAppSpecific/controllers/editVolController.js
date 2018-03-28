@@ -1,9 +1,21 @@
 ﻿angular.module("app").controller("editVolController", ['$scope', 'AppServices', '$routeParams', '$rootScope', function ($scope, appServices, $routeParams, $rootScope) {
     var self = this;
+    console.log("TEST - edit volunteer");
     //self.param1 = null;
     self.vol = null;
 
-    console.log("TEST - edit volunteer");
+    self.loadSkills = function () {
+        appServices.getSkills().then(function (response) {
+            console.log(response.data);
+
+            self.skills = response.data;
+            console.log(self.skills);
+
+            self.test = false;
+        });
+    };
+
+    self.loadSkills();
 
     //var id = $rootScope.id;
     //console.log($rootScope.id);

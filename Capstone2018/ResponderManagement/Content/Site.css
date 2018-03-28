@@ -139,10 +139,10 @@ h3 {
     width: 25%;
 }
 
-#emergencyChkbx2, skillsChkbx {
+#emergencyChkbx2, skillsChkbx ul {
     /*column-count: 4;*/
     /*column-width: 200px;*/
-    display: block;
+    /*display: block;*/
     /*list-style: none;*/
     /*list-style-type: none;*/
 }
