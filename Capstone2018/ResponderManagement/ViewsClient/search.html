@@ -33,7 +33,7 @@
         </select>
     </div>
 
-    <input type="text" class="form-control" placeholder="Search" ng-model="search" />
+    <input type="text" class="form-control" placeholder="Search" ng-model="self.searchText" />
 
     <div class="input-group-append">
         <a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>
@@ -55,7 +55,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="v in self.volunteers | filter:{'FirstName': search}">
+        <!--<tr ng-repeat="v in self.volunteers | filter: searchText">-->
+        <tr ng-repeat="v in self.searchName()">
             <td>{{v.VolunteerID}}</td>
             <td>{{v.FirstName}} {{v.LastName}}</td>
             <td>{{v.Email}}</td>

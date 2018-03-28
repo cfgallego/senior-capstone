@@ -41,7 +41,8 @@ namespace ResponderManagement.Controllers.ApiControllers
         public IHttpActionResult GetVolunteers()
         {
             // pulls all volunteers from database
-            var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ToList();
+            //var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ToList();
+            var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
             return Ok(volunteers);
         }
 
