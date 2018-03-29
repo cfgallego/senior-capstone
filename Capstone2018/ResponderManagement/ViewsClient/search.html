@@ -37,13 +37,13 @@
 
     <div class="input-group-append">
         <!--<a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>-->
-        <button href="#" class="btn btn-outline-danger"><img src="Content/images/search.png"></button>
+        <button href="#" class="btn btn-outline-danger" ng-click="self.buttonClick()"><img src="Content/images/search.png"></button>
     </div>
 </div>
 
-<br /><br /><br />
+<br /><br />
 
-<table class="table" ng-model="self.volunteers" ng-if="self.test===false">
+<table class="table" ng-model="self.volunteers" ng-if="self.loadTable">
     <thead>
         <tr>
             <th>ID</th>
@@ -57,7 +57,8 @@
     </thead>
     <tbody>
         <!--<tr ng-repeat="v in self.volunteers | filter: searchText">-->
-        <tr ng-repeat="v in self.searchName()">
+        <!--<tr ng-repeat="v in self.searchName()">-->
+        <tr ng-repeat="v in self.volunteerTable">
             <td>{{v.VolunteerID}}</td>
             <td>{{v.FirstName}} {{v.LastName}}</td>
             <td>{{v.Email}}</td>

@@ -63,12 +63,22 @@
         if (self.searchText == "")
             return;
 
-        return self.volunteers.filter(function (item) {
+        //return self.volunteers.filter(function (item) {
+        //    return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1 || item.LastName.toLowerCase().indexOf(self.searchText) > -1)
+
+        self.volunteerTable = self.volunteers.filter(function (item) {
             return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1 || item.LastName.toLowerCase().indexOf(self.searchText) > -1)
-        })
+        });
     };
 
     // ng-show function for searching groups??
+
+    // load table on seach button click
+    self.loadTable = false;
+    self.buttonClick = function () {
+        self.searchName();
+        self.loadTable = true;
+    };
 
 
     self.loadVolunteers();
