@@ -158,5 +158,14 @@ h3 {
     margin: auto;
 }
 
+#addvolForm p {
+    color: red;
+}
+
+/*to remove arrows on phone number input area*/
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} 
 
 
