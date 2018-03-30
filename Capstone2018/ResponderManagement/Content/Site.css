@@ -148,8 +148,8 @@ h3 {
     margin: auto;
 }
 
-#emergencyList, #emergencyForm, #addvolForm {
-    width: 800px;
+#emergencyList, #emergencyForm, #addvolForm, #editvolForm {
+    width: 700px;
     margin: auto;
 }
 
