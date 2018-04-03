@@ -17,6 +17,22 @@
         });
     };
 
+
+    self.groups = [];
+
+    self.loadGroups = function () {
+        appServices.getEmergencies().then(function (response) {
+            console.log(response.data);
+
+            self.groups = response.data;
+            console.log(self.emergencies);
+
+            self.test = false;
+        });
+    };
+
+    self.loadGroups();
+
     // delete volunteer
     self.delete = function (id) {
         console.log(id);
@@ -79,7 +95,6 @@
         self.searchName();
         self.loadTable = true;
     };
-
 
     self.loadVolunteers();
 }]);

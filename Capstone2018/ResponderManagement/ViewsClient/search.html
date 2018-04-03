@@ -24,20 +24,30 @@
 
 
 
-<div class="input-group"> <!--id="searchForm"-->
+<div class="input-group">
     <div class="input-group-prepend">
-        <select class="form-control" style="height:50px;">
-            <!--<option >-Select-</option>-->
-            <option value="name" selected>Name</option>
-            <option value="group">Group</option>
+        <select style="height:50px;" class="form-control" name="type" ng-model="search.type" ng-dropdown required>
+            <option ng-option value="name" selected>Name</option>
+            <option ng-option value="group">Group</option>
         </select>
     </div>
 
-    <input type="text" class="form-control" placeholder="Search" ng-model="self.searchText" />
+    <div ng-if="search.type=='name'">
+        <input style="height:50px; width:950px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" />
+    </div>
+
+    <div ng-if="search.type=='group'">
+        <!--<input type="text" class="form-control" placeholder="Search Group" ng-model="self.searchText" />-->
+        <select style="height:50px; width:950px;" class="form-control" name="type" multiple required>
+            <option value="">-- Select group/s --</option>
+            <option ng-repeat="g in self.groups" value="{{g.Name}}">{{g.Name}}</option>
+        </select>
+        <p style="text-align:center;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+    </div>
 
     <div class="input-group-append">
         <!--<a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>-->
-        <button href="#" class="btn btn-outline-danger" ng-click="self.buttonClick()"><img src="Content/images/search.png"></button>
+        <button style="height:50px;" href="#" class="btn btn-outline-danger" ng-click="self.buttonClick()"><img src="Content/images/search.png"></button>
     </div>
 </div>
 

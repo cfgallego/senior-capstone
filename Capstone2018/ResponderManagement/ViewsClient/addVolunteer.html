@@ -34,7 +34,6 @@
                 <input type="text" name="phoneNumber" class="form-control" placeholder="###-###-####" ng-model="self.volunteer.phoneNumber" ng-pattern="self.phoneNumberPattern" required>
                 <div ng-show="form.$submitted">
                     <p ng-show="form.phoneNumber.$error.required">Phone Number is required</p>
-                    <!--<p ng-show="form.phoneNumber.$error.minlength || form.phoneNumber.$error.maxlength || form.phoneNumber.$error.pattern">Invalid Phone Number</p> ng-minlength="10" ng-maxlength="10" -->
                     <p ng-show="form.phoneNumber.$error.pattern">Invalid Phone Number</p>
                 </div>
             </div>
@@ -120,7 +119,6 @@
                 <input type="text" name="zipCode" class="form-control" id="inputZip" placeholder="#####" ng-model="self.volunteer.zipCode" ng-pattern="self.zipCodePattern" required>
                 <div ng-show="form.$submitted">
                     <p ng-show="form.zipCode.$error.required">Zip Code is required</p>
-                    <!--<p ng-show="form.zipCode.$error.minlength || form.zipCode.$error.maxlength">Invalid Zip Code</p> ng-minlength="5" ng-maxlength="5"-->
                     <p ng-show="form.zipCode.$error.pattern">Invalid Zip Code</p>
                 </div>
             </div>
