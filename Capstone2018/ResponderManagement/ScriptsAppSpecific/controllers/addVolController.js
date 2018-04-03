@@ -43,4 +43,10 @@
             console.log(response);
         });
     };
+
+    // phone number pattern ###-###-#### or ##########
+    self.phoneNumberPattern = /^\d{3}[- ]?\d{3}[- ]?\d{4}$/;
+
+    // zipcode pattern #####
+    self.zipCodePattern = /^\d{5}$/;
 }]);

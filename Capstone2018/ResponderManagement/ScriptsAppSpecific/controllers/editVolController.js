@@ -24,7 +24,7 @@
     console.log(self.param1);
     //self.param1 = $route.current.param1;
 
-
+    // prefills the form
     self.fillForm = function () {
         appServices.getVolunteerByID(self.param1).then(function (response) {
             self.vol = response.data;
@@ -38,8 +38,14 @@
     console.log(self.vol);
     self.fillForm();
 
-    self.update = function (v) {
+    // phone number pattern ###-###-#### or ##########
+    self.phoneNumberPattern = /^\d{3}[- ]?\d{3}[- ]?\d{4}$/;
 
+    // zipcode pattern #####
+    self.zipCodePattern = /^\d{5}$/;
+
+    // save volunteer information edits
+    self.update = function (v) {
         console.log("TEST - update");
         if (!v)
             return;
