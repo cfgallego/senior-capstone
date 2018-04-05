@@ -33,7 +33,7 @@
     </div>
 
     <div ng-if="search.type=='name'">
-        <input style="height:50px; width:950px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" />
+        <input style="height:50px; width:950px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
     </div>
 
     <div ng-if="search.type=='group'">
