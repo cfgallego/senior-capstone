@@ -30,6 +30,7 @@ namespace ResponderManagement
                 "~/Scripts/moment.js",
                 "~/Scripts/angular-ui/calendar.js",
                 "~/Scripts/bootstrap.js",
+                //"~/Scripts/bootstrap.bundle.min.js",
                 "~/Scripts/umd/popper.js",
                 "~/Scripts/sweetalert.min.js",
                 "~/ScriptsAppSpecific/main.js"

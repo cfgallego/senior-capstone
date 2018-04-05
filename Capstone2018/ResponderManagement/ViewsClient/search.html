@@ -38,11 +38,24 @@
 
     <div ng-if="search.type=='group'">
         <!--<input type="text" class="form-control" placeholder="Search Group" ng-model="self.searchText" />-->
-        <select style="height:50px; width:950px;" class="form-control" name="type" multiple required>
-            <option value="">-- Select group/s --</option>
+
+        <select style="height:50px; width:950px;" class="form-control" name="selectedGroups" ng-model="self.data.selectedGroups" multiple required>
+            <!--<option value="">-- Select group/s --</option>-->
             <option ng-repeat="g in self.groups" value="{{g.Name}}">{{g.Name}}</option>
         </select>
-        <p style="text-align:center;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+        <p style="text-align:center; font-size:small; color:red;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+        <p>Selected Groups: {{self.data.selectedGroups}}</p>
+
+        <!--<div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>-->
     </div>
 
     <div class="input-group-append">

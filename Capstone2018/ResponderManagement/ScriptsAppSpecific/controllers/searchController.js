@@ -19,6 +19,7 @@
 
 
     self.groups = [];
+    self.data = { selectedGroups: [] };
 
     self.loadGroups = function () {
         appServices.getEmergencies().then(function (response) {
