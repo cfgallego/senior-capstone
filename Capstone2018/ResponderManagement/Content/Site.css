@@ -158,7 +158,7 @@ h3 {
     margin: auto;
 }
 
-#addvolForm p, #editvolForm p {
+#addvolForm p, #editvolForm p, #emergencyForm p {
     color: red;
     font-size: small;
 }
