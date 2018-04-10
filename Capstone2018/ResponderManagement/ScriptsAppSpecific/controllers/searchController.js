@@ -21,6 +21,7 @@
     self.groups = [];
     self.data = { selectedGroups: [] };
 
+    // pang display ra sa group sa search bar
     self.loadGroups = function () {
         appServices.getEmergencies().then(function (response) {
             console.log(response.data);
@@ -66,6 +67,9 @@
                 }
 
             });
+
+        //self.loadVolunteers();
+        //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
     };
 
     // edit volunteer

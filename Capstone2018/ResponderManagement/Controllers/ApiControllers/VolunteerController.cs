@@ -17,6 +17,9 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("addVolunteer")]
         public IHttpActionResult AddVolunteer(Volunteer v)
         {
+            var skills = DataContext.Skills;
+            var skillList = new List<Skill>();
+
             var vol = new Volunteer();
             {
                 vol.FirstName = v.FirstName;
@@ -28,11 +31,19 @@ namespace ResponderManagement.Controllers.ApiControllers
                 vol.State = v.State;
                 vol.ZipCode = v.ZipCode;
                 // vol.Skills = v.Skills;
+                foreach (var s in v.Skills)
+                {
+                    if (s.Name != null)
+                    {
+                        skillList.Add(new Skill() { Name = s.Name });
+                    }
+                }
+                vol.Skills = skillList;
             }
 
-            DataContext.Volunteers.Add(v);
+            DataContext.Volunteers.Add(vol); // v?
             DataContext.SaveChanges();
-            return Ok(v);
+            return Ok(vol); // v?
         }
 
         // Read (view) Volunteer
@@ -102,7 +113,7 @@ namespace ResponderManagement.Controllers.ApiControllers
             vol.ZipCode = v.ZipCode;
 
             DataContext.SaveChanges();
-            return Ok(v);
+            return Ok(vol); // v?
         }
 
 
