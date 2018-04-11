@@ -37,14 +37,28 @@
     </div>
 
     <div ng-if="search.type=='group'">
-        <!--<input type="text" class="form-control" placeholder="Search Group" ng-model="self.searchText" />-->
-
-        <select style="height:50px; width:950px;" class="form-control" name="selectedGroups" ng-model="self.data.selectedGroups" multiple required>
-            <!--<option value="">-- Select group/s --</option>-->
+        
+        <div class="btn-group" style="height:50px; width:950px;">
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Fire</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Flood</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Hurricane</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Snow Storm</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Terrorist</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Tornado</label>
+            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Wildfire</label>
+        </div>
+        
+        
+        <!--<select style="height:50px; width:950px;" class="form-control" name="selectedGroups" ng-model="self.data.selectedGroups" multiple required>
+            <!- -<option value="">-- Select group/s --</option>- ->
             <option ng-repeat="g in self.groups" value="{{g.Name}}">{{g.Name}}</option>
         </select>
         <p style="text-align:center; font-size:small; color:red;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-        <p>Selected Groups: {{self.data.selectedGroups}}</p>
+        <p>Selected Groups: {{self.data.selectedGroups}}</p>-->
+
+
+
 
         <!--<div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

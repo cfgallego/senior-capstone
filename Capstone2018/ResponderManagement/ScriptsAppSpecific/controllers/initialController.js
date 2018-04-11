@@ -3,4 +3,6 @@
     console.log("initial controller");
 
     $rootScope.id = 0;
+
+    // dire ang logout ibutang
 }]);

@@ -154,14 +154,15 @@
 
         <fieldset id="skillsChkbx" name="skills">
             <h4>Certified Skills</h4>
+            <pre>Results: {{self.checkResults}}</pre>
 
             <div class="btn-group">
-                <label class="btn btn-primary" ng-model="self.selectedSkills[0].isChecked" uib-btn-checkbox>{{self.selectedSkills[0].Name}}</label>
-                <label class="btn btn-primary" ng-model="self.selectedSkills[1].isChecked" uib-btn-checkbox>{{self.selectedSkills[1].Name}}</label>
-                <label class="btn btn-primary" ng-model="self.selectedSkills[2].isChecked" uib-btn-checkbox>{{self.selectedSkills[2].Name}}</label>
-                <label class="btn btn-primary" ng-model="self.selectedSkills[3].isChecked" uib-btn-checkbox>{{self.selectedSkills[3].Name}}</label>
-                <label class="btn btn-primary" ng-model="self.selectedSkills[4].isChecked" uib-btn-checkbox>{{self.selectedSkills[4].Name}}</label>
-                <label class="btn btn-primary" ng-model="self.selectedSkills[5].isChecked" uib-btn-checkbox>{{self.selectedSkills[5].Name}}</label>
+                <label class="btn btn-light" ng-model="self.selectedSkills[0].isChecked" uib-btn-checkbox>{{self.selectedSkills[0].Name}}</label>
+                <label class="btn btn-light" ng-model="self.selectedSkills[1].isChecked" uib-btn-checkbox>{{self.selectedSkills[1].Name}}</label>
+                <label class="btn btn-light" ng-model="self.selectedSkills[2].isChecked" uib-btn-checkbox>{{self.selectedSkills[2].Name}}</label>
+                <label class="btn btn-light" ng-model="self.selectedSkills[3].isChecked" uib-btn-checkbox>{{self.selectedSkills[3].Name}}</label>
+                <label class="btn btn-light" ng-model="self.selectedSkills[4].isChecked" uib-btn-checkbox>{{self.selectedSkills[4].Name}}</label>
+                <label class="btn btn-light" ng-model="self.selectedSkills[5].isChecked" uib-btn-checkbox>{{self.selectedSkills[5].Name}}</label>
             </div>
 
             <!--<ul ng-repeat="s in self.skills" style="list-style-type: none;">
@@ -172,14 +173,14 @@
                 </li>
             </ul>-->
             <!--<div ng-show="form.$submitted">
-        <p ng-show="form.skills.$error.required">Please select Skill/s</p>
-    </div>-->
+                <p ng-show="form.skills.$error.required">Please select Skill/s</p>
+            </div>-->
         </fieldset>
         <!--<h4>Certified Skills</h4>
         <label ng-repeat="s in self.skills">
             <input type="checkbox" checklist-model="self.volunteer.Skills"  checklist-value="{{s.Name}}" /> {{s.Name}} <br />
         </label>-->
-        <button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(form.$valid)">Add</button> <!--should be self.submitForm(form.$valid) when error checking gets implemented-->
+        <button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(form.$valid)">Add</button>
     </form>
 </div>
 

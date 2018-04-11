@@ -34,4 +34,9 @@
 
     // zipcode pattern #####
     self.zipCodePattern = /^\d{5}$/;
+
+    // TEST send email test func
+    self.sendTestEmail = function () {
+        appServices.sendTestEmail();
+    }
 }]);

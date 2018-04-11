@@ -41,6 +41,11 @@
             // SkillController functions
             getSkills: function () {
                 return $http.get("api/ResponderManagement/skills/getSkills");
+            },
+
+            // TEST send email
+            sendTestEmail: function () {
+                return $http.post("api/ResponderManagement/emergencies/sendEmails");
             }
         }
     }]);

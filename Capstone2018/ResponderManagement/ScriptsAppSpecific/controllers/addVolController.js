@@ -1,5 +1,5 @@
 ﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', '$window', function ($scope, appServices, $window) {
-    var self = this
+    var self = this;
     console.log("TEST - addVolunteer");
 
     self.volunteer = {};
@@ -99,6 +99,7 @@
 
     self.testModel = {};
 
+    self.checkResults = [];
     $scope.$watchCollection('self.selectedSkills', function () {
         self.checkResults = [];
         angular.forEach(self.selectedSkills, function (value, key) {

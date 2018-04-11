@@ -15,8 +15,8 @@
 
         <li><button type="button" class="btn btn-primary"><a href="/emergencyDetail" style="color:white;">Next</a></button></li>
     </ul>
-</fieldset>--> <!-- Darian's fieldset -->
-
+</fieldset>-->
+ <!-- Darian's fieldset -->
 <!--<script>
     // Sends emergency groups selected to next page.
     function selectedGroups() {
@@ -52,10 +52,8 @@
         document.getElementById("date").value = today;
         document.getElementById("time").value = now;
     }
-<!--</script>--> <!--JavaScript for button-->
-
-
-
+<!--</script>-->
+ <!--JavaScript for button-->
 
 
 <!--<div>
@@ -71,7 +69,8 @@
 
 <fieldset id="emergencyList" name="echecklist">
     <legend>Emergency Scenarios</legend>
-    <ul >
+    <!-- option 1 -->
+    <ul>
         <li ng-repeat="e in self.emergencies" style="list-style-type: none;">
             <input type="checkbox" id="e-{{e.OptionValue}}" ng-model="e.IsSelected" ng-change="e.canProceed()"> <!-- value="{{e.Name}}" ng-change="self.canProceed()"-->
             <label>{{e.Name}}</label>
@@ -84,6 +83,31 @@
             <button type="submit" href="/emergencyDetail" class="btn btn-outline-danger" ng-disabled="!self.checkedOneOrMore">Next</button>
         </li>
     </ul>
+
+    <!-- option 2 -->
+    <div class="btn-group">
+        <div>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Fire</label>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Flood</label>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Hurricane</label>
+        </div>
+
+        <div>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Snow Storm</label>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Terrorist</label>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Tornado</label>
+            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Wildfire</label>
+        </div>
+    </div>
+
+    <div>
+        <a role="button" href="/emergencyDetail" class="btn btn-outline-danger">Next - not disabled</a>
+        <button type="submit" href="/emergencyDetail" class="btn btn-outline-danger" ng-disabled="!self.checkedOneOrMore">Next</button>
+    </div>
 </fieldset>
+
+
+
 
 
