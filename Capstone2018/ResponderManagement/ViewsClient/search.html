@@ -33,12 +33,13 @@
     </div>
 
     <div ng-if="search.type=='name'">
-        <input style="height:50px; width:950px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
+        <!--width:950px;  class="col-md-10" style="padding:0;"-->
+        <input style="height:50px; width:960px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
     </div>
 
     <div ng-if="search.type=='group'">
-        
-        <div class="btn-group" style="height:50px; width:950px;">
+        <!--width:950px;  class="col-md-10" style="padding:0;"-->
+        <div class="btn-group" style="height:50px; width:960px;">
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Fire</label>
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Flood</label>
@@ -48,28 +49,24 @@
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Tornado</label>
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Wildfire</label>
         </div>
-        
-        
+
+
         <!--<select style="height:50px; width:950px;" class="form-control" name="selectedGroups" ng-model="self.data.selectedGroups" multiple required>
-            <!- -<option value="">-- Select group/s --</option>- ->
-            <option ng-repeat="g in self.groups" value="{{g.Name}}">{{g.Name}}</option>
-        </select>
-        <p style="text-align:center; font-size:small; color:red;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-        <p>Selected Groups: {{self.data.selectedGroups}}</p>-->
-
-
-
-
+        <!- -<option value="">-- Select group/s --</option>- ->
+        <option ng-repeat="g in self.groups" value="{{g.Name}}">{{g.Name}}</option>
+    </select>
+    <p style="text-align:center; font-size:small; color:red;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+    <p>Selected Groups: {{self.data.selectedGroups}}</p>-->
         <!--<div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </div>-->
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>-->
     </div>
 
     <div class="input-group-append">
@@ -87,7 +84,7 @@
             <th style="width: 300px;">Name</th>
             <th style="width: 250px;">Email</th>
             <th style="width: 250px;">Phone Number</th>
-            <th style="width: 550px;">Address</th>
+            <th style="width: 500px;">Address</th>
             <th>Action</th>
             <th></th>
             <th></th>

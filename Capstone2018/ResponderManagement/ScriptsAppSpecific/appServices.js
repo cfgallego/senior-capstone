@@ -32,20 +32,19 @@
                 return $http.delete("api/ResponderManagement/volunteers/deleteVolunteer?id=" + id);
             },
 
-
             // EmergencyController functions
             getEmergencies: function () {
                 return $http.get("api/ResponderManagement/emergencies/getEmergencies");
             },
 
-            // SkillController functions
-            getSkills: function () {
-                return $http.get("api/ResponderManagement/skills/getSkills");
-            },
-
             // TEST send email
             sendTestEmail: function () {
                 return $http.post("api/ResponderManagement/emergencies/sendEmails");
+            },
+
+            // SkillController functions
+            getSkills: function () {
+                return $http.get("api/ResponderManagement/skills/getSkills");
             }
         }
     }]);

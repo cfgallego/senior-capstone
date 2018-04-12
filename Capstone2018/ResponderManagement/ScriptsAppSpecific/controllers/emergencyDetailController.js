@@ -19,6 +19,10 @@
         console.log(v, "TEST - send");
         if (!v)
             return;
+        appServices.sendTestEmail().then(function () {
+            swal("SUCCESS", "Notification sent!", "success");
+        });
+
         //var newMsg = {
         //    EmailDate: self.message.date,
         //    EmailTime: self.message.time,

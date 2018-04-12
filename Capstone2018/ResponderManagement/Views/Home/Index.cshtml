@@ -4,6 +4,7 @@
     <base href="/" />
     <meta name="viewport" content="width=device-width" />
     <title>SCP 2018</title>
+    <link rel="icon" href="Content/images/truck2.png" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     @Styles.Render("~/content/css")
     @Scripts.Render("~/bundles/all")
@@ -56,9 +57,9 @@
         <!--end Navigation-->
 
         <div class="container" style="background-color: white; padding-top: 20px;">
-            <div ng-view id="main"></div> @*ng-views calls html views*@
+            <div ng-view id="main"></div> @* html pages will be displayed here *@
         </div>
-        @*<br /><br /><br /><br /><br />*@
+
         @Scripts.Render("~/bundles/controllers")
         <script src="~/ScriptsAppSpecific/appServices.js"></script>
 
