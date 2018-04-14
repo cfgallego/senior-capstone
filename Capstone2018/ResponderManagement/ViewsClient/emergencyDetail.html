@@ -10,14 +10,15 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="emergencyDate">Date</label>
-                <input type="text" name="emergencyDate" class="form-control" id="emergencyDate" value="{{self.currentDateTime | date:'EEEE, MM/dd/yyyy'}}" readonly>
+                <!--<input type="text" name="emergencyDate" class="form-control" id="emergencyDate" value="{{self.currentDateTime | date:'EEEE, MM/dd/yyyy'}}" readonly>-->
                 <!--<input type="text" class="form-control" id="emergencyDate" ng-model="self.message.date" value="{{self.currentDateTime | date:'EEEE, MM/dd/yyyy'}}" readonly>-->
-                <!--<input type="text" class="form-control" id="emergencyDate" data-ng-model="self.message.date" readonly>-->
+                <input type="text" class="form-control" id="emergencyDate" data-ng-model="self.message.date" readonly>
             </div>
             <div class="form-group col-md-6">
                 <label for="emergencyTime">Time</label>
-                <input type="text" name="emergencyTime" class="form-control" id="emergencyTime" value="{{self.currentDateTime | date:'hh:mm:ss a'}}" readonly>
+                <!--<input type="text" name="emergencyTime" class="form-control" id="emergencyTime" value="{{self.currentDateTime | date:'hh:mm:ss a'}}" readonly>-->
                 <!--<input type="text" class="form-control" id="emergencyTime" ng-model="self.message.time" value="{{self.currentDateTime | date:'hh:mm:ss a'}}" readonly>-->
+                <input type="text" class="form-control" id="emergencyTime" data-ng-model="self.message.time" readonly>
             </div>
         </div>
 
@@ -40,7 +41,7 @@
             <div class="form-group col-md-3">
                 <label for="emergencyState">State</label>
                 <select id="emergencyState" name="state" class="form-control" ng-model="self.message.state" required>
-                    <!--<option selected>-Select-</option>-->
+                    <option value="">-Select-</option>
 
                     <option value="al">AL - Alabama</option>
                     <option value="ak">AK - Alaska</option>

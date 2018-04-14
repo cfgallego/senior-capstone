@@ -27,19 +27,19 @@
 <div class="input-group">
     <div class="input-group-prepend">
         <select style="height:50px;" class="form-control" name="type" ng-model="self.selectSearch" ng-dropdown required>
-            <option ng-option value="name" selected>Name</option>
-            <option ng-option value="group">Group</option>
+            <option value="name" selected>Name</option>
+            <option value="emergency">Emergency</option>
         </select>
     </div>
 
     <div ng-if="self.selectSearch=='name'">
         <!--width:950px;  class="col-md-10" style="padding:0;"-->
-        <input style="height:50px; width:960px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
+        <input style="height:50px; width:930px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
     </div>
 
-    <div ng-if="self.selectSearch=='group'">
+    <div ng-if="self.selectSearch=='emergency'">
         <!--width:950px;  class="col-md-10" style="padding:0;"-->
-        <div class="btn-group" style="height:50px; width:960px;">
+        <div class="btn-group" style="height:50px; width:930px;">
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Fire</label>
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Flood</label>

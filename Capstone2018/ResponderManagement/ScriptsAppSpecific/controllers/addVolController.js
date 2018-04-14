@@ -5,6 +5,7 @@
     self.volunteer = {};
     self.skills = [];
     self.test = true;
+    self.volunteer.state = null;
 
     self.selectedSkills = [
         { Name: "EMS Training", isChecked: false },

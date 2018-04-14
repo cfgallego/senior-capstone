@@ -3,6 +3,9 @@
     console.log("TEST - emergencyDetail");
 
     self.currentDateTime = new Date();
+    //self.message.date = dateFilter(date, 'EEEE, MM/dd/yyyy');
+
+    //self.message.state = null;
 
     //self.$watch('self.currentDateTime', function (date) {
     //    self.message.date = dateFilter(date, 'EEEE, MM/dd/yyyy');
@@ -23,15 +26,16 @@
             swal("SUCCESS", "Notification sent!", "success");
         });
 
-        //var newMsg = {
-        //    EmailDate: self.message.date,
-        //    EmailTime: self.message.time,
-        //    StreetAddress: self.message.streetAddress,
-        //    City: self.message.city,
-        //    Zip: self.message.zip,
-        //    Comment: self.message.comment
-        //    // Emergency ??
-        //};
+        var newMsg = {
+            EmailDate: self.message.date,
+            EmailTime: self.message.time,
+            StreetAddress: self.message.streetAddress,
+            City: self.message.city,
+            State: self.message.state,
+            Zip: self.message.zip,
+            Comment: self.message.comment
+            // Emergency ??
+        };
 
         //console.log(newMsg);
     }
