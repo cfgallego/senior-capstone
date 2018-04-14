@@ -8,12 +8,12 @@
     self.volunteer.state = null;
 
     self.selectedSkills = [
-        { Name: "EMS Training", isChecked: false },
-        { Name: "Fire Safety", isChecked: false },
-        { Name: "First-Aid Training", isChecked: false },
-        { Name: "Leadership Training", isChecked: false },
-        { Name: "Lifeguard Training", isChecked: false },
-        { Name: "Redcross Certification", isChecked: false }
+        { Name: "Fire Safety", SkillID: 1, isChecked: false },
+        { Name: "EMS Training", SkillID: 2, isChecked: false },
+        { Name: "Lifeguard Training", SkillID: 3, isChecked: false },
+        { Name: "First-Aid Training", SkillID: 4, isChecked: false },
+        { Name: "Leadership Training", SkillID: 5, isChecked: false },
+        { Name: "Redcross Certification", SkillID: 6, isChecked: false }
     ];
 
     self.trueSkill = {};
@@ -43,7 +43,8 @@
             if (self.selectedSkills[i].isChecked) {
                 console.log("test 2");
                 self.finalSkills.push({
-                    Name: self.selectedSkills[i].Name
+                    Name: self.selectedSkills[i].Name,
+                    SkillID: self.selectedSkills[i].SkillID
                 });
             }
         }
@@ -59,7 +60,8 @@
             State: self.volunteer.state,
             ZipCode: self.volunteer.zipCode,
             // Skills?
-            Skills: {
+            Skills: self.finalSkills
+            //{
                 //EMS: { Name: self.finalSkills.length > 0 ? self.finalSkills[0].Name : undefined },
                 //FireSafety: { Name: self.finalSkills.length > 1 ? self.finalSkills[1].Name : undefined },
                 //FirstAid: { Name: self.finalSkills.length > 2 ? self.finalSkills[2].Name : undefined },
@@ -67,13 +69,13 @@
                 //Lifeguard: { Name: self.finalSkills.length > 4 ? self.finalSkills[4].Name : undefined },
                 //Redcross: { Name: self.finalSkills.length > 5 ? self.finalSkills[5].Name : undefined },
 
-                EMS: { Name: self.finalSkills[0] ? self.finalSkills[0].Name : undefined },
-                FireSafety: { Name: self.finalSkills[1] ? self.finalSkills[1].Name : undefined },
-                FirstAid: { Name: self.finalSkills[2] ? self.finalSkills[2].Name : undefined },
-                Leadership: { Name: self.finalSkills[3] ? self.finalSkills[3].Name : undefined },
-                Lifeguard: { Name: self.finalSkills[4] ? self.finalSkills[4].Name : undefined },
-                Redcross: { Name: self.finalSkills[5] ? self.finalSkills[5].Name : undefined }
-            }
+                //EMS: { Name: self.finalSkills[0] ? self.finalSkills[0].Name : undefined },
+                //FireSafety: { Name: self.finalSkills[1] ? self.finalSkills[1].Name : undefined },
+                //FirstAid: { Name: self.finalSkills[2] ? self.finalSkills[2].Name : undefined },
+                //Leadership: { Name: self.finalSkills[3] ? self.finalSkills[3].Name : undefined },
+                //Lifeguard: { Name: self.finalSkills[4] ? self.finalSkills[4].Name : undefined },
+                //Redcross: { Name: self.finalSkills[5] ? self.finalSkills[5].Name : undefined }
+            //}
 
             //EmsTraining: "EMS Training" ? self.selectedSkills.Ems.isChecked : null,
             //FireSafety: self.selectedSkills.Fire.isChecked,

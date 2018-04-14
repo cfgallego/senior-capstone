@@ -14,9 +14,6 @@ namespace ResponderManagement.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-
-        // Insure that the telephone number has EITHER the form "###-###-####" OR "(###) ###-####"
-        // [RegularExpression(@"^(\([0-9]{3}\)\ |^\([0-9]{3}\)|^[0-9]{3}-)[0-9]{3}-[0-9]{4}$")]
         public string PhoneNumber { get; set; }
         public string StreetAddress { get; set; }
         public string City { get; set; }

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Configuration;
 using ResponderManagement.Models;
+using ResponderManagement.Models.dto;
 
 namespace ResponderManagement.Controllers.ApiControllers
 {
@@ -17,7 +18,7 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("addVolunteer")]
         public IHttpActionResult AddVolunteer(Volunteer v)
         {
-            var skills = DataContext.Skills;
+            //var skills = DataContext.Skills;
             var skillList = new List<Skill>();
 
             var vol = new Volunteer();
@@ -35,7 +36,8 @@ namespace ResponderManagement.Controllers.ApiControllers
                 {
                     if (s.Name != null)
                     {
-                        skillList.Add(new Skill() { Name = s.Name });
+                        //skillList.Add(new Skill() { Name = s.Name });
+                        skillList.Add(DataContext.Skills.Find(s.SkillID));
                     }
                 }
                 vol.Skills = skillList;
@@ -52,9 +54,34 @@ namespace ResponderManagement.Controllers.ApiControllers
         public IHttpActionResult GetVolunteers()
         {
             // pulls all volunteers from database
-            //var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ToList();
-            var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
-            return Ok(volunteers);
+            //var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
+            //return Ok(volunteers);
+
+            var volunteers = DataContext.Volunteers.ToList();
+            var volList = new List<VolunteerDTO>();
+            foreach (var v in volunteers)
+            {
+                //v.Skills = (from vol in volunteers
+                //            from s in skill
+                //            where vol.Skills.Contains(s)
+                //            select s).ToList();
+
+                var dto = new VolunteerDTO();
+                {
+                    dto.VolunteerID = v.VolunteerID;
+                    dto.FirstName = v.FirstName;
+                    dto.LastName = v.LastName;
+                    dto.Email = v.Email;
+                    dto.PhoneNumber = v.PhoneNumber;
+                    dto.StreetAddress = v.StreetAddress;
+                    dto.City = v.City;
+                    dto.State = v.State;
+                    dto.ZipCode = v.ZipCode;
+                };
+
+                volList.Add(dto);
+            }
+            return Ok(volList);
         }
 
         [HttpGet]

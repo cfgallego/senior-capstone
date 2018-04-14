@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ResponderManagement.Models
 {
-    public class Skill
+    public class Skill : IEquatable<Skill>
     {
         [Key]
         public int SkillID { get; set; }
@@ -17,8 +17,13 @@ namespace ResponderManagement.Models
 
         public Skill()
         {
-            Volunteers = new List<Volunteer>();
-            Emergencies = new List<Emergency>();
+            //Volunteers = new List<Volunteer>();
+            //Emergencies = new List<Emergency>();
+        }
+
+        public bool Equals(Skill s)
+        {
+            return (s.SkillID == this.SkillID);
         }
     }
 }
