@@ -4,27 +4,39 @@
     //self.param1 = null;
     self.vol = null;
 
-    self.loadSkills = function () {
-        appServices.getSkills().then(function (response) {
-            console.log(response.data);
+    self.selectedSkills = [
+        { Name: "Fire Safety", SkillID: 1, isChecked: false },
+        { Name: "EMS Training", SkillID: 2, isChecked: false },
+        { Name: "Lifeguard Training", SkillID: 3, isChecked: false },
+        { Name: "First-Aid Training", SkillID: 4, isChecked: false },
+        { Name: "Leadership Training", SkillID: 5, isChecked: false },
+        { Name: "Redcross Certification", SkillID: 6, isChecked: false }
+    ];
 
-            self.skills = response.data;
-            console.log(self.skills);
+    self.trueSkill = {};
+    self.finalSkills = [];
 
-            self.test = false;
-        });
-    };
+    //self.loadSkills = function () {
+    //    appServices.getSkills().then(function (response) {
+    //        console.log(response.data);
 
-    self.loadSkills();
+    //        self.skills = response.data;
+    //        console.log(self.skills);
+
+    //        self.test = false;
+    //    });
+    //};
+
+    //self.loadSkills();
 
     //var id = $rootScope.id;
     //console.log($rootScope.id);
 
+    // prefills the form
     self.param1 = $routeParams.param1;
     console.log(self.param1);
     //self.param1 = $route.current.param1;
 
-    // prefills the form
     self.fillForm = function () {
         appServices.getVolunteerByID(self.param1).then(function (response) {
             self.vol = response.data;
@@ -38,17 +50,23 @@
     console.log(self.vol);
     self.fillForm();
 
-    // phone number pattern ###-###-#### or ##########
-    self.phoneNumberPattern = /^\d{3}[- ]?\d{3}[- ]?\d{4}$/;
-
-    // zipcode pattern #####
-    self.zipCodePattern = /^\d{5}$/;
-
     // save volunteer information edits
     self.update = function (v) {
         console.log("TEST - update");
         if (!v)
             return;
+
+        self.finalSkills = [];
+        for (var i = 0; i < self.selectedSkills.length; i++) {
+            if (self.selectedSkills[i].isChecked) {
+                self.finalSkills.push({
+                    Name: self.selectedSkills[i].Name,
+                    SkillID: self.selectedSkills[i].SkillID
+                });
+            }
+        }
+        console.log(self.finalSkills);
+
         var req = {
             VolunteerID: self.vol.VolunteerID,
             FirstName: self.vol.FirstName,
@@ -58,7 +76,8 @@
             StreetAddress: self.vol.StreetAddress,
             City: self.vol.City,
             State: self.vol.State,
-            ZipCode: self.vol.ZipCode
+            ZipCode: self.vol.ZipCode,
+            Skills: self.finalSkills
         };
 
         console.log(req);
@@ -69,6 +88,12 @@
             // redirect back to prev page?
         });
     };
+
+    // phone number pattern ###-###-#### or ##########
+    self.phoneNumberPattern = /^\d{3}[- ]?\d{3}[- ]?\d{4}$/;
+
+    // zipcode pattern #####
+    self.zipCodePattern = /^\d{5}$/;
 
     //self.back = function () {
     //    console.log("TEST - cancel update")

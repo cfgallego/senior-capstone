@@ -128,6 +128,7 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("editVolunteer")]
         public IHttpActionResult EditVolunteer(Volunteer v)
         {
+            var skillList = new List<Skill>();
             Volunteer vol = DataContext.Volunteers.Find(v.VolunteerID);
 
             vol.FirstName = v.FirstName;
@@ -138,6 +139,15 @@ namespace ResponderManagement.Controllers.ApiControllers
             vol.City = v.City;
             vol.State = v.State;
             vol.ZipCode = v.ZipCode;
+            foreach (var s in v.Skills)
+            {
+                if (s.Name != null)
+                {
+                    //skillList.Add(new Skill() { Name = s.Name });
+                    skillList.Add(DataContext.Skills.Find(s.SkillID));
+                }
+            }
+            vol.Skills = skillList;
 
             DataContext.SaveChanges();
             return Ok(vol); // v?

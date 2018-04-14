@@ -26,7 +26,7 @@
             console.log(response.data);
 
             self.groups = response.data;
-            console.log(self.emergencies);
+            console.log(self.groups);
 
             self.test = false;
         });

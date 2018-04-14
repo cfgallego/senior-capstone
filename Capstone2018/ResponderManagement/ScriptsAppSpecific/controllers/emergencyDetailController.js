@@ -2,19 +2,11 @@
     var self = this;
     console.log("TEST - emergencyDetail");
 
-    self.currentDateTime = new Date();
-    //self.message.date = dateFilter(date, 'EEEE, MM/dd/yyyy');
+    self.currentDate = $filter('date')(new Date(), "EEEE, MM/dd/yyyy");
+    console.log(self.currentDate);
 
-    //self.message.state = null;
-
-    //self.$watch('self.currentDateTime', function (date) {
-    //    self.message.date = dateFilter(date, 'EEEE, MM/dd/yyyy');
-    //    console.log(self.message.date);
-    //});
-
-    //self.$watch('self.message.date', function (dateString) {
-    //    self.currentDateTime = new Date(dateString);
-    //});
+    self.currentTime = $filter('date')(new Date(), "HH:mm a");
+    console.log(self.currentTime);
 
     self.message = {};
 
@@ -27,8 +19,8 @@
         });
 
         var newMsg = {
-            EmailDate: self.message.date,
-            EmailTime: self.message.time,
+            EmailDate: self.currentDate, //self.message.date,
+            EmailTime: self.currentTime,
             StreetAddress: self.message.streetAddress,
             City: self.message.city,
             State: self.message.state,
@@ -36,7 +28,6 @@
             Comment: self.message.comment
             // Emergency ??
         };
-
         //console.log(newMsg);
     }
 
@@ -44,7 +35,7 @@
     self.zipCodePattern = /^\d{5}$/;
 
     // TEST send email test func
-    self.sendTestEmail = function () {
-        appServices.sendTestEmail();
-    }
+    //self.sendTestEmail = function () {
+    //    appServices.sendTestEmail();
+    //}
 }]);

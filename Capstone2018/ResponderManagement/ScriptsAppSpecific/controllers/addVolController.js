@@ -5,7 +5,7 @@
     self.volunteer = {};
     self.skills = [];
     self.test = true;
-    self.volunteer.state = null;
+    //self.volunteer.state = null;
 
     self.selectedSkills = [
         { Name: "Fire Safety", SkillID: 1, isChecked: false },
@@ -39,9 +39,7 @@
 
         self.finalSkills = [];
         for (var i = 0; i < self.selectedSkills.length; i++) {
-            console.log("test 1");
             if (self.selectedSkills[i].isChecked) {
-                console.log("test 2");
                 self.finalSkills.push({
                     Name: self.selectedSkills[i].Name,
                     SkillID: self.selectedSkills[i].SkillID
@@ -59,30 +57,7 @@
             City: self.volunteer.city,
             State: self.volunteer.state,
             ZipCode: self.volunteer.zipCode,
-            // Skills?
             Skills: self.finalSkills
-            //{
-                //EMS: { Name: self.finalSkills.length > 0 ? self.finalSkills[0].Name : undefined },
-                //FireSafety: { Name: self.finalSkills.length > 1 ? self.finalSkills[1].Name : undefined },
-                //FirstAid: { Name: self.finalSkills.length > 2 ? self.finalSkills[2].Name : undefined },
-                //Leadership: { Name: self.finalSkills.length > 3 ? self.finalSkills[3].Name : undefined },
-                //Lifeguard: { Name: self.finalSkills.length > 4 ? self.finalSkills[4].Name : undefined },
-                //Redcross: { Name: self.finalSkills.length > 5 ? self.finalSkills[5].Name : undefined },
-
-                //EMS: { Name: self.finalSkills[0] ? self.finalSkills[0].Name : undefined },
-                //FireSafety: { Name: self.finalSkills[1] ? self.finalSkills[1].Name : undefined },
-                //FirstAid: { Name: self.finalSkills[2] ? self.finalSkills[2].Name : undefined },
-                //Leadership: { Name: self.finalSkills[3] ? self.finalSkills[3].Name : undefined },
-                //Lifeguard: { Name: self.finalSkills[4] ? self.finalSkills[4].Name : undefined },
-                //Redcross: { Name: self.finalSkills[5] ? self.finalSkills[5].Name : undefined }
-            //}
-
-            //EmsTraining: "EMS Training" ? self.selectedSkills.Ems.isChecked : null,
-            //FireSafety: self.selectedSkills.Fire.isChecked,
-            //FirstAidTraining: self.selectedSkills.FirstAid.isChecked,
-            //LeadershipTraining: self.selectedSkills.Leadership.isChecked,
-            //LifeguardTraining: self.selectedSkills.Lifeguard.isChecked,
-            //RedcrossCertification: self.selectedSkills.Redcross.isChecked
         };
 
         console.log(newReq);
@@ -99,16 +74,4 @@
 
     // zipcode pattern #####
     self.zipCodePattern = /^\d{5}$/;
-
-    self.testModel = {};
-
-    self.checkResults = [];
-    $scope.$watchCollection('self.selectedSkills', function () {
-        self.checkResults = [];
-        angular.forEach(self.selectedSkills, function (value, key) {
-            if (value) {
-                self.checkResults.push(key);
-            }
-        });
-    });
 }]);
