@@ -17,11 +17,10 @@
         });
     };
 
-
     self.groups = [];
     self.data = { selectedGroups: [] };
 
-    // pang display ra sa group sa search bar
+    // pang display ra sa group sa search bar ??
     self.loadGroups = function () {
         appServices.getEmergencies().then(function (response) {
             console.log(response.data);
@@ -55,7 +54,8 @@
                     appServices.deleteVolunteer(id);
 
                     // to remove volunteer from table without refreshing - di npud mugana
-                    //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
+                    self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
+                    console.log(self.volunteers);
 
                     swal("Deleted!", "Volunteer has been deleted", "success");
                     console.log("confirm delete");
@@ -65,30 +65,34 @@
                     swal("Cancelled", "Volunteer was not deleted", "error");
                     console.log("cancel delete");
                 }
-
+                console.log(self.volunteers);
+                console.log(isConfirm);
             });
-
-        //self.loadVolunteers();
-        //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
     };
+
+    console.log(self.volunteers);
 
     // edit volunteer
-    self.edit = function (param1) {
-        console.log(param1);
-        $location.path("/editVolunteer/" + param1);
+    // will prefill the editVolunteer page
+    self.edit = function (id) {
+        console.log(id);
+        $location.path("/editVolunteer/" + id);
     };
 
-    // seach volunteer by first name or last name but not both
+    // seach volunteer by first name or last name or both
     self.searchText = "";
     self.searchName = function () {
-        if (self.searchText == "")
+        if (self.searchText === "")
             return;
 
         //return self.volunteers.filter(function (item) {
         //    return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1 || item.LastName.toLowerCase().indexOf(self.searchText) > -1)
 
         self.volunteerTable = self.volunteers.filter(function (item) {
-            return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1 || item.LastName.toLowerCase().indexOf(self.searchText) > -1)
+            return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1
+                || item.LastName.toLowerCase().indexOf(self.searchText) > -1
+                || (item.FirstName.toLowerCase().toString() + " " + item.LastName.toLowerCase()).indexOf(self.searchText) > -1
+            )
         });
     };
 
@@ -102,4 +106,6 @@
     };
 
     self.loadVolunteers();
+
+    self.selectSearch = "name";
 }]);

@@ -26,18 +26,18 @@
 
 <div class="input-group">
     <div class="input-group-prepend">
-        <select style="height:50px;" class="form-control" name="type" ng-model="search.type" ng-dropdown required>
+        <select style="height:50px;" class="form-control" name="type" ng-model="self.selectSearch" ng-dropdown required>
             <option ng-option value="name" selected>Name</option>
             <option ng-option value="group">Group</option>
         </select>
     </div>
 
-    <div ng-if="search.type=='name'">
+    <div ng-if="self.selectSearch=='name'">
         <!--width:950px;  class="col-md-10" style="padding:0;"-->
         <input style="height:50px; width:960px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
     </div>
 
-    <div ng-if="search.type=='group'">
+    <div ng-if="self.selectSearch=='group'">
         <!--width:950px;  class="col-md-10" style="padding:0;"-->
         <div class="btn-group" style="height:50px; width:960px;">
             <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
@@ -85,9 +85,8 @@
             <th style="width: 250px;">Email</th>
             <th style="width: 250px;">Phone Number</th>
             <th style="width: 500px;">Address</th>
-            <th>Action</th>
-            <th></th>
-            <th></th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -106,6 +105,6 @@
     </tbody>
 </table>
 
-<div ng-show="(self.volunteerTable).length==0">No match found.</div>
+<div ng-show="(self.volunteerTable).length == 0">No match found.</div>
 
 

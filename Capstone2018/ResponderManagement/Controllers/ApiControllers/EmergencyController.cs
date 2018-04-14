@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO; // for File and Path?
+using System.IO; // for File and Path
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Net.Mail; // for MailAddress?
-using System.Web; // for HttpContext?
+using System.Net.Mail; // for MailAddress
+using System.Web; // for HttpContext
 using System.Web.Http;
 using ResponderManagement.Models;
 
@@ -23,6 +23,26 @@ namespace ResponderManagement.Controllers.ApiControllers
             return Ok(emregencies);
         }
 
+
+        //private string createEmailBody(string d, string t, string sa, string ci, string s, string z, string co)
+        //{
+        //    string body = string.Empty;
+
+        //    using (StreamReader reader = new StreamReader(HttpContext.Current.Server.MapPath("~/toVolunteer.html")))
+        //    //string body = File.ReadAllText(Path.Combine(HttpRuntime.AppDomainAppPath, "EmailTemplates/toVolunteer.html"));
+
+        //    body = body.Replace("{date}", d);
+        //    body = body.Replace("{time}", t);
+        //    body = body.Replace("{streetAddress}", sa);
+        //    body = body.Replace("{city}", ci);
+        //    body = body.Replace("{state}", s);
+        //    body = body.Replace("{zipCode}", z);
+        //    body = body.Replace("{comments}", co);
+
+        //    return body;
+        //}
+
+
         // TEST send email
         [HttpPost]
         [Route("sendEmails")]
@@ -32,9 +52,22 @@ namespace ResponderManagement.Controllers.ApiControllers
             var toAddress = new MailAddress("mracho@augusta.edu", "Volunteer Group");
             const string fromPassword = "Te4!664256st";
             const string subject = "test";
-            //string body = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("EmailTemplates/toVolunteers.html"));
-            //string body = "test email";
+
+            //string d = String.Format("{0}", Request.Form["emergencyDate"]);
+            //var d2 = HttpRequest.Form["emergencyDate"];
+
+            //string body = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("EmailTemplates/toVolunteers.html"));  // di mugana
             string body = File.ReadAllText(Path.Combine(HttpRuntime.AppDomainAppPath, "EmailTemplates/toVolunteer.html"));
+
+            //body = body.Replace("{date}", emergencyDate);
+
+            //body = body.Replace("{date}", "Date");
+            //body = body.Replace("{time}", "Time");
+            //body = body.Replace("{streetAddress}", "Street Address");
+            //body = body.Replace("{city}", "City");
+            //body = body.Replace("{state}", "State");
+            //body = body.Replace("{zipCode}", "Zip Code");
+            //body = body.Replace("{comments}", "Comments");
 
             var smtp = new SmtpClient
             {

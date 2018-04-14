@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,12 +7,12 @@
 
     <style>
         .container {
-            width: 1000px;
-            /* background-color: red; */
+            width: 800px;
+            /*background-color: red;*/
         }
 
         .emergencyDetail {
-            width: 800px;
+            width: 600px;
             /* background-color: white; */
             margin: auto;
         }
@@ -25,7 +26,7 @@
 
 <body>
     <div class="container">
-        <h2>Responder Management System</h2>
+        <h2><img src="https://png.icons8.com/color/40/000000/ambulance.png">Responder Management System</h2>
 
         <p>Volunteer, </p>
         <p>An emergency is occuring. The details are listed below.</p>
@@ -39,17 +40,23 @@
 
             <tr>
                 <th>When:</th>
-                <td>Date, Time</td>
+                <td>{date}, {time}</td>
+                <!--<td>
+                    <%
+                    Response.Write(Request.Form["emergencyDate"]);
+                    response.write(" " & request.form("emergencyTime"));
+                    %>
+                </td>-->
             </tr>
 
             <tr>
                 <th>Where:</th>
-                <td>Street Address, City, State, Zip Code</td>
+                <td>{streetAddress}, {city}, {state}, {zipCode}</td>
             </tr>
 
             <tr>
                 <th>Additional Comments:</th>
-                <td>Comments</td>
+                <td>{comments}</td>
             </tr>
 
             <tr>
@@ -62,5 +69,10 @@
         <p>Thank you!</p>
         <p>RMS Team</p>
     </div>
+
+
+    <footer>
+        <a href="https://icons8.com">Icon pack by Icons8</a>
+    </footer>
 </body>
 </html>
