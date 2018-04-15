@@ -48,10 +48,12 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("sendEmails")]
         public IHttpActionResult SendEmails()
         {
-            var fromAddress = new MailAddress("capstonetest2018@gmail.com", "Responder Management System");
+            //var fromAddress = new MailAddress("capstonetest2018@gmail.com", "Responder Management System");
+            //const string fromPassword = "Te4!664256st";
+            var fromAddress = new MailAddress("rms.capstone2018@gmail.com", "Responder Management System");
             var toAddress = new MailAddress("mracho@augusta.edu", "Volunteer Group");
-            const string fromPassword = "Te4!664256st";
-            const string subject = "test";
+            const string fromPassword = "atcharapapaya";
+            const string subject = "EMERGENCY Volunteer Needed";
 
             //string d = String.Format("{0}", Request.Form["emergencyDate"]);
             //var d2 = HttpRequest.Form["emergencyDate"];

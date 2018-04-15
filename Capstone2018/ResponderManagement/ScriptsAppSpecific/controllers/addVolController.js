@@ -3,8 +3,8 @@
     console.log("TEST - addVolunteer");
 
     self.volunteer = {};
-    self.skills = [];
-    self.test = true;
+    //self.skills = [];
+    //self.test = true;
     //self.volunteer.state = null;
 
     self.selectedSkills = [
@@ -63,7 +63,6 @@
         console.log(newReq);
         appServices.addNewVolunteer(newReq).then(function (response) {
             self.volunteer = {};
-            //$window.alert("Volunteer added!");
             swal("SUCCESS", "Volunteer added!", "success");
             console.log(response);
         });

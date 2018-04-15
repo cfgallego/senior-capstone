@@ -13,8 +13,8 @@
         { Name: "Redcross Certification", SkillID: 6, isChecked: false }
     ];
 
-    self.trueSkill = {};
-    self.finalSkills = [];
+    //self.trueSkill = {};
+    //self.finalSkills = [];
 
     //self.loadSkills = function () {
     //    appServices.getSkills().then(function (response) {

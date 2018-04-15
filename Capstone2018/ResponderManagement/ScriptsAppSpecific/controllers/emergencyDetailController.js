@@ -1,11 +1,11 @@
-﻿angular.module("app").controller("emergencyDetailController", ['$scope', 'AppServices', '$filter', 'dateFilter', function ($scope, appServices, $filter, dateFilter) {
+﻿angular.module("app").controller("emergencyDetailController", ['$scope', 'AppServices', '$filter', '$routeParams', function ($scope, appServices, $filter, $routeParams) {
     var self = this;
     console.log("TEST - emergencyDetail");
 
     self.currentDate = $filter('date')(new Date(), "EEEE, MM/dd/yyyy");
     console.log(self.currentDate);
 
-    self.currentTime = $filter('date')(new Date(), "HH:mm a");
+    self.currentTime = $filter('date')(new Date(), "hh:mm a");
     console.log(self.currentTime);
 
     self.message = {};
@@ -38,4 +38,7 @@
     //self.sendTestEmail = function () {
     //    appServices.sendTestEmail();
     //}
+
+    self.param1 = $routeParams.param1;
+    console.log(self.param1);
 }]);

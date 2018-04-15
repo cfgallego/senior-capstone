@@ -1,44 +1,48 @@
 ﻿<h3>Home</h3>
 
 <fieldset id="emergencyList" name="echecklist">
-    <legend>Emergency Scenarios</legend>
+    <legend>Select Emergency</legend>
     <!-- option 1 -->
-    <ul>
+    <!--<ul>
         <li ng-repeat="e in self.emergencies" style="list-style-type: none;">
-            <input type="checkbox" id="e-{{e.OptionValue}}" ng-model="e.IsSelected" ng-change="e.canProceed()"> <!-- value="{{e.Name}}" ng-change="self.canProceed()"-->
+            <input type="checkbox" id="e-{{e.OptionValue}}" ng-model="e.IsSelected" ng-change="e.canProceed()"> <!- - value="{{e.Name}}" ng-change="self.canProceed()"- ->
             <label>{{e.Name}}</label>
         </li>
     </ul>
 
     <ul style="list-style-type: none;">
         <li>
-            <!--<a role="button" href="/emergencyDetail" class="btn btn-outline-danger">Next - not disabled</a>-->
-            <!--<button type="submit" href="/emergencyDetail" class="btn btn-outline-danger" ng-disabled="!self.checkedOneOrMore">Next</button>-->
+            <button type="submit" href="/emergencyDetail" class="btn btn-outline-danger" ng-disabled="!self.checkedOneOrMore">Next</button>
             <a role="button" href="/emergencyDetail" class="btn btn-outline-danger">Next</a>
         </li>
-    </ul>
-
+    </ul>-->
+    
+    
     <!-- option 2 -->
-    <!--<div class="btn-group">
+    <div ng-if="self.eCount === 0">
+        <p style="text-align:center; color:red; font-size:small;">Please select emergency/s</p>
+    </div>
+    <div class="btn-group">
         <div>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Fire</label>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Flood</label>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Hurricane</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-right:3px;" ng-model="self.emergencies[0].isChecked" uib-btn-checkbox>{{self.emergencies[0].Name}}</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-right:3px;" ng-model="self.emergencies[1].isChecked" uib-btn-checkbox>{{self.emergencies[1].Name}}</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-right:3px;" ng-model="self.emergencies[2].isChecked" uib-btn-checkbox>{{self.emergencies[2].Name}}</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-right:3px;" ng-model="self.emergencies[3].isChecked" uib-btn-checkbox>{{self.emergencies[3].Name}}</label>
         </div>
 
         <div>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Snow Storm</label>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Terrorist</label>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Tornado</label>
-            <label class="btn btn-light col-md-6" style="height:50px; padding-top:12px;" uib-btn-checkbox>Wildfire</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-left:3px;" ng-model="self.emergencies[4].isChecked" uib-btn-checkbox>{{self.emergencies[4].Name}}</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-left:3px;" ng-model="self.emergencies[5].isChecked" uib-btn-checkbox>{{self.emergencies[5].Name}}</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-left:3px;" ng-model="self.emergencies[6].isChecked" uib-btn-checkbox>{{self.emergencies[6].Name}}</label>
+            <label class="btn btn-light col" style="height:50px; width:350px; padding-top:12px; margin-left:3px;" ng-model="self.emergencies[7].isChecked" uib-btn-checkbox>{{self.emergencies[7].Name}}</label>
         </div>
     </div>
 
     <div>
-        <a role="button" href="/emergencyDetail" class="btn btn-outline-danger">Next - not disabled</a>
-        <button type="submit" href="/emergencyDetail" class="btn btn-outline-danger" ng-disabled="!self.checkedOneOrMore">Next</button>
-    </div>-->
+        <!--<a role="button" href="/emergencyDetail" class="btn btn-outline-danger">Next - not disabled</a>-->
+        <!--<button type="submit" href="/emergencyDetail" class="btn btn-outline-danger" ng-disabled="!self.checkedOneOrMore">Next</button>-->
+        <a role="button" href="#" class="btn btn-outline-danger" ng-click="self.proceed()" ng-disabled="self.eCount === 0">Next</a>
+    </div>
 </fieldset>
 
 

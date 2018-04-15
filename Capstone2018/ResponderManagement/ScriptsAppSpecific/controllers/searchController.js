@@ -21,18 +21,18 @@
     self.data = { selectedGroups: [] };
 
     // pang display ra sa group sa search bar ??
-    self.loadGroups = function () {
-        appServices.getEmergencies().then(function (response) {
-            console.log(response.data);
+    //self.loadGroups = function () {
+    //    appServices.getEmergencies().then(function (response) {
+    //        console.log(response.data);
 
-            self.groups = response.data;
-            console.log(self.groups);
+    //        self.groups = response.data;
+    //        console.log(self.groups);
 
-            self.test = false;
-        });
-    };
+    //        self.test = false;
+    //    });
+    //};
 
-    self.loadGroups();
+    //self.loadGroups();
 
     // delete volunteer
     self.delete = function (id) {
@@ -51,11 +51,15 @@
         },
             function (isConfirm) {
                 if (isConfirm) {
-                    appServices.deleteVolunteer(id);
-
                     // to remove volunteer from table without refreshing - di npud mugana
                     self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
                     console.log(self.volunteers);
+
+                    appServices.deleteVolunteer(id);
+
+                    //// to remove volunteer from table without refreshing - di npud mugana
+                    //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
+                    //console.log(self.volunteers);
 
                     swal("Deleted!", "Volunteer has been deleted", "success");
                     console.log("confirm delete");
@@ -85,9 +89,6 @@
         if (self.searchText === "")
             return;
 
-        //return self.volunteers.filter(function (item) {
-        //    return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1 || item.LastName.toLowerCase().indexOf(self.searchText) > -1)
-
         self.volunteerTable = self.volunteers.filter(function (item) {
             return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1
                 || item.LastName.toLowerCase().indexOf(self.searchText) > -1
@@ -107,5 +108,6 @@
 
     self.loadVolunteers();
 
+    // set default search by
     self.selectSearch = "name";
 }]);
