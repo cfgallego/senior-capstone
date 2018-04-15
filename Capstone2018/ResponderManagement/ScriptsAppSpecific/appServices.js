@@ -23,11 +23,10 @@
             //},
 
             // updateVolunteer
-            editVolunteer: function (vol) {
-                return $http.put("api/ResponderManagement/volunteers/editVolunteer", vol);
+            updateVolunteer: function (vol) {
+                return $http.put("api/ResponderManagement/volunteers/updateVolunteer", vol);
             },
 
-            // deleteVolunteer
             deleteVolunteer: function (id) {
                 return $http.delete("api/ResponderManagement/volunteers/deleteVolunteer?id=" + id);
             },
@@ -37,8 +36,9 @@
                 return $http.get("api/ResponderManagement/emergencies/getEmergencies");
             },
 
-            // TEST send email
-            sendTestEmail: function () {
+            //getEmergenciesByID
+
+            sendEmail: function () {
                 return $http.post("api/ResponderManagement/emergencies/sendEmails");
             },
 

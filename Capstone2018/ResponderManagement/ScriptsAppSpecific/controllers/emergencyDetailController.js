@@ -14,7 +14,7 @@
         console.log(v, "TEST - send");
         if (!v)
             return;
-        appServices.sendTestEmail().then(function () {
+        appServices.sendEmail().then(function () {
             swal("SUCCESS", "Notification sent!", "success");
         });
 

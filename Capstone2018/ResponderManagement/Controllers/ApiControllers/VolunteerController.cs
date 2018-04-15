@@ -125,8 +125,8 @@ namespace ResponderManagement.Controllers.ApiControllers
 
         // Update (edit) Volunteer
         [HttpPut]
-        [Route("editVolunteer")]
-        public IHttpActionResult EditVolunteer(Volunteer v)
+        [Route("updateVolunteer")]
+        public IHttpActionResult UpdateVolunteer(Volunteer v)
         {
             var skillList = new List<Skill>();
             Volunteer vol = DataContext.Volunteers.Find(v.VolunteerID);

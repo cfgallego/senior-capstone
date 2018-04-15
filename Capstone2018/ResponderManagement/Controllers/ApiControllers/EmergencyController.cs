@@ -24,25 +24,6 @@ namespace ResponderManagement.Controllers.ApiControllers
         }
 
 
-        //private string createEmailBody(string d, string t, string sa, string ci, string s, string z, string co)
-        //{
-        //    string body = string.Empty;
-
-        //    using (StreamReader reader = new StreamReader(HttpContext.Current.Server.MapPath("~/toVolunteer.html")))
-        //    //string body = File.ReadAllText(Path.Combine(HttpRuntime.AppDomainAppPath, "EmailTemplates/toVolunteer.html"));
-
-        //    body = body.Replace("{date}", d);
-        //    body = body.Replace("{time}", t);
-        //    body = body.Replace("{streetAddress}", sa);
-        //    body = body.Replace("{city}", ci);
-        //    body = body.Replace("{state}", s);
-        //    body = body.Replace("{zipCode}", z);
-        //    body = body.Replace("{comments}", co);
-
-        //    return body;
-        //}
-
-
         // TEST send email
         [HttpPost]
         [Route("sendEmails")]

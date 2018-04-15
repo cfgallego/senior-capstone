@@ -87,7 +87,7 @@
 
         console.log(req);
 
-        appServices.editVolunteer(req).then(function (response) {
+        appServices.updateVolunteer(req).then(function (response) {
             swal("SUCCESS", "Volunteer information updated!", "success");
             console.log(response);
             // redirect back to prev page?
