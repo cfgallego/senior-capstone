@@ -100,20 +100,6 @@ h3 {
     font-family: 'Lato', sans-serif;
 }
 
-#emergencyChkbx li {
-    display: block;
-    position: center;
-    padding-left: 60px;
-    margin-bottom: 30px;
-    font-size: 20px;
-    float: left;
-    width: 25%;
-}
-
-#emergencyChkbx2, skillsChkbx ul {
-
-}
-
 #loginForm {
     width: 350px;
     margin: auto;
@@ -132,5 +118,12 @@ h3 {
 #addvolForm p, #editvolForm p, #emergencyForm p {
     color: red;
     font-size: small;
+}
+
+#emergencyList label {
+    height: 50px;
+    width: 350px;
+    padding-top: 12px;
+    margin-right: 3px;
 }
 

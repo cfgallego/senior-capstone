@@ -154,17 +154,22 @@
 
         <fieldset id="skillsChkbx" name="skills">
             <h4>Certified Skills</h4>
-            <!--<pre>Results: {{self.checkResults}}</pre>-->
+
+            <div ng-show="form.$submitted">
+                <div ng-if="self.sCount === 0">
+                    <p style="text-align:center;">Please select skill/s</p>
+                </div>
+            </div>
 
             <div>
-                <label class="btn btn-light" style="width:230px;" ng-model="self.selectedSkills[0].isChecked" uib-btn-checkbox>{{self.selectedSkills[0].Name}}</label>
-                <label class="btn btn-light" style="width:230px;" ng-model="self.selectedSkills[1].isChecked" uib-btn-checkbox>{{self.selectedSkills[1].Name}}</label>
-                <label class="btn btn-light" style="width:230px;" ng-model="self.selectedSkills[2].isChecked" uib-btn-checkbox>{{self.selectedSkills[2].Name}}</label>
+                <label class="btn btn-light" style="width:230px;" ng-model="self.skills[0].isChecked" uib-btn-checkbox>{{self.skills[0].Name}}</label>
+                <label class="btn btn-light" style="width:230px;" ng-model="self.skills[1].isChecked" uib-btn-checkbox>{{self.skills[1].Name}}</label>
+                <label class="btn btn-light" style="width:230px;" ng-model="self.skills[2].isChecked" uib-btn-checkbox>{{self.skills[2].Name}}</label>
             </div>
             <div>
-                <label class="btn btn-light" style="width:230px;" ng-model="self.selectedSkills[3].isChecked" uib-btn-checkbox>{{self.selectedSkills[3].Name}}</label>
-                <label class="btn btn-light" style="width:230px;" ng-model="self.selectedSkills[4].isChecked" uib-btn-checkbox>{{self.selectedSkills[4].Name}}</label>
-                <label class="btn btn-light" style="width:230px;" ng-model="self.selectedSkills[5].isChecked" uib-btn-checkbox>{{self.selectedSkills[5].Name}}</label>
+                <label class="btn btn-light" style="width:230px;" ng-model="self.skills[3].isChecked" uib-btn-checkbox>{{self.skills[3].Name}}</label>
+                <label class="btn btn-light" style="width:230px;" ng-model="self.skills[4].isChecked" uib-btn-checkbox>{{self.skills[4].Name}}</label>
+                <label class="btn btn-light" style="width:230px;" ng-model="self.skills[5].isChecked" uib-btn-checkbox>{{self.skills[5].Name}}</label>
             </div>
 
             <!--<ul ng-repeat="s in self.skills" style="list-style-type: none;">

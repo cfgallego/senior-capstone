@@ -45,9 +45,9 @@
             }
         }
         console.log(self.selectedEmergencies);
-        console.log(self.count);
+        console.log(self.eCount);
 
-        if (self.eCount == 0)
+        if (self.eCount === 0)
             return;
 
         $location.path("/emergencyDetail/");

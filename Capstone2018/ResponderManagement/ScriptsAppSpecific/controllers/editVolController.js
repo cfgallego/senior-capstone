@@ -4,7 +4,7 @@
     //self.param1 = null;
     self.vol = null;
 
-    self.selectedSkills = [
+    self.skills = [
         { Name: "Fire Safety", SkillID: 1, isChecked: false },
         { Name: "EMS Training", SkillID: 2, isChecked: false },
         { Name: "Lifeguard Training", SkillID: 3, isChecked: false },
@@ -56,16 +56,21 @@
         if (!v)
             return;
 
-        self.finalSkills = [];
-        for (var i = 0; i < self.selectedSkills.length; i++) {
-            if (self.selectedSkills[i].isChecked) {
-                self.finalSkills.push({
-                    Name: self.selectedSkills[i].Name,
-                    SkillID: self.selectedSkills[i].SkillID
+        self.sCount = 0;
+        self.selectedSkills = [];
+        for (var i = 0; i < self.skills.length; i++) {
+            if (self.skills[i].isChecked) {
+                self.selectedSkills.push({
+                    Name: self.skills[i].Name,
+                    SkillID: self.skills[i].SkillID
                 });
+                self.sCount++;
             }
         }
-        console.log(self.finalSkills);
+        console.log(self.selectedSkills);
+
+        if (v && (self.sCount === 0))
+            return;
 
         var req = {
             VolunteerID: self.vol.VolunteerID,
@@ -77,7 +82,7 @@
             City: self.vol.City,
             State: self.vol.State,
             ZipCode: self.vol.ZipCode,
-            Skills: self.finalSkills
+            Skills: self.selectedSkills
         };
 
         console.log(req);

@@ -17,8 +17,8 @@
         });
     };
 
-    self.groups = [];
-    self.data = { selectedGroups: [] };
+    //self.groups = [];
+    //self.data = { selectedGroups: [] };
 
     // pang display ra sa group sa search bar ??
     //self.loadGroups = function () {

@@ -7,7 +7,7 @@
     //self.test = true;
     //self.volunteer.state = null;
 
-    self.selectedSkills = [
+    self.skills = [
         { Name: "Fire Safety", SkillID: 1, isChecked: false },
         { Name: "EMS Training", SkillID: 2, isChecked: false },
         { Name: "Lifeguard Training", SkillID: 3, isChecked: false },
@@ -16,8 +16,8 @@
         { Name: "Redcross Certification", SkillID: 6, isChecked: false }
     ];
 
-    self.trueSkill = {};
-    self.finalSkills = [];
+    //self.trueSkill = {};
+    //self.finalSkills = [];
 
     //self.loadSkills = function () {
     //    appServices.getSkills().then(function (response) {
@@ -37,16 +37,22 @@
         if (!v)
             return;
 
-        self.finalSkills = [];
-        for (var i = 0; i < self.selectedSkills.length; i++) {
-            if (self.selectedSkills[i].isChecked) {
-                self.finalSkills.push({
-                    Name: self.selectedSkills[i].Name,
-                    SkillID: self.selectedSkills[i].SkillID
+        self.sCount = 0;
+        self.selectedSkills = [];
+        for (var i = 0; i < self.skills.length; i++) {
+            if (self.skills[i].isChecked) {
+                self.selectedSkills.push({
+                    Name: self.skills[i].Name,
+                    SkillID: self.skills[i].SkillID
                 });
+                self.sCount++;
             }
         }
-        console.log(self.finalSkills);
+        console.log(self.selectedSkills);
+        console.log(self.sCount);
+
+        if (v && (self.sCount === 0))
+            return;
 
         var newReq = {
             FirstName: self.volunteer.firstName,
@@ -57,7 +63,7 @@
             City: self.volunteer.city,
             State: self.volunteer.state,
             ZipCode: self.volunteer.zipCode,
-            Skills: self.finalSkills
+            Skills: self.selectedSkills
         };
 
         console.log(newReq);
