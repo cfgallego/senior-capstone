@@ -143,7 +143,7 @@ namespace ResponderManagement.Controllers.ApiControllers
             {
                 if (s.Name != null)
                 {
-                    //if (skillList.Contains(s))
+                    //if (vol.Skills.Contains(s))
                         //continue;
 
                     //skillList.Add(new Skill() { Name = s.Name });

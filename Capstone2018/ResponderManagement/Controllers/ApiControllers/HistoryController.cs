@@ -42,7 +42,8 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("getHistory")]
         public IHttpActionResult GetHisotry()
         {
-            var history = DataContext.Histories.OrderBy(x => x.EmergencyDate).ThenBy(x => x.EmergencyTime).ToList();
+            //var history = DataContext.Histories.OrderBy(x => x.EmergencyDate).ThenBy(x => x.EmergencyTime).ToList();
+            var history = DataContext.Histories.OrderByDescending(x => x.EmergencyDate).ThenByDescending(x => x.EmergencyTime).ToList();
             return Ok(history);
         }
     }
