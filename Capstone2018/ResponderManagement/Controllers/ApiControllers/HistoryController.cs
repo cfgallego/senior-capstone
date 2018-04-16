@@ -37,5 +37,13 @@ namespace ResponderManagement.Controllers.ApiControllers
             DataContext.SaveChanges();
             return Ok(hstry);
         }
+
+        [HttpGet]
+        [Route("getHistory")]
+        public IHttpActionResult GetHisotry()
+        {
+            var history = DataContext.Histories.OrderBy(x => x.EmergencyDate).ThenBy(x => x.EmergencyTime).ToList();
+            return Ok(history);
+        }
     }
 }

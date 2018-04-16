@@ -2,7 +2,8 @@
     var self = this;
     console.log("TEST - emergencyDetail");
 
-    self.currentDate = $filter('date')(new Date(), "EEEE, MM/dd/yyyy");
+    self.currentDate = $filter('date')(new Date(), "MM/dd/yyyy");
+    //self.currentDate = $filter('date')(new Date(), "EEEE, MM/dd/yyyy");
     console.log(self.currentDate);
 
     self.currentTime = $filter('date')(new Date(), "hh:mm a");

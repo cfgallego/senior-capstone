@@ -50,6 +50,9 @@
             // HistoryController functions
             newMessage: function (msg) {
                 return $http.post("api/ResponderManagement/history/newMessage", msg);
-            }
+            },
+            getHistory: function () {
+                return $http.get("api/ResponderManagement/history/getHistory");
+            },
         }
     }]);

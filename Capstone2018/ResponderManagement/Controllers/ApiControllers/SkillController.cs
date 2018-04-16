@@ -11,7 +11,6 @@ namespace ResponderManagement.Controllers.ApiControllers
     [RoutePrefix("api/" + AppName + "/skills")]
     public class SkillController : AppApiController
     {
-        // Read (view) Skills
         [HttpGet]
         [Route("getSkills")]
         public IHttpActionResult GetSkills()
