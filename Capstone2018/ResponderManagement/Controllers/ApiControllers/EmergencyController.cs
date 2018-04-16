@@ -23,7 +23,6 @@ namespace ResponderManagement.Controllers.ApiControllers
             return Ok(emregencies);
         }
 
-
         // TEST send email
         [HttpPost]
         [Route("sendEmails")]

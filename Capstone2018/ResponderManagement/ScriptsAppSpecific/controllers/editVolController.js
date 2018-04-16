@@ -35,7 +35,6 @@
     // prefills the form
     self.param1 = $routeParams.param1;
     console.log(self.param1);
-    //self.param1 = $route.current.param1;
 
     self.fillForm = function () {
         appServices.getVolunteerByID(self.param1).then(function (response) {

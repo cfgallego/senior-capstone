@@ -34,8 +34,18 @@ textarea {
 }*/
 
 nav {
-    background-color: #cd5c5c; /*lightcoral #f08080, dodgerblue #1e90ff, indianred #cd5c5c*/
-    /*color: white;*/
+    background-color: #E12C2C;
+    /*
+        lightcoral #f08080 
+        dodgerblue #1e90ff
+        indianred #cd5c5c
+        brickred #C62D42
+        cherry #DA2647
+        #D43535
+        #E1373A
+        #d51a1a
+        #E12C2C - kani
+    */
 }
 
 .nav-item {
@@ -51,7 +61,7 @@ nav {
 .dropdown-item:hover {
     text-decoration: underline;
 }
-/*comment this out to go back to normal container size on nav*/
+
 nav .container {
     /*max-width: 1920px;*/
     max-width: 1600px;
@@ -84,7 +94,7 @@ footer hr {
     border: none;
     height: 2px;
     width: 350px;
-    background-color: #cd5c5c;
+    background-color: #E12C2C;
 }
 
 h3 {
@@ -125,5 +135,6 @@ h3 {
     width: 350px;
     padding-top: 12px;
     margin-right: 3px;
+    margin-left: 3px;
 }
 

@@ -76,11 +76,10 @@
 
     console.log(self.volunteers);
 
-    // edit volunteer
-    // will prefill the editVolunteer page
-    self.edit = function (id) {
-        console.log(id);
-        $location.path("/editVolunteer/" + id);
+    // edit volunteer - will redirect to the editVolunteer page, param1 = id
+    self.edit = function (param1) {
+        console.log(param1);
+        $location.path("/editVolunteer/" + param1);
     };
 
     // seach volunteer by first name or last name or both
@@ -99,7 +98,7 @@
 
     // ng-show function for searching groups??
 
-    // load table on seach button click
+    // load table on seach button click or enter keypress
     self.loadTable = false;
     self.buttonClick = function () {
         self.searchName();

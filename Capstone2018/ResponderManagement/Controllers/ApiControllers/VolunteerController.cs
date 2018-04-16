@@ -143,6 +143,9 @@ namespace ResponderManagement.Controllers.ApiControllers
             {
                 if (s.Name != null)
                 {
+                    //if (skillList.Contains(s))
+                        //continue;
+
                     //skillList.Add(new Skill() { Name = s.Name });
                     skillList.Add(DataContext.Skills.Find(s.SkillID));
                 }

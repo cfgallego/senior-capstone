@@ -14,13 +14,10 @@
         console.log(v, "TEST - send");
         if (!v)
             return;
-        appServices.sendEmail().then(function () {
-            swal("SUCCESS", "Notification sent!", "success");
-        });
 
         var newMsg = {
-            EmailDate: self.currentDate, //self.message.date,
-            EmailTime: self.currentTime,
+            EmergencyDate: self.currentDate, //self.message.date,
+            EmergencyTime: self.currentTime,
             StreetAddress: self.message.streetAddress,
             City: self.message.city,
             State: self.message.state,
@@ -29,6 +26,16 @@
             // Emergency ??
         };
         //console.log(newMsg);
+
+        appServices.newMessage(newMsg).then(function (response) {
+            //self.message = {};
+            //swal("SUCCESS", "Volunteer added!", "success");
+            console.log(response);
+        });
+
+        appServices.sendEmail().then(function () {
+            swal("SUCCESS", "Notification sent!", "success");
+        });
     }
 
     // zipcode pattern #####

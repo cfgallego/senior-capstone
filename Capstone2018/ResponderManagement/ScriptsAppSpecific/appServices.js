@@ -45,6 +45,11 @@
             // SkillController functions
             getSkills: function () {
                 return $http.get("api/ResponderManagement/skills/getSkills");
+            },
+
+            // HistoryController functions
+            newMessage: function (msg) {
+                return $http.post("api/ResponderManagement/history/newMessage", msg);
             }
         }
     }]);
