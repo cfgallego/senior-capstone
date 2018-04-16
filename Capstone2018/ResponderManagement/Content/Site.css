@@ -138,3 +138,7 @@ h3 {
     margin-left: 3px;
 }
 
+#searchByEmergency label {
+    height: 50px;
+    padding-top: 12px;
+}

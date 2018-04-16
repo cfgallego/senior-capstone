@@ -15,34 +15,16 @@
 
     <div ng-if="self.selectSearch=='emergency'">
         <!--width:950px;  class="col-md-10" style="padding:0;"-->
-        <div class="btn-group" style="height:50px; width:930px;">
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Earthquake</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Fire</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Flood</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Hurricane</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Snow Storm</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Terrorist</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Tornado</label>
-            <label class="btn btn-light col-md-2" style="height:50px; padding-top:12px;" uib-btn-checkbox>Wildfire</label>
+        <div class="btn-group" style="height:50px; width:930px;" id="searchByEmergency">
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[0].isChecked" uib-btn-checkbox>{{self.emergencies[0].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[1].isChecked" uib-btn-checkbox>{{self.emergencies[1].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[2].isChecked" uib-btn-checkbox>{{self.emergencies[2].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[3].isChecked" uib-btn-checkbox>{{self.emergencies[3].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[4].isChecked" uib-btn-checkbox>{{self.emergencies[4].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[5].isChecked" uib-btn-checkbox>{{self.emergencies[5].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[6].isChecked" uib-btn-checkbox>{{self.emergencies[6].Name}}</label>
+            <label class="btn btn-light col-md-2" ng-model="self.emergencies[7].isChecked" uib-btn-checkbox>{{self.emergencies[7].Name}}</label>
         </div>
-
-
-        <!--<select style="height:50px; width:950px;" class="form-control" name="selectedGroups" ng-model="self.data.selectedGroups" multiple required>
-        <!- -<option value="">-- Select group/s --</option>- ->
-        <option ng-repeat="g in self.groups" value="{{g.Name}}">{{g.Name}}</option>
-    </select>
-    <p style="text-align:center; font-size:small; color:red;">Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
-    <p>Selected Groups: {{self.data.selectedGroups}}</p>-->
-        <!--<div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </div>-->
     </div>
 
     <div class="input-group-append">

@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("editVolController", ['$scope', 'AppServices', '$routeParams', '$rootScope', function ($scope, appServices, $routeParams, $rootScope) {
+﻿angular.module("app").controller("editVolController", ['$scope', 'AppServices', '$routeParams', '$rootScope', '$location', function ($scope, appServices, $routeParams, $rootScope, $location) {
     var self = this;
     console.log("TEST - edit volunteer");
     //self.param1 = null;
@@ -70,8 +70,8 @@
         }
         console.log(self.selectedSkills);
 
-        if (v && (self.sCount === 0))
-            return;
+        //if (v && (self.sCount === 0))
+        //    return;
 
         var req = {
             VolunteerID: self.vol.VolunteerID,
@@ -92,6 +92,7 @@
             swal("SUCCESS", "Volunteer information updated!", "success");
             console.log(response);
             // redirect back to prev page?
+            $location.path("/search/");
         });
     };
 

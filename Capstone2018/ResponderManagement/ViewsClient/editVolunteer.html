@@ -1,7 +1,7 @@
 ﻿<h3>Edit Volunteer</h3>
 
 <div ng-if="self.loadPage === true" style="text-align:center;">
-    <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+    <img src="Content/images/loadingtruck2.gif" style="box-shadow:0 0 8px 8px white inset; height:260px; width:350px;" /> <!--height="260" width="350"-->
     <p style="font-weight:bold;">Fetching data...</p>
 </div>
 
@@ -171,11 +171,11 @@
         <fieldset id="skillsChkbx">
             <h4>Certified Skills</h4>
 
-            <div ng-show="form.$submitted">
+            <!--<div ng-show="form.$submitted">
                 <div ng-if="self.sCount === 0">
                     <p style="text-align:center;">Please select skill/s</p>
                 </div>
-            </div>
+            </div>-->
 
             <div>
                 <label class="btn btn-light" style="width:230px;" ng-model="self.skills[0].isChecked" uib-btn-checkbox>{{self.skills[0].Name}}</label>

@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("searchController", ['$scope', 'AppServices', '$http', '$window', '$location', '$filter', '$routeParams', '$rootScope', function ($scope, appServices, $http, $window, $location, $filter, $routeParams, $rootScope) {
+﻿angular.module("app").controller("searchController", ['$scope', 'AppServices', '$http', '$window', '$location', '$filter', '$routeParams', '$rootScope', '$route', function ($scope, appServices, $http, $window, $location, $filter, $routeParams, $rootScope, $route) {
     var self = this;
     console.log("TEST - search");
     self.loadPage = true;
@@ -36,6 +36,19 @@
 
     //self.loadGroups();
 
+    self.emergencies = [
+        { Name: "Fire", EmergencyID: 1, isChecked: false },
+        { Name: "Hurricane", EmergencyID: 2, isChecked: false },
+        { Name: "Flood", EmergencyID: 3, isChecked: false },
+        { Name: "Earthquake", EmergencyID: 4, isChecked: false },
+        { Name: "Tornado", EmergencyID: 5, isChecked: false },
+        { Name: "Snow Storm", EmergencyID: 6, isChecked: false },
+        { Name: "Terrorist", EmergencyID: 7, isChecked: false },
+        { Name: "Wildfire", EmergencyID: 8, isChecked: false },
+    ];
+    console.log(self.emergencies);
+
+
     // delete volunteer
     self.delete = function (id) {
         console.log(id);
@@ -54,19 +67,17 @@
             function (isConfirm) {
                 if (isConfirm) {
                     // to remove volunteer from table without refreshing - di npud mugana
-                    self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
-                    console.log(self.volunteers);
-
-                    appServices.deleteVolunteer(id);
-
-                    //// to remove volunteer from table without refreshing - di npud mugana
                     //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
                     //console.log(self.volunteers);
 
+                    appServices.deleteVolunteer(id);
+
                     swal("Deleted!", "Volunteer has been deleted", "success");
                     console.log("confirm delete");
-                    //self.loadVolunteers();
-                    //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
+
+                    // redirect back to search page
+                    //$location.path("/search/");
+                    $route.reload();
                 } else {
                     swal("Cancelled", "Volunteer was not deleted", "error");
                     console.log("cancel delete");
@@ -108,8 +119,8 @@
         //self.loadPage = false;
     };
 
-    self.loadVolunteers();
-
     // set default search by
     self.selectSearch = "name";
+
+    self.loadVolunteers();
 }]);

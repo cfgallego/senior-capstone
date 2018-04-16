@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', '$window', function ($scope, appServices, $window) {
+﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', '$window', '$location', '$route', function ($scope, appServices, $window, $location, $route) {
     var self = this;
     console.log("TEST - addVolunteer");
 
@@ -68,9 +68,12 @@
 
         console.log(newReq);
         appServices.addNewVolunteer(newReq).then(function (response) {
-            self.volunteer = {};
+            //self.volunteer = {};
             swal("SUCCESS", "Volunteer added!", "success");
             console.log(response);
+            //refresh page?
+            //$location.path("/addVolunteer/");
+            $route.reload();
         });
     };
 
