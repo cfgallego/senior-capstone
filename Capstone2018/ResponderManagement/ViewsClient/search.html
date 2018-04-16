@@ -1,29 +1,5 @@
 ﻿<h3>Search</h3>
 
-
-<!--<div>
-    <form id="searchForm">
-        <div class="form-row align-items-center">
-            <div class="col-md-2">
-                <select class="custom-select">
-                    <option selected>-Select-</option>
-                    <option value="name">Name</option>
-                    <option value="group">Group</option>
-                </select>
-            </div>
-            <div class="col-md-9">
-                <input type="text" class="form-control" placeholder="Search" />
-            </div>
-            <div class="col-md-1">
-                <!- -<button type="submit" class="btn btn-primary">Submit</button>- ->
-                <a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>
-            </div>
-        </div>
-    </form>
-</div>-->
-
-
-
 <div class="input-group">
     <div class="input-group-prepend">
         <select style="height:50px;" class="form-control" name="type" ng-model="self.selectSearch" ng-dropdown required>
@@ -77,6 +53,10 @@
 
 <br /><br />
 
+<div ng-if="self.loadPage === true" style="text-align:center;">
+    <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+</div>
+
 <table class="table" ng-model="self.volunteers" ng-if="self.loadTable">
     <thead>
         <tr>
@@ -105,6 +85,5 @@
     </tbody>
 </table>
 
-<div ng-show="(self.volunteerTable).length == 0">No match found.</div>
-
-
+<!--<div ng-show="(self.volunteerTable).length == 0">No match found.</div>-->
+<div ng-if="(self.volunteerTable).length == 0">No match found.</div>

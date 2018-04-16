@@ -244,6 +244,8 @@
     <Content Include="Content\images\edit2.png" />
     <Content Include="Content\images\search.png" />
     <Content Include="Content\images\truck.png" />
+    <Content Include="Content\images\loadingtruck1.gif" />
+    <Content Include="Content\images\loadingtruck2.gif" />
     <Content Include="Content\images\truck2.png" />
     <Content Include="Content\sweetalert.css" />
     <Content Include="Content\ui-bootstrap-csp.css" />

@@ -1,8 +1,9 @@
 ﻿angular.module("app").controller("searchController", ['$scope', 'AppServices', '$http', '$window', '$location', '$filter', '$routeParams', '$rootScope', function ($scope, appServices, $http, $window, $location, $filter, $routeParams, $rootScope) {
     var self = this;
     console.log("TEST - search");
+    self.loadPage = true;
 
-    self.test = true;
+    //self.test = true;
     self.volunteers = [];
 
     // load volunteers from server
@@ -13,7 +14,8 @@
             self.volunteers = response.data;
             console.log(self.volunteers);
 
-            self.test = false;
+            //self.test = false;
+            self.loadPage = false;
         });
     };
 
@@ -103,6 +105,7 @@
     self.buttonClick = function () {
         self.searchName();
         self.loadTable = true;
+        //self.loadPage = false;
     };
 
     self.loadVolunteers();

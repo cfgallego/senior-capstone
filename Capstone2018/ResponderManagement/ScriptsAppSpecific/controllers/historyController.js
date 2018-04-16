@@ -1,6 +1,7 @@
 ﻿angular.module("app").controller("historyController", ['$scope', 'AppServices', function ($scope, appServices, $http) {
     var self = this;
     console.log("TEST - history");
+    self.loadPage = true;
 
     self.history = [];
 
@@ -10,6 +11,7 @@
 
             self.history = response.data;
             console.log(self.history);
+            self.loadPage = false;
         });
     };
 
