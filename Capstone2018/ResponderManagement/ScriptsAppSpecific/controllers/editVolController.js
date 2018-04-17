@@ -3,7 +3,7 @@
     console.log("TEST - edit volunteer");
     //self.param1 = null;
     self.vol = null;
-    self.loadPage = true;
+    self.loadDb = true;
 
     self.skills = [
         { Name: "Fire Safety", SkillID: 1, isChecked: false },
@@ -41,7 +41,7 @@
         appServices.getVolunteerByID(self.param1).then(function (response) {
             self.vol = response.data;
             console.log(self.vol.FirstName);
-            self.loadPage = false;
+            self.loadDb = false;
         }).catch(function (response) {
             swal("ERROR", "message", "error");
         });

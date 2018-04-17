@@ -50,7 +50,7 @@ namespace ResponderManagement.Controllers.ApiControllers
 
         // Read (view) Volunteer
         [HttpGet]
-        [Route("getVolunteers")] // get all volunteers in the database 
+        [Route("getVolunteers")]
         public IHttpActionResult GetVolunteers()
         {
             // pulls all volunteers from database
@@ -92,36 +92,38 @@ namespace ResponderManagement.Controllers.ApiControllers
             return Ok(vol);
         }
 
-        //[HttpGet]
-        //[Route("getVolunteerByName")]
-        //public IHttpActionResult GetVolunteerByName(string name)
-        //{
-        //    var vol = DataContext.Volunteers.Find(name);
 
-        //    if (vol != null)
-        //    {
-        //        var request = new
-        //        {
-        //            id = vol.VolunteerID,
-        //            firstName = vol.FirstName,
-        //            lastName = vol.LastName,
-        //            phoneNumber = vol.PhoneNumber,
-        //            email = vol.Email,
-        //            streetAddress = vol.StreetAddress,
-        //            city = vol.City,
-        //            state = vol.State,
-        //            zipCode = vol.ZipCode
-        //        };
+        // ----------------------
+        [HttpGet]
+        [Route("getVolunteersByEmergency")]
+        public List<Volunteer> getVolunteersByEmergency(string emerg)
+        {
+            //get all skills related to given emergency
+            List<Skill> skills = DataContext.Emergencies.First(x => x.Name == emerg).Skills.ToList();
+            //list of all volunteers to search through
+            List<Volunteer> allVols = DataContext.Volunteers.ToList();
+            //list to be output
+            List<Volunteer> usingVols = new List<Volunteer>();
 
-        //        return Ok(request);
-        //    }
+            foreach (Skill s in skills)
+            {
+                foreach (Volunteer v in allVols)
+                {
+                    //adds volunteer to output list, then removes from all for faster searching through later loops andprevent duplicates
+                    if (v.Skills.Contains(s))
+                    {
+                        usingVols.Add(v);
+                        allVols.Remove(v);
+                    }
+                }
+                if (allVols.Count == 0)
+                    break;
+            }//end foreach
+            return usingVols;
+        }
+        // ----------------------
 
-        //    else
-        //    {
-        //        var error = "No match found";
-        //        return Ok(error);
-        //    }
-        //}
+
 
         // Update (edit) Volunteer
         [HttpPut]

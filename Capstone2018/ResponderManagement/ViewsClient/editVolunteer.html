@@ -1,11 +1,11 @@
 ﻿<h3>Edit Volunteer</h3>
 
-<div ng-if="self.loadPage === true" style="text-align:center;">
+<div ng-if="self.loadDb === true" style="text-align:center;">
     <img src="Content/images/loadingtruck2.gif" style="box-shadow:0 0 8px 8px white inset; height:260px; width:350px;" /> <!--height="260" width="350"-->
     <p style="font-weight:bold;">Fetching data...</p>
 </div>
 
-<div ng-if="self.loadPage === false">
+<div ng-if="self.loadDb === false">
     <form id="editvolForm" name="form" ng-submit="form.$valid" novalidate>
         <h4>Personal Information</h4>
         <div class="form-row">

@@ -1,10 +1,11 @@
 ﻿<h3>Search</h3>
 
-<div ng-if="self.loadPage === true" style="text-align:center;">
+<div ng-if="self.loadDb === true" style="text-align:center;">
     <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+    <p style="font-weight:bold;">Fetching data...</p>
 </div>
 
-<div ng-if="self.loadPage === false">
+<div ng-if="self.loadDb === false">
     <div class="input-group">
         <div class="input-group-prepend">
             <select style="height:50px;" class="form-control" name="type" ng-model="self.selectSearch" ng-dropdown required>
