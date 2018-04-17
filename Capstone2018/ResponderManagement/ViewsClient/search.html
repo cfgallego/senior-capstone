@@ -1,71 +1,77 @@
 ﻿<h3>Search</h3>
 
-<div class="input-group">
-    <div class="input-group-prepend">
-        <select style="height:50px;" class="form-control" name="type" ng-model="self.selectSearch" ng-dropdown required>
-            <option value="name" selected>Name</option>
-            <option value="emergency">Emergency</option>
-        </select>
-    </div>
-
-    <div ng-if="self.selectSearch=='name'">
-        <!--width:950px;  class="col-md-10" style="padding:0;"-->
-        <input style="height:50px; width:930px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
-    </div>
-
-    <div ng-if="self.selectSearch=='emergency'">
-        <!--width:950px;  class="col-md-10" style="padding:0;"-->
-        <div class="btn-group" style="height:50px; width:930px;" id="searchByEmergency">
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[0].isChecked" uib-btn-checkbox>{{self.emergencies[0].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[1].isChecked" uib-btn-checkbox>{{self.emergencies[1].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[2].isChecked" uib-btn-checkbox>{{self.emergencies[2].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[3].isChecked" uib-btn-checkbox>{{self.emergencies[3].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[4].isChecked" uib-btn-checkbox>{{self.emergencies[4].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[5].isChecked" uib-btn-checkbox>{{self.emergencies[5].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[6].isChecked" uib-btn-checkbox>{{self.emergencies[6].Name}}</label>
-            <label class="btn btn-light col-md-2" ng-model="self.emergencies[7].isChecked" uib-btn-checkbox>{{self.emergencies[7].Name}}</label>
-        </div>
-    </div>
-
-    <div class="input-group-append">
-        <!--<a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>-->
-        <button style="height:50px;" href="#" class="btn btn-outline-danger" ng-click="self.buttonClick()"><img src="Content/images/search.png"></button>
-    </div>
-</div>
-
-<br /><br />
-
 <div ng-if="self.loadPage === true" style="text-align:center;">
     <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
 </div>
 
-<table class="table" ng-model="self.volunteers" ng-if="self.loadTable">
-    <thead>
-        <tr>
-            <!--<th>ID</th>-->
-            <th style="width: 300px;">Name</th>
-            <th style="width: 250px;">Email</th>
-            <th style="width: 250px;">Phone Number</th>
-            <th style="width: 500px;">Address</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--<tr ng-repeat="v in self.volunteers | filter: searchText">-->
-        <!--<tr ng-repeat="v in self.searchName()">-->
-        <tr ng-repeat="v in self.volunteerTable">
-            <!--<td>{{v.VolunteerID}}</td>-->
-            <td>{{v.FirstName}} {{v.LastName}}</td>
-            <td>{{v.Email}}</td>
-            <td>{{v.PhoneNumber}}</td>
-            <td>{{v.StreetAddress}}, {{v.City}}, {{v.State}} {{v.ZipCode}}</td>
+<div ng-if="self.loadPage === false">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <select style="height:50px;" class="form-control" name="type" ng-model="self.selectSearch" ng-dropdown required>
+                <option value="name" selected>Name</option>
+                <option value="emergency">Emergency</option>
+            </select>
+        </div>
 
-            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="self.edit(v.VolunteerID)"><img src="Content/images/edit.png"></a></td>
-            <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="self.delete(v.VolunteerID)"><img src="Content/images/delete.png"></a></td>
-        </tr>
-    </tbody>
-</table>
+        <div ng-if="self.selectSearch=='name'">
+            <!--width:950px;  class="col-md-10" style="padding:0;"-->
+            <input style="height:50px; width:930px;" type="text" class="form-control" placeholder="Search" ng-model="self.searchText" ng-keyup="$event.keyCode == 13 && self.buttonClick()" />
+        </div>
 
-<!--<div ng-show="(self.volunteerTable).length == 0">No match found.</div>-->
-<div ng-if="(self.volunteerTable).length == 0">No match found.</div>
+        <div ng-if="self.selectSearch=='emergency'">
+            <!--width:950px;  class="col-md-10" style="padding:0;"-->
+            <div class="btn-group" style="height:50px; width:930px;" id="searchByEmergency">
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[0].isChecked" uib-btn-checkbox>{{self.emergencies[0].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[1].isChecked" uib-btn-checkbox>{{self.emergencies[1].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[2].isChecked" uib-btn-checkbox>{{self.emergencies[2].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[3].isChecked" uib-btn-checkbox>{{self.emergencies[3].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[4].isChecked" uib-btn-checkbox>{{self.emergencies[4].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[5].isChecked" uib-btn-checkbox>{{self.emergencies[5].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[6].isChecked" uib-btn-checkbox>{{self.emergencies[6].Name}}</label>
+                <label class="btn btn-light col-md-2" ng-model="self.emergencies[7].isChecked" uib-btn-checkbox>{{self.emergencies[7].Name}}</label>
+            </div>
+        </div>
+
+        <div class="input-group-append">
+            <!--<a href="/searchResult" role="button" class="btn btn-outline-danger"><img src="Content/images/search.png"></a>-->
+            <button style="height:50px;" href="#" class="btn btn-outline-danger" ng-click="self.buttonClick()"><img src="Content/images/search.png"></button>
+        </div>
+    </div>
+
+    <br /><br />
+
+    <!--<div ng-if="self.loadPage === true" style="text-align:center;">
+        <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+    </div>-->
+
+    <table class="table" ng-model="self.volunteers" ng-if="self.loadTable">
+        <thead>
+            <tr>
+                <!--<th>ID</th>-->
+                <th style="width: 300px;">Name</th>
+                <th style="width: 250px;">Email</th>
+                <th style="width: 250px;">Phone Number</th>
+                <th style="width: 500px;">Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr ng-repeat="v in self.volunteers | filter: searchText">-->
+            <!--<tr ng-repeat="v in self.searchName()">-->
+            <tr ng-repeat="v in self.volunteerTable">
+                <!--<td>{{v.VolunteerID}}</td>-->
+                <td>{{v.FirstName}} {{v.LastName}}</td>
+                <td>{{v.Email}}</td>
+                <td>{{v.PhoneNumber}}</td>
+                <td>{{v.StreetAddress}}, {{v.City}}, {{v.State}} {{v.ZipCode}}</td>
+
+                <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="self.edit(v.VolunteerID)"><img src="Content/images/edit.png"></a></td>
+                <td><a role="button" href="#" class="btn btn-outline-danger btn-sm" ng-click="self.delete(v.VolunteerID)"><img src="Content/images/delete.png"></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--<div ng-show="(self.volunteerTable).length == 0">No match found.</div>-->
+    <div ng-if="(self.volunteerTable).length == 0">No match found.</div>
+</div>

@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("emergencyDetailController", ['$scope', 'AppServices', '$filter', '$routeParams', function ($scope, appServices, $filter, $routeParams) {
+﻿angular.module("app").controller("emergencyDetailController", ['$scope', 'AppServices', '$filter', '$routeParams', '$location', function ($scope, appServices, $filter, $routeParams, $location) {
     var self = this;
     console.log("TEST - emergencyDetail");
 
@@ -36,6 +36,7 @@
 
         appServices.sendEmail().then(function () {
             swal("SUCCESS", "Notification sent!", "success");
+            $location.path("/home/");
         });
     }
 
