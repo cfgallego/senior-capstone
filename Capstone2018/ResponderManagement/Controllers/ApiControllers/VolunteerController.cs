@@ -96,10 +96,10 @@ namespace ResponderManagement.Controllers.ApiControllers
         // ----------------------
         [HttpGet]
         [Route("getVolunteersByEmergency")]
-        public List<Volunteer> getVolunteersByEmergency(string emerg)
+        public IHttpActionResult GetVolunteersByEmergency(string emergency)
         {
             //get all skills related to given emergency
-            List<Skill> skills = DataContext.Emergencies.First(x => x.Name == emerg).Skills.ToList();
+            List<Skill> skills = DataContext.Emergencies.First(x => x.Name == emergency).Skills.ToList();
             //list of all volunteers to search through
             List<Volunteer> allVols = DataContext.Volunteers.ToList();
             //list to be output
@@ -110,16 +110,16 @@ namespace ResponderManagement.Controllers.ApiControllers
                 foreach (Volunteer v in allVols)
                 {
                     //adds volunteer to output list, then removes from all for faster searching through later loops andprevent duplicates
-                    if (v.Skills.Contains(s))
+                    if (v.Skills.Contains(s) && !usingVols.Contains(v))
                     {
                         usingVols.Add(v);
-                        allVols.Remove(v);
+                        //allVols.Remove(v);
                     }
                 }
-                if (allVols.Count == 0)
-                    break;
+                //if (allVols.Count == 0)
+                //    break;
             }//end foreach
-            return usingVols;
+            return Ok(usingVols);
         }
         // ----------------------
 

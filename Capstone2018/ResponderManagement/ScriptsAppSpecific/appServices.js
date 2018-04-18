@@ -13,8 +13,8 @@
             },
 
             //getVolunteersByEmergency
-            getVolunteersByEmergency: function (e) {
-                return $http.get("api/ResponderManagement/volunteers/getVolunteerByID?id=" + e);
+            getVolunteersByEmergency: function (emergency) {
+                return $http.get("api/ResponderManagement/volunteers/getVolunteersByEmergency?emergency=" + emergency);
             },
             // end getVolunteerByEmergency
 

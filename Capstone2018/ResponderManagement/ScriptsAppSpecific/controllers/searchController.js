@@ -19,24 +19,6 @@
         });
     };
 
-    //self.groups = [];
-    //self.data = { selectedGroups: [] };
-
-    // pang display ra sa group sa search bar ??
-    //self.loadGroups = function () {
-    //    appServices.getEmergencies().then(function (response) {
-    //        console.log(response.data);
-
-    //        self.groups = response.data;
-    //        console.log(self.groups);
-
-    //        self.test = false;
-    //    });
-    //};
-
-    //self.loadGroups();
-
-
     // delete volunteer
     self.delete = function (id) {
         console.log(id);
@@ -83,9 +65,6 @@
         $location.path("/editVolunteer/" + param1);
     };
 
-    // set default search by
-    self.selectSearch = "name";
-
     // seach volunteer by first name or last name or both
     self.searchText = "";
     self.searchName = function () {
@@ -100,16 +79,7 @@
         });
     };
 
-    // load table on seach button click or enter keypress
-    self.loadTable = false;
-    self.buttonClick = function () {
-        self.searchName();
-        self.loadTable = true;
-        //self.loadDb = false;
-    };
-
-
-    // search volunteer by emergency??
+    // search volunteer by emergency
     self.emergencies = [
         { Name: "Fire", EmergencyID: 1, isChecked: false },
         { Name: "Hurricane", EmergencyID: 2, isChecked: false },
@@ -122,8 +92,60 @@
     ];
     console.log(self.emergencies);
 
+    self.searchEmergency = function () {
+        self.eCount = 0;
+        self.selectedEmergencies = [];
+        self.emergencyVolunteers = [];
+
+        for (var i = 0; i < self.emergencies.length; i++) {
+            if (self.emergencies[i].isChecked) {
+                self.selectedEmergencies.push({
+                    Name: self.emergencies[i].Name,
+                    EmergencyID: self.emergencies[i].EmergencyID
+                });
+                self.eCount++;
+
+                // mugana ang appService dire pero isa-isa ra ang sakto ?
+                appServices.getVolunteersByEmergency(self.emergencies[i].Name).then(function (response) {
+                    console.log(response.data);
+
+                    self.emergencyVolunteers = response.data;
+                    console.log(self.emergencyVolunteers);
+                    console.log("TEST");
+                });
+            }
+        }
+        console.log(self.selectedEmergencies);
+        console.log(self.eCount);
+
+        //self.volunteerTable = self.emergencyVolunteers;    
+    }
 
 
+
+    //// load table on seach button click or enter keypress
+    //self.loadTable = false;
+    //self.buttonClick = function () {
+    //    self.searchName();
+    //    self.loadTable = true;
+    //    //self.loadDb = false;
+    //};
+
+
+    // set default search by
+    self.selectSearch = "name";
+
+    // load table on seach button click or enter keypress if selectSearch = name
+    self.loadTable = false;
+    self.buttonClick = function () {
+        if (self.selectSearch == 'name')
+            self.searchName();
+        else
+            self.searchEmergency();
+
+        self.loadTable = true;
+        //self.loadDb = false;
+    };
 
     self.loadVolunteers();
 }]);
