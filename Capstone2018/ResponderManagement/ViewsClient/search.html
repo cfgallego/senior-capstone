@@ -85,7 +85,7 @@
     </div>-->
 
     <div ng-if="self.selectSearch=='name'">
-        <div ng-if="(self.volunteerTable).length === 0">No match found.</div>
+        <div ng-if="((self.volunteerTable).length === 0) || self.searchText === null">No match found.</div>
     </div>
 
     <div ng-if="self.selectSearch=='emergency'">

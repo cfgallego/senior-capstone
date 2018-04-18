@@ -73,8 +73,8 @@
 
         self.volunteerTable = self.volunteers.filter(function (item) {
             return (item.FirstName.toLowerCase().toString().indexOf(self.searchText) > -1
-                || item.LastName.toLowerCase().indexOf(self.searchText) > -1
-                || (item.FirstName.toLowerCase().toString() + " " + item.LastName.toLowerCase()).indexOf(self.searchText) > -1
+                || item.LastName.toLowerCase().toString().indexOf(self.searchText) > -1
+                || (item.FirstName.toLowerCase().toString() + " " + item.LastName.toLowerCase().toString()).indexOf(self.searchText) > -1
             )
         });
     };
@@ -96,6 +96,7 @@
         self.eCount = 0;
         self.selectedEmergencies = [];
         self.emergencyVolunteers = [];
+        //self.loadDb = true;
 
         for (var i = 0; i < self.emergencies.length; i++) {
             if (self.emergencies[i].isChecked) {
@@ -105,22 +106,20 @@
                 });
                 self.eCount++;
 
-                // mugana ang appService dire pero isa-isa ra ang sakto ?
                 appServices.getVolunteersByEmergency(self.emergencies[i].Name).then(function (response) {
                     console.log(response.data);
 
                     self.emergencyVolunteers = response.data;
                     console.log(self.emergencyVolunteers);
-                    console.log("TEST");
+
+                    self.volunteerTable = self.emergencyVolunteers.filter(function (item) {
+                        return item.toString();
+                    });
                 });
             }
-        }
-        console.log(self.selectedEmergencies);
-        console.log(self.eCount);
-
-        //self.volunteerTable = self.emergencyVolunteers;    
+            //self.loadDb = false;
+        }       
     }
-
 
 
     //// load table on seach button click or enter keypress
