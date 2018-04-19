@@ -1,0 +1,144 @@
+﻿body {
+    padding-top: 120px;
+    padding-bottom: 20px;
+    /*max-width: 1920px;*/
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 992px) {
+        body {
+            padding-top: 80px;
+        }
+    }
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+nav {
+    background-color: #E12C2C;
+    /*
+        lightcoral #f08080 
+        dodgerblue #1e90ff
+        indianred #cd5c5c
+        brickred #C62D42
+        cherry #DA2647
+        #D43535
+        #E1373A
+        #d51a1a
+        #E12C2C - kani
+    */
+}
+
+.nav-item {
+    /*color: white;*/
+}
+
+.nav-item:hover {
+    /*background-color:#094c84;*/
+    color: white;
+    text-decoration: underline;
+}
+
+.dropdown-item:hover {
+    text-decoration: underline;
+}
+
+nav .container {
+    /*max-width: 1920px;*/
+    max-width: 1600px;
+}
+
+#itemsLeftNav {
+    margin-left: 10px;
+}
+
+#logo {
+    padding-right: 30px;
+}
+
+.container #wrapper {
+    width: 1920px;
+    margin-left: auto;
+}
+
+footer {
+    max-width: 1920px;
+    margin-left: auto;
+    padding-left: 85px;
+    /*margin-top: -24px;*/
+    margin-top: 100px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+footer hr {
+    border: none;
+    height: 2px;
+    width: 350px;
+    background-color: #E12C2C;
+}
+
+h3 {
+    text-align: center;
+}
+
+#main {
+    background-color: white;
+    margin-bottom: 0px;
+}
+
+#scp {
+    font-family: 'Lato', sans-serif;
+}
+
+#loginForm {
+    width: 350px;
+    margin: auto;
+}
+
+#emergencyList, #emergencyForm, #addvolForm, #editvolForm {
+    width: 700px;
+    margin: auto;
+}
+
+#searchForm {
+    width: 1000px;
+    margin: auto;
+}
+
+#addvolForm p, #editvolForm p, #emergencyForm p {
+    color: red;
+    font-size: small;
+}
+
+#emergencyList label {
+    height: 50px;
+    width: 350px;
+    padding-top: 12px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+#searchByEmergency label {
+    height: 50px;
+    padding-top: 12px;
+}

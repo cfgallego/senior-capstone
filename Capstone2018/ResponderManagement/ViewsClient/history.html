@@ -1,0 +1,35 @@
+﻿<h3>History</h3>
+
+<div ng-if="self.loadDb === true" style="text-align:center;">
+    <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+    <p style="font-weight:bold;">Fetching data...</p>
+</div>
+
+<div ng-if="self.loadDb === false">
+    <table class="table">
+        <thead>
+            <tr>
+                <!--<th>ID</th>-->
+                <th style="width: 150px;">Date</th>
+                <th style="width: 150px;">Time</th>
+                <th style="width: 200px;">Emergency</th>
+                <th style="width: 500px;">Address</th>
+                <th style="width: 500px;">Comments</th>
+                <th style="width: 150px;">Sent By</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="h in self.history">
+                <!--<td>{{h.HisoryID}}</td>-->
+                <td>{{h.EmergencyDate}}</td>
+                <td>{{h.EmergencyTime}}</td>
+                <td>Emergency list</td>
+                <td>{{h.StreetAddress}}, {{h.City}}, {{h.State}} {{h.Zip}}</td>
+                <td>{{h.Comment}}</td>
+                <td>Director</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--<img src="Content/images/loadingtruck1.gif" />-->
