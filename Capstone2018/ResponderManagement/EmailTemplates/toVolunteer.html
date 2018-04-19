@@ -1,5 +1,4 @@
-﻿<!--<%@ Page Language="C#" %>-->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,12 +7,10 @@
     <style>
         .container {
             width: 800px;
-            /*background-color: red;*/
         }
 
         .emergencyDetail {
             width: 600px;
-            /* background-color: white; */
             margin: auto;
         }
 
@@ -26,45 +23,40 @@
 
 <body>
     <div class="container">
-        <h2><img src="https://png.icons8.com/color/40/000000/ambulance.png"> Responder Management System</h2>
+        <div class="row" style="text-align:center;">
+            <img src="https://png.icons8.com/color/40/000000/ambulance.png">
+            <h3>Responder Management System</h3>
+        </div>
 
         <p>Volunteer, </p>
         <p>An emergency is occuring. The details are listed below.</p>
         <br>
-
         <table class="emergencyDetail">
             <tr>
-                <th>Emergency:</th>
-                <td>Emergency list</td>
+                <th>Emergency</th>
+                <td>: Emergency list</td>
             </tr>
-
             <tr>
-                <th>When:</th>
-                <td>{date}, {time}</td>
-                <!--<td>
-                    <%
-                    Response.Write(Request.Form["emergencyDate"]);
-                    response.write(" " & request.form("emergencyTime"));
-                    %>
-                </td>-->
+                <th>Date</th>
+                <td>: {date}</td>
             </tr>
-
             <tr>
-                <th>Where:</th>
-                <td>{streetAddress}, {city}, {state}, {zipCode}</td>
+                <th>Time</th>
+                <td>: {time}</td>
             </tr>
-
             <tr>
-                <th>Additional Comments:</th>
-                <td>{comments}</td>
+                <th>Location</th>
+                <td>: {streetAddress}, {city}, {state}, {zipCode}</td>
             </tr>
-
             <tr>
-                <th>Contact:</th>
-                <td>Director Contact details</td>
+                <th>Additional Comments</th>
+                <td>: {comments}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>: Director Contact details</td>
             </tr>
         </table>
-
         <br>
         <p>Thank you!</p>
         <p>RMS Team</p>

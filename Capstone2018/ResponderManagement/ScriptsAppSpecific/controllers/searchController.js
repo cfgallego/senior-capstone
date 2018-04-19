@@ -38,6 +38,7 @@
                 if (isConfirm) {
                     // to remove volunteer from table without refreshing - di npud mugana
                     //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
+                    self.volunteers.splice(id, 1);
                     //console.log(self.volunteers);
 
                     appServices.deleteVolunteer(id);
@@ -46,7 +47,7 @@
                     console.log("confirm delete");
 
                     // redirect back to search page
-                    $location.path("/search/");
+                    //$location.path("/search/");
                     //$route.reload();
                 } else {
                     swal("Cancelled", "Volunteer was not deleted", "error");

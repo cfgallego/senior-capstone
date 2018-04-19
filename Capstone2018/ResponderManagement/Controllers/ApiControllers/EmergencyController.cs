@@ -26,7 +26,7 @@ namespace ResponderManagement.Controllers.ApiControllers
         // TEST send email
         [HttpPost]
         [Route("sendEmails")]
-        public IHttpActionResult SendEmails()
+        public IHttpActionResult SendEmails(History h)
         {
             //var fromAddress = new MailAddress("capstonetest2018@gmail.com", "Responder Management System");
             //const string fromPassword = "Te4!664256st";
@@ -35,21 +35,25 @@ namespace ResponderManagement.Controllers.ApiControllers
             const string fromPassword = "atcharapapaya";
             const string subject = "EMERGENCY Volunteer Needed";
 
-            //string d = String.Format("{0}", Request.Form["emergencyDate"]);
-            //var d2 = HttpRequest.Form["emergencyDate"];
+            //get list of email adresses
+            List<Volunteer> vols = getVolunteersByEmergency("Earthquake");
+            MailAddressCollection mails = new MailAddressCollection();
+
+            foreach (var v in vols)
+            {
+                mails.Add(v.Email);
+            }
 
             //string body = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("EmailTemplates/toVolunteers.html"));  // di mugana
             string body = File.ReadAllText(Path.Combine(HttpRuntime.AppDomainAppPath, "EmailTemplates/toVolunteer.html"));
 
-            //body = body.Replace("{date}", emergencyDate);
-
-            //body = body.Replace("{date}", "Date");
-            //body = body.Replace("{time}", "Time");
-            //body = body.Replace("{streetAddress}", "Street Address");
-            //body = body.Replace("{city}", "City");
-            //body = body.Replace("{state}", "State");
-            //body = body.Replace("{zipCode}", "Zip Code");
-            //body = body.Replace("{comments}", "Comments");
+            body = body.Replace("{date}", h.EmergencyDate);
+            body = body.Replace("{time}", h.EmergencyTime);
+            body = body.Replace("{streetAddress}", h.StreetAddress);
+            body = body.Replace("{city}", h.City);
+            body = body.Replace("{state}", h.State);
+            body = body.Replace("{zipCode}", h.Zip);
+            body = body.Replace("{comments}", h.Comment);
 
             var smtp = new SmtpClient
             {
@@ -68,10 +72,41 @@ namespace ResponderManagement.Controllers.ApiControllers
                 Body = body
             })
             {
+                foreach (var adress in mails)
+                {
+                    message.Bcc.Add(adress);
+                }
+
                 smtp.Send(message);
             }
 
             return Ok();
         }
+
+        private List<Volunteer> getVolunteersByEmergency(string emergency)
+        {
+            //get all skills related to given emergency
+            List<Skill> skills = DataContext.Emergencies.First(x => x.Name == emergency).Skills.ToList();
+            //list of all volunteers to search through
+            List<Volunteer> allVols = DataContext.Volunteers.ToList();
+            //list to be output
+            List<Volunteer> usingVols = new List<Volunteer>();
+
+            foreach (Skill s in skills)
+            {
+                foreach (Volunteer v in allVols)
+                {
+                    //adds volunteer to output list, then removes from all for faster searching through later loops andprevent duplicates
+                    if (v.Skills.Contains(s) && !usingVols.Contains(v))
+                    {
+                        usingVols.Add(v);
+                        //allVols.Remove(v);
+                    }
+                }
+                //if (allVols.Count == 0)
+                //    break;
+            }//end foreach
+            return usingVols;
+        }//end method
     }
 }

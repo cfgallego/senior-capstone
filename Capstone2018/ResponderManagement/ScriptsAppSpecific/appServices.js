@@ -29,8 +29,8 @@
             getEmergencies: function () {
                 return $http.get("api/ResponderManagement/emergencies/getEmergencies");
             },
-            sendEmail: function () {
-                return $http.post("api/ResponderManagement/emergencies/sendEmails");
+            sendEmail: function (msg) {
+                return $http.post("api/ResponderManagement/emergencies/sendEmails", msg);
             },
 
             // SkillController functions

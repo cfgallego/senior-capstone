@@ -34,7 +34,7 @@
             console.log(response);
         });
 
-        appServices.sendEmail().then(function () {
+        appServices.sendEmail(newMsg).then(function () {
             swal("SUCCESS", "Notification sent!", "success");
             $location.path("/home/");
         });
