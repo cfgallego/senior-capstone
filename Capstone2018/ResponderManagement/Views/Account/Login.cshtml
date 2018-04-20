@@ -1,0 +1,83 @@
+﻿@using ResponderManagement.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Responder Management System";
+}
+<html ng-app="app">
+<head>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width" />
+    <title>SCP 2018</title>
+    <link rel="icon" href="Content/images/truck2.png" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    @Styles.Render("~/content/css")
+    @Scripts.Render("~/bundles/all")
+</head>
+<body ng-controller="initialController as self" class="body-content">
+    <div id="wrapper">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-left" id="logo"><img src="Content/images/truck2.png"></a>
+                <a id="scp" class="navbar-brand" href="/" style="">Responder Management System</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="navbar-nav ml-auto"></ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--end nav bar-->
+        <div class="container" style="background-color: white; padding-top: 20px;">
+            <div ng-view id="main"></div> @* html pages will be displayed here *@
+        </div>
+
+        <script src="~/ScriptsAppSpecific/appServices.js"></script>
+
+    </div>
+</body>
+</html>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+<footer class="container" style="background-color: white;">
+    Copyright &copy; Spring 2018<br>
+    <hr>
+    Team 4 Senior Capstone Project<br>
+    Augusta University<br>
+</footer>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
