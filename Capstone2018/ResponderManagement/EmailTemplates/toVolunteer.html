@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TEST EMAIL</title>
+
+    <style>
+        .container {
+            width: 800px;
+        }
+
+        .emergencyDetail {
+            width: 600px;
+            margin: auto;
+        }
+
+        th {
+            text-align: left;
+            width: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="text-align:center;">
+            <img src="https://png.icons8.com/color/40/000000/ambulance.png">
+            <h3>Responder Management System</h3>
+        </div>
+
+        <p>Volunteer, </p>
+        <p>An emergency is occuring. The details are listed below.</p>
+        <br>
+        <table class="emergencyDetail">
+            <tr>
+                <th>Emergency</th>
+                <td>: Emergency list</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>: {date}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>: {time}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>: {streetAddress}, {city}, {state}, {zipCode}</td>
+            </tr>
+            <tr>
+                <th>Additional Comments</th>
+                <td>: {comments}</td>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <td>: Director Contact details</td>
+            </tr>
+        </table>
+        <br>
+        <p>Thank you!</p>
+        <p>RMS Team</p>
+    </div>
+</body>
+</html>
