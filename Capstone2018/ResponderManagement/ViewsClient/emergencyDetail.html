@@ -4,7 +4,8 @@
     <form id="emergencyForm" name="eform" ng-submit="eform.$valid" novalidate>
         <div class="form-group">
             <label for="emergencies">Emergency</label>
-            <input type="text" class="form-control" id="emergencies" value="emergency" readonly>
+            <!--<input type="text" class="form-control" id="emergencies" value="emergency" readonly>-->
+            <input type="text" class="form-control" id="emergencies" ng-model="Fact.getEmergencies" readonly>
         </div>
 
         <div class="form-row">

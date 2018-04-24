@@ -47,3 +47,21 @@
             }
         }
     }]);
+
+
+// to pass data from one controller to another
+angular.module("app").factory("Fact", function () {
+    var data = {
+        myEmergencies: []
+    }
+
+    return {
+        getEmergencies: function () {
+            return data.myEmergencies;
+        },
+
+        setEmergencies: function (e) {
+            data.myEmergencies = e;
+        }
+    }
+})

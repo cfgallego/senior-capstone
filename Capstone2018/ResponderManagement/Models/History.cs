@@ -10,8 +10,6 @@ namespace ResponderManagement.Models
     {
         [Key]
         public int HistoryID { get; set; }
-        //public string EmailDate { get; set; }
-        //public string EmailTime { get; set; }
         public string EmergencyDate { get; set; }
         public string EmergencyTime { get; set; }
         public string StreetAddress { get; set; }
@@ -19,6 +17,6 @@ namespace ResponderManagement.Models
         public string State { get; set; }
         public string Zip { get; set; }
         public string Comment { get; set; }
-        //public string Emergency { get; set; }
+        public string Emergency { get; set; }
     }
 }

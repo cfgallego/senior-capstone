@@ -113,6 +113,10 @@
                     self.emergencyVolunteers = response.data;
                     console.log(self.emergencyVolunteers);
 
+                    //self.volunteerTable.push(self.emergencyVolunteers.filter(function (item) {
+                    //    return item.toString();
+                    //}));
+
                     self.volunteerTable = self.emergencyVolunteers.filter(function (item) {
                         return item.toString();
                     });

@@ -36,7 +36,7 @@ namespace ResponderManagement.Controllers.ApiControllers
             const string subject = "EMERGENCY Volunteer Needed";
 
             //get list of email adresses
-            List<Volunteer> vols = getVolunteersByEmergency("Earthquake");
+            List<Volunteer> vols = getVolunteersByEmergency(h.Emergency);
             MailAddressCollection mails = new MailAddressCollection();
 
             foreach (var v in vols)

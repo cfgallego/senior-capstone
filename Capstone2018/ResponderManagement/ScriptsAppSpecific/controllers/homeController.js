@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("homeController", ['$scope', 'AppServices', '$location', function ($scope, appServices, $location) {
+﻿angular.module("app").controller("homeController", ['$scope', 'AppServices', '$location', 'Fact', function ($scope, appServices, $location, Fact) {
     var self = this;
     console.log("TEST - home");
 
@@ -31,6 +31,9 @@
     ];
     console.log(self.emergencies);
 
+    // passing data?
+    self.fact = Fact;
+
     self.proceed = function () {
         self.eCount = 0;
         self.selectedEmergencies = [];
@@ -49,6 +52,9 @@
 
         if (self.eCount === 0)
             return;
+
+        // passing data?
+        Fact.setEmergencies(self.selectedEmergencies);
 
         $location.path("/emergencyDetail/");
     };

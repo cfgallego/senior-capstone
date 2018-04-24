@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("emergencyDetailController", ['$scope', 'AppServices', '$filter', '$routeParams', '$location', function ($scope, appServices, $filter, $routeParams, $location) {
+﻿angular.module("app").controller("emergencyDetailController", ['$scope', 'AppServices', '$filter', '$routeParams', '$location', 'Fact', function ($scope, appServices, $filter, $routeParams, $location, Fact) {
     var self = this;
     console.log("TEST - emergencyDetail");
 
@@ -10,6 +10,10 @@
     console.log(self.currentTime);
 
     self.message = {};
+
+    // getting data from home?
+    self.fact = Fact;
+    console.log(self.fact);
 
     self.send = function (v) {
         console.log(v, "TEST - send");
@@ -23,8 +27,9 @@
             City: self.message.city,
             State: self.message.state,
             Zip: self.message.zip,
-            Comment: self.message.comment
+            Comment: self.message.comment,
             // Emergency ??
+            Emergency: "Hurricane"
         };
         //console.log(newMsg);
 
@@ -48,6 +53,6 @@
     //    appServices.sendTestEmail();
     //}
 
-    self.param1 = $routeParams.param1;
-    console.log(self.param1);
+    //self.param1 = $routeParams.param1;
+    //console.log(self.param1);
 }]);

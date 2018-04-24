@@ -31,6 +31,7 @@ namespace ResponderManagement.Controllers.ApiControllers
                 hstry.Zip = h.Zip;
                 hstry.Comment = h.Comment;
                 // emergency??
+                hstry.Emergency = h.Emergency;
             }
 
             DataContext.Histories.Add(hstry);
