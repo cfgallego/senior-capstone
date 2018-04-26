@@ -47,6 +47,7 @@ namespace ResponderManagement.Controllers.ApiControllers
             //string body = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("EmailTemplates/toVolunteers.html"));  // di mugana
             string body = File.ReadAllText(Path.Combine(HttpRuntime.AppDomainAppPath, "EmailTemplates/toVolunteer.html"));
 
+            body = body.Replace("{emergency list}", h.Emergency);
             body = body.Replace("{date}", h.EmergencyDate);
             body = body.Replace("{time}", h.EmergencyTime);
             body = body.Replace("{streetAddress}", h.StreetAddress);

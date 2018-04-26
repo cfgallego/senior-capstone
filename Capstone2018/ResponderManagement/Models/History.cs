@@ -17,6 +17,6 @@ namespace ResponderManagement.Models
         public string State { get; set; }
         public string Zip { get; set; }
         public string Comment { get; set; }
-        public string Emergency { get; set; }
+        public string Emergency { get; set; } // Emergency list
     }
 }

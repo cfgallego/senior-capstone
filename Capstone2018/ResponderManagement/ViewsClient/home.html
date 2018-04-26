@@ -1,6 +1,6 @@
 ﻿<h3>Home</h3>
 
-<fieldset id="emergencyList">
+<fieldset id="emergencyList" ng-hide="self.emergencyDetail == true">
     <h4>Select Emergency</h4>
 
     <div ng-if="self.eCount === 0">
@@ -24,10 +24,121 @@
     </div>
 
     <div>
-        <a role="button" href="#" class="btn btn-outline-danger"  ng-click="self.proceed()" ng-disabled="self.eCount === 0">Next</a>
+        <a role="button" href="#" class="btn btn-outline-danger" ng-click="self.proceed()" ng-disabled="self.eCount === 0">Next</a>
     </div>
 </fieldset>
 
+
+<div ng-if="self.emergencyDetail == true">
+    <form id="emergencyForm" name="eform" ng-submit="eform.$valid" novalidate>
+        <div class="form-group">
+            <label for="emergencies">Emergency</label>
+            <!--<input type="text" class="form-control" id="emergencies" value="emergency" readonly>-->
+            <input type="text" class="form-control" id="emergencies" ng-model="self.eList" readonly>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="emergencyDate">Date</label>
+                <input type="text" class="form-control" id="emergencyDate" ng-model="self.currentDate" readonly>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="emergencyTime">Time</label>
+                <input type="text" class="form-control" id="emergencyTime" ng-model="self.currentTime" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emergencyAddress">Street Address</label>
+            <input type="text" name="streetAddress" class="form-control" id="emergencyAddress" ng-model="self.message.streetAddress" required>
+            <div ng-show="eform.$submitted">
+                <p ng-show="eform.streetAddress.$error.required">Street Address is required</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="emergencyCity">City</label>
+                <input type="text" name="city" class="form-control" id="emergencyCity" ng-model="self.message.city" required>
+                <div ng-show="eform.$submitted">
+                    <p ng-show="eform.city.$error.required">City is required</p>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="emergencyState">State</label>
+                <select id="emergencyState" name="state" class="form-control" ng-model="self.message.state" required>
+                    <option value="">-Select-</option>
+                    <option value="AL">AL - Alabama</option>
+                    <option value="AK">AK - Alaska</option>
+                    <option value="AZ">AZ - Arizona</option>
+                    <option value="AR">AR - Arkansas</option>
+                    <option value="CA">CA - California</option>
+                    <option value="CO">CO - Colorado</option>
+                    <option value="CT">CT - Connecticut</option>
+                    <option value="DE">DE - Delaware</option>
+                    <option value="FL">FL - Florida</option>
+                    <option value="GA">GA - Georgia</option>
+                    <option value="HI">HI - Hawaii</option>
+                    <option value="ID">ID - Idaho</option>
+                    <option value="IL">IL - Illinois</option>
+                    <option value="IN">IN - Indianna</option>
+                    <option value="IA">IA - Iowa</option>
+                    <option value="KS">KS - Kansas</option>
+                    <option value="KY">KY - Kentucky</option>
+                    <option value="LA">LA - Louisiana</option>
+                    <option value="ME">ME - Maine</option>
+                    <option value="MD">MD - Maryland</option>
+                    <option value="MA">MA - Massachusetts</option>
+                    <option value="MI">MI - Michigan</option>
+                    <option value="MN">MN - Minnesota</option>
+                    <option value="MS">MS - Mississippi</option>
+                    <option value="MO">MO - Missouri</option>
+                    <option value="MT">MT - Montana</option>
+                    <option value="NE">NE - Nebraska</option>
+                    <option value="NV">NV - Nevada</option>
+                    <option value="NH">NH - New Hampshire</option>
+                    <option value="NJ">NJ - New Jersey</option>
+                    <option value="NM">NM - New Mexico</option>
+                    <option value="NY">NY - New York</option>
+                    <option value="NC">NC - North Carolina</option>
+                    <option value="ND">ND - North Dakota</option>
+                    <option value="OH">OH - Ohio</option>
+                    <option value="OK">OK - Oklahoma</option>
+                    <option value="OR">OR - Oregon</option>
+                    <option value="PA">PA - Pennsylvania</option>
+                    <option value="RI">RI - Rhode Island</option>
+                    <option value="SC">SC - South Carolina</option>
+                    <option value="SD">SD - South Dakota</option>
+                    <option value="TN">TN - Tennessee</option>
+                    <option value="TX">TX - Texas</option>
+                    <option value="UT">UT - Utah</option>
+                    <option value="VT">VT - Vermont</option>
+                    <option value="VA">VA - Virginia</option>
+                    <option value="WA">WA - Washington</option>
+                    <option value="WV">WV- West Virginia</option>
+                    <option value="WI">WI - Wisconsin</option>
+                    <option value="WY">WY - Wyoming</option>
+                </select>
+                <div ng-show="eform.$submitted">
+                    <p ng-show="eform.state.$error.required">Please select State</p>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="emergencyZip">Zip Code</label>
+                <input type="text" name="zip" class="form-control" id="emergencyZip" ng-model="self.message.zip" ng-pattern="self.zipCodePattern" required>
+                <div ng-show="eform.$submitted">
+                    <p ng-show="eform.zip.$error.required">Zip Code is required</p>
+                    <p ng-show="eform.zip.$error.pattern">Invalid Zip Code</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emergencyComments">Addtional Comments</label>
+            <textarea class="form-control" id="emergencyComments" rows="4" ng-model="self.message.comment" />
+        </div>
+
+        <a href="/home" role="button" class="btn btn-outline-danger">Cancel</a>
+        <button type="submit" class="btn btn-outline-danger" ng-click="self.send(eform.$valid)">Send</button>
+        <!--<button type="submit" class="btn btn-outline-danger" ng-click="self.sendTestEmail()">TEST EMAIL</button>-->
+    </form>
+</div>
 
 
 
