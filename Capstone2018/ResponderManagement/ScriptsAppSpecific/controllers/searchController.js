@@ -3,7 +3,6 @@
     console.log("TEST - search");
     self.loadDb = true;
 
-    //self.test = true;
     self.volunteers = [];
 
     // load volunteers from server
@@ -93,11 +92,13 @@
     ];
     console.log(self.emergencies);
 
+
+    //self.loadEgroup = true;
     self.searchEmergency = function () {
         self.eCount = 0;
         self.selectedEmergencies = [];
         self.emergencyVolunteers = [];
-        //self.loadDb = true;
+        //self.loadEgroup= true;
 
         for (var i = 0; i < self.emergencies.length; i++) {
             if (self.emergencies[i].isChecked) {
@@ -122,8 +123,8 @@
                     });
                 });
             }
-            //self.loadDb = false;
         }
+        self.loadEgroup = false;
     }
 
 
@@ -144,8 +145,10 @@
     self.buttonClick = function () {
         if (self.selectSearch == 'name')
             self.searchName();
-        else
+        else {
             self.searchEmergency();
+            self.loadEgroup = true;
+        }
 
         self.loadTable = true;
         //self.loadDb = false;

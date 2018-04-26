@@ -60,7 +60,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="v in self.volunteerTable">
+            <tr ng-repeat="v in self.volunteerTable | orderBy: '+FirstName'">
                 <!--<td>{{v.VolunteerID}}</td>-->
                 <td>{{v.FirstName}} {{v.LastName}}</td>
                 <td>{{v.Email}}</td>
@@ -87,5 +87,18 @@
 
     <div ng-if="self.selectSearch=='emergency'">
         <div ng-if="self.eCount === 0">No emergency selected.</div>
+
+        <div ng-if="self.loadEgroup === true" ng-hide="((self.emergencyVolunteers).length > 0) || (self.eCount === 0)" style="text-align:center;">
+            <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+            <p style="font-weight:bold;">Fetching data...</p>
+        </div>
     </div>
+
+
+    <!--<div ng-if="self.selectSearch=='emergency'">
+        <div ng-if="self.loadEgroup === true" ng-hide="((self.emergencyVolunteers).length > 0) || (self.eCount === 0)" style="text-align:center;">
+            <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
+            <p style="font-weight:bold;">Fetching data...</p>
+        </div>
+    </div>-->
 </div>

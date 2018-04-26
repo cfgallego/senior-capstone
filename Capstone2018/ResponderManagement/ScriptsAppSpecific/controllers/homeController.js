@@ -1,4 +1,4 @@
-﻿angular.module("app").controller("homeController", ['$scope', 'AppServices', '$location', '$filter', 'Fact', function ($scope, appServices, $location, $filter, Fact) {
+﻿angular.module("app").controller("homeController", ['$scope', 'AppServices', '$location', '$filter', function ($scope, appServices, $location, $filter) {
     var self = this;
     console.log("TEST - home");
 
@@ -33,9 +33,7 @@
     ];
     console.log(self.emergencies);
 
-    // passing data?
-    //self.fact = Fact;
-
+    // if valid, shows the emergency detail form
     self.proceed = function () {
         self.eCount = 0;
         self.selectedEmergencies = [];
@@ -55,10 +53,8 @@
         if (self.eCount === 0)
             return;
 
-        // passing data?
-        //Fact.setEmergencies(self.selectedEmergencies);
-
         //$location.path("/emergencyDetail/");
+
         self.emergencyDetail = true;
 
         self.currentDate = $filter('date')(new Date(), "MM/dd/yyyy");
@@ -68,42 +64,38 @@
         self.currentTime = $filter('date')(new Date(), "hh:mm a");
         console.log(self.currentTime);
 
-        //console.log(self.selectedEmergencies[0].Name);
+        // make the list of selected emergency names
         self.emergencyList = [];
         for (var i = 0; i < self.selectedEmergencies.length; i++) {
             self.emergencyList.push(self.selectedEmergencies[i].Name);
-            //console.log(self.selectedEmergencies[i].Name);
         }
         console.log(self.emergencyList);
         self.eList = self.emergencyList.toString();
         console.log(self.eList);
 
-
-
+        // send the message
         self.send = function (v) {
             console.log(v, "TEST - send");
             if (!v)
                 return;
 
             var newMsg = {
-                EmergencyDate: self.currentDate, //self.message.date,
+                EmergencyDate: self.currentDate,
                 EmergencyTime: self.currentTime,
                 StreetAddress: self.message.streetAddress,
                 City: self.message.city,
                 State: self.message.state,
                 Zip: self.message.zip,
                 Comment: self.message.comment,
-                // Emergency ??
-                Emergency: self.eList
+                Emergency: self.eList // emergency list
             };
-            //console.log(newMsg);
 
+            // saves message to the database
             appServices.newMessage(newMsg).then(function (response) {
-                //self.message = {};
-                //swal("SUCCESS", "Volunteer added!", "success");
                 console.log(response);
             });
 
+            // sends email to volunteers
             appServices.sendEmail(newMsg).then(function () {
                 swal("SUCCESS", "Notification sent!", "success");
                 $location.path("/home/");
