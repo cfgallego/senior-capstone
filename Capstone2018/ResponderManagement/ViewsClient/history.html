@@ -16,12 +16,12 @@
                 <!--<th style="width: 500px;">Address</th>
                 <th style="width: 500px;">Comments</th>
                 <th style="width: 150px;">Sent By</th>-->
-                 <th style="width: 575px;">Address</th>
+                <th style="width: 575px;">Address</th>
                 <th style="width: 575px;">Comments</th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="h in self.history">
+            <tr ng-repeat="h in self.history | startFrom: self.currentPage * self.pageSize | limitTo: self.pageSize">
                 <!--<td>{{h.HisoryID}}</td>-->
                 <td>{{h.EmergencyDate}}</td>
                 <td>{{h.EmergencyTime}}</td>
@@ -32,6 +32,17 @@
             </tr>
         </tbody>
     </table>
+
+    <br />
+    <div style="text-align:center;">
+        <button class="btn btn-outline-danger" ng-disabled="self.currentPage == 0" ng-click="self.currentPage = self.currentPage-1">
+            <
+        </button>
+        {{self.currentPage+1}}/{{self.numberOfPages()}}
+        <button class="btn btn-outline-danger" ng-disabled="self.currentPage >= self.history.length / self.pageSize-1" ng-click="self.currentPage = self.currentPage+1">
+            >
+        </button>
+    </div>
 </div>
 
-<!--<img src="Content/images/loadingtruck1.gif" />-->
+
