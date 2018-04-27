@@ -1,7 +1,8 @@
-﻿<h3>Home</h3>
+﻿<!--<h3>Home</h3>-->
 
 <fieldset id="emergencyList" ng-hide="self.emergencyDetail == true">
-    <h4>Select Emergency</h4>
+    <h3 style="text-align:center;">Select Emergency</h3>
+    <br />
 
     <div ng-if="self.eCount === 0">
         <p style="text-align:center; color:red; font-size:small;">Please select emergency/s</p>
@@ -29,11 +30,14 @@
 </fieldset>
 
 
+<!-- emergency detail form -->
 <div ng-if="self.emergencyDetail == true">
+    <h3 style="text-align:center;">Emergency Details</h3>
+    <br />
+
     <form id="emergencyForm" name="eform" ng-submit="eform.$valid" novalidate>
         <div class="form-group">
             <label for="emergencies">Emergency</label>
-            <!--<input type="text" class="form-control" id="emergencies" value="emergency" readonly>-->
             <input type="text" class="form-control" id="emergencies" ng-model="self.eList" readonly>
         </div>
         <div class="form-row">
@@ -136,7 +140,6 @@
 
         <a href="/home" role="button" class="btn btn-outline-danger">Cancel</a>
         <button type="submit" class="btn btn-outline-danger" ng-click="self.send(eform.$valid)">Send</button>
-        <!--<button type="submit" class="btn btn-outline-danger" ng-click="self.sendTestEmail()">TEST EMAIL</button>-->
     </form>
 </div>
 

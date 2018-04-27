@@ -2,7 +2,5 @@
     var self = this;
     console.log("initial controller");
 
-    $rootScope.id = 0;
-
-    // dire ang logout ibutang
+    //$rootScope.id = 0;
 }]);

@@ -263,14 +263,11 @@
     <Content Include="ScriptsAppSpecific\appServices.js" />
     <Content Include="ScriptsAppSpecific\controllers\addVolController.js" />
     <Content Include="ScriptsAppSpecific\controllers\editVolController.js" />
-    <Content Include="ScriptsAppSpecific\controllers\emergencyDetailController.js" />
     <Content Include="ScriptsAppSpecific\controllers\historyController.js" />
     <Content Include="ScriptsAppSpecific\controllers\homeController.js" />
     <Content Include="ScriptsAppSpecific\controllers\initialController.js" />
     <Content Include="ScriptsAppSpecific\controllers\loginController.js" />
     <Content Include="ScriptsAppSpecific\controllers\searchController.js" />
-    <Content Include="ScriptsAppSpecific\controllers\searchResultController.js" />
-    <Content Include="ScriptsAppSpecific\controllers\viewVolunteerController.js" />
     <Content Include="ScriptsAppSpecific\main.js" />
     <Content Include="Scripts\angular\angular-animate.js" />
     <Content Include="Scripts\angular\angular-animate.min.js" />
@@ -377,13 +374,10 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="ViewsClient\addVolunteer.html" />
     <Content Include="ViewsClient\editVolunteer.html" />
-    <Content Include="ViewsClient\emergencyDetail.html" />
     <Content Include="ViewsClient\history.html" />
     <Content Include="ViewsClient\home.html" />
     <Content Include="ViewsClient\login.html" />
     <Content Include="ViewsClient\search.html" />
-    <Content Include="ViewsClient\searchResult.html" />
-    <Content Include="ViewsClient\viewVolunteer.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

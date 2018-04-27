@@ -1,7 +1,5 @@
 ﻿angular.module("app").controller("editVolController", ['$scope', 'AppServices', '$routeParams', '$rootScope', '$location', function ($scope, appServices, $routeParams, $rootScope, $location) {
     var self = this;
-    console.log("TEST - edit volunteer");
-    //self.param1 = null;
     self.vol = null;
     self.loadDb = true;
 
@@ -14,33 +12,12 @@
         { Name: "Redcross Certification", SkillID: 6, isChecked: false }
     ];
 
-    //self.trueSkill = {};
-    //self.finalSkills = [];
-
-    //self.loadSkills = function () {
-    //    appServices.getSkills().then(function (response) {
-    //        console.log(response.data);
-
-    //        self.skills = response.data;
-    //        console.log(self.skills);
-
-    //        self.test = false;
-    //    });
-    //};
-
-    //self.loadSkills();
-
-    //var id = $rootScope.id;
-    //console.log($rootScope.id);
-
-    // prefills the form
+    // prefills the form - gets data from selected vol
     self.param1 = $routeParams.param1;
-    console.log(self.param1);
 
     self.fillForm = function () {
         appServices.getVolunteerByID(self.param1).then(function (response) {
             self.vol = response.data;
-            console.log(self.vol.FirstName);
             self.loadDb = false;
         }).catch(function (response) {
             swal("ERROR", "message", "error");
@@ -53,7 +30,6 @@
 
     // save volunteer information edits
     self.update = function (v) {
-        console.log("TEST - update");
         if (!v)
             return;
 
@@ -68,10 +44,6 @@
                 self.sCount++;
             }
         }
-        console.log(self.selectedSkills);
-
-        //if (v && (self.sCount === 0))
-        //    return;
 
         var req = {
             VolunteerID: self.vol.VolunteerID,
@@ -86,12 +58,9 @@
             Skills: self.selectedSkills
         };
 
-        console.log(req);
-
         appServices.updateVolunteer(req).then(function (response) {
             swal("SUCCESS", "Volunteer information updated!", "success");
-            console.log(response);
-            // redirect back to prev page?
+            // redirect back to prev page
             $location.path("/search/");
         });
     };
@@ -101,8 +70,4 @@
 
     // zipcode pattern #####
     self.zipCodePattern = /^\d{5}$/;
-
-    //self.back = function () {
-    //    console.log("TEST - cancel update")
-    //};
 }]);

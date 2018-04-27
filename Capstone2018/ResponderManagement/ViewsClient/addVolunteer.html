@@ -4,10 +4,10 @@
     <form id="addvolForm" name="form" ng-submit="form.$valid" novalidate>
         <h4>Personal Information</h4>
         <div class="form-row">
-            <div class="form-group col-md-6"> <!-- ng-class="{'has-error': form.$submitted}" -->
+            <div class="form-group col-md-6">
                 <label>First Name</label>
                 <input type="text" name="firstName" class="form-control" placeholder="First Name" ng-model="self.volunteer.firstName" required>
-                <div ng-show="form.$submitted"> <!--|| form.firstName.$touched-->
+                <div ng-show="form.$submitted">
                     <p ng-show="form.firstName.$error.required">First Name is required</p>
                 </div>
             </div>
@@ -124,34 +124,6 @@
             </div>
         </div>
 
-        <!--<h4>Certified Skills</h4>
-        <div class="form-group">
-            <div class="form-check">
-                <input type="checkbox" name="skills" value="fireSafety" label="Fire Safety">
-                <label>Fire Safety </label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills" value="emsTraining">
-                <label> EMS Training </label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills" value="lifeguardTraining">
-                <label>Lifeguard Training</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills" value="firstaidTraining">
-                <label>First-aid Training</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills" value="leadershipTraining">
-                <label>Leadership Training</label>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" name="skills" value="redcross">
-                <label>Redcross Certification</label>
-            </div>
-        </div>-->
-
         <fieldset id="skillsChkbx" name="skills">
             <h4>Certified Skills</h4>
 
@@ -171,22 +143,8 @@
                 <label class="btn btn-light" style="width:230px;" ng-model="self.skills[4].isChecked" uib-btn-checkbox>{{self.skills[4].Name}}</label>
                 <label class="btn btn-light" style="width:230px;" ng-model="self.skills[5].isChecked" uib-btn-checkbox>{{self.skills[5].Name}}</label>
             </div>
-
-            <!--<ul ng-repeat="s in self.skills" style="list-style-type: none;">
-                <li>
-                    <!- -<input type="checkbox" name="groups" value="{{s.Name}}" ng-model="self.volunteer.Skills">- ->
-                    <input type="checkbox" name="groups" checklist-value="{{s.Name}}" checklisk-model="self.volunteer.Skills">
-                    <label>{{s.Name}}</label>
-                </li>
-            </ul>-->
-            <!--<div ng-show="form.$submitted">
-                <p ng-show="form.skills.$error.required">Please select Skill/s</p>
-            </div>-->
         </fieldset>
-        <!--<h4>Certified Skills</h4>
-        <label ng-repeat="s in self.skills">
-            <input type="checkbox" checklist-model="self.volunteer.Skills"  checklist-value="{{s.Name}}" /> {{s.Name}} <br />
-        </label>-->
+
         <button type="submit" class="btn btn-outline-danger" ng-click="self.submitForm(form.$valid)">Add</button>
     </form>
 </div>

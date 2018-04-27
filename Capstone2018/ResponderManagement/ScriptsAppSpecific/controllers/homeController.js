@@ -1,25 +1,6 @@
 ﻿angular.module("app").controller("homeController", ['$scope', 'AppServices', '$location', '$filter', function ($scope, appServices, $location, $filter) {
     var self = this;
-    console.log("TEST - home");
-
     self.emergencyDetail = false;
-
-    //self.test = true;
-    //self.emergencies = [];
-
-    //self.loadEmergencies = function () {
-    //    appServices.getEmergencies().then(function (response) {
-    //        console.log(response.data);
-
-    //        self.emergencies = response.data;
-    //        console.log(self.emergencies);
-
-    //        self.test = false;
-    //    });
-    //};
-
-    //self.loadEmergencies();
-
 
     self.emergencies = [
         { Name: "Fire", EmergencyID: 1, isChecked: false },
@@ -53,25 +34,19 @@
         if (self.eCount === 0)
             return;
 
-        //$location.path("/emergencyDetail/");
-
         self.emergencyDetail = true;
 
         self.currentDate = $filter('date')(new Date(), "MM/dd/yyyy");
         //self.currentDate = $filter('date')(new Date(), "EEEE, MM/dd/yyyy");
-        console.log(self.currentDate);
 
         self.currentTime = $filter('date')(new Date(), "hh:mm a");
-        console.log(self.currentTime);
 
         // make the list of selected emergency names
         self.emergencyList = [];
         for (var i = 0; i < self.selectedEmergencies.length; i++) {
             self.emergencyList.push(self.selectedEmergencies[i].Name);
         }
-        console.log(self.emergencyList);
         self.eList = self.emergencyList.toString();
-        console.log(self.eList);
 
         // send the message
         self.send = function (v) {

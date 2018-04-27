@@ -23,17 +23,16 @@ namespace ResponderManagement.Controllers.ApiControllers
             return Ok(emregencies);
         }
 
-        // TEST send email
+        // send email
         [HttpPost]
         [Route("sendEmails")]
         public IHttpActionResult SendEmails(History h)
         {
-            //var fromAddress = new MailAddress("capstonetest2018@gmail.com", "Responder Management System");
-            //const string fromPassword = "Te4!664256st";
             var fromAddress = new MailAddress("rms.capstone2018@gmail.com", "Responder Management System");
             var toAddress = new MailAddress("mracho@augusta.edu", "Volunteer Group");
             const string fromPassword = "atcharapapaya";
-            const string subject = "EMERGENCY Volunteer Needed";
+            //const string subject = "EMERGENCY Volunteer Needed";
+            string subject = h.Emergency.ToUpper() + " Volunteer Needed";
 
             //get list of email adresses
             List<Volunteer> vols = getVolunteersByEmergency(h.Emergency);
@@ -44,7 +43,6 @@ namespace ResponderManagement.Controllers.ApiControllers
                 mails.Add(v.Email);
             }
 
-            //string body = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("EmailTemplates/toVolunteers.html"));  // di mugana
             string body = File.ReadAllText(Path.Combine(HttpRuntime.AppDomainAppPath, "EmailTemplates/toVolunteer.html"));
 
             body = body.Replace("{emergency list}", h.Emergency);
@@ -101,13 +99,10 @@ namespace ResponderManagement.Controllers.ApiControllers
                     if (v.Skills.Contains(s) && !usingVols.Contains(v))
                     {
                         usingVols.Add(v);
-                        //allVols.Remove(v);
                     }
                 }
-                //if (allVols.Count == 0)
-                //    break;
-            }//end foreach
+            }
             return usingVols;
-        }//end method
+        }
     }
 }

@@ -2,6 +2,4 @@
     var self = this;
     console.log("TEST - login");
 
-   
-
 }]);

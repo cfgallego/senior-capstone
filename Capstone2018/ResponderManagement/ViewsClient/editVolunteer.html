@@ -1,7 +1,7 @@
 ﻿<h3>Edit Volunteer</h3>
 
 <div ng-if="self.loadDb === true" style="text-align:center;">
-    <img src="Content/images/loadingtruck2.gif" style="box-shadow:0 0 8px 8px white inset; height:260px; width:350px;" /> <!--height="260" width="350"-->
+    <img src="Content/images/loadingtruck2.gif" style="box-shadow:0 0 8px 8px white inset; height:260px; width:350px;" />
     <p style="font-weight:bold;">Fetching data...</p>
 </div>
 
@@ -139,35 +139,6 @@
             </div>
         </div>
 
-        <!--<h4>Certified Skills</h4>
-    <div class="form-group">
-        <div class="form-check">
-            <input type="checkbox" name="skills" value="fireSafety" label="Fire Safety">
-            <label>Fire Safety </label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="skills" value="emsTraining">
-            <label> EMS Training </label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="skills" value="lifeguardTraining">
-            <label>Lifeguard Training</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="skills" value="firstaidTraining">
-            <label>First-aid Training</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="skills" value="leadershipTraining">
-            <label>Leadership Training</label>
-        </div>
-        <div class="form-check">
-            <input type="checkbox" name="skills" value="redcross">
-            <label>Redcross Certification</label>
-        </div>
-    </div>-->
-
-
         <fieldset id="skillsChkbx">
             <h4>Certified Skills</h4>
 
@@ -187,16 +158,8 @@
                 <label class="btn btn-light" style="width:230px;" ng-model="self.skills[4].isChecked" uib-btn-checkbox>{{self.skills[4].Name}}</label>
                 <label class="btn btn-light" style="width:230px;" ng-model="self.skills[5].isChecked" uib-btn-checkbox>{{self.skills[5].Name}}</label>
             </div>
-
-            <!--<ul ng-repeat="s in self.skills" style="list-style-type: none;">
-        <li>
-            <input type="checkbox" name="groups" value="{{s.Name}}">
-            <label>{{s.Name}}</label>
-        </li>
-    </ul>-->
         </fieldset>
 
-        <!--<button href="#" class="btn btn-outline-danger" ng-click="self.back()">Cancel</button>-->
         <a href="/search" role="button" class="btn btn-outline-danger">Cancel</a>
         <button type="submit" class="btn btn-outline-danger" ng-click="self.update(form.$valid)">Update</button>
     </form>

@@ -14,13 +14,6 @@
             controllerAs: "self"
         })
 
-        .when("/viewVolunteer",
-        {
-            templateUrl: "ViewsClient/viewVolunteer.html",
-            controller: "viewVolunteerController",
-            controllerAs: "self"
-        })
-
         .when("/editVolunteer/:param1",
         {
             templateUrl: "ViewsClient/editVolunteer.html",
@@ -46,20 +39,6 @@
         {
             templateUrl: "ViewsClient/login.html",
             controller: "loginController",
-            controllerAs: "self"
-        })
-
-        .when("/emergencyDetail",
-        {
-            templateUrl: "ViewsClient/emergencyDetail.html",
-            controller: "emergencyDetailController",
-            controllerAs: "self"
-        })
-
-        .when("/searchResult",
-        {
-            templateUrl: "ViewsClient/searchResult.html",
-            controller: "searchResultController",
             controllerAs: "self"
         })
 

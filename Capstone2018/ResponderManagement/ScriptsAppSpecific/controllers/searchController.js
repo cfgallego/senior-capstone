@@ -1,6 +1,5 @@
 ﻿angular.module("app").controller("searchController", ['$scope', 'AppServices', '$http', '$window', '$location', '$filter', '$routeParams', '$rootScope', '$route', function ($scope, appServices, $http, $window, $location, $filter, $routeParams, $rootScope, $route) {
     var self = this;
-    console.log("TEST - search");
     self.loadDb = true;
 
     self.volunteers = [];
@@ -20,7 +19,6 @@
 
     // delete volunteer
     self.delete = function (id) {
-        console.log(id);
         // sweet alert
         swal({
             title: "Are you sure?",
@@ -37,23 +35,18 @@
                 if (isConfirm) {
                     // to remove volunteer from table without refreshing - di npud mugana
                     //self.volunteers = $filter('filter')(self.volunteers, { id: '!' + id });
-                    self.volunteers.splice(id, 1);
+                    //self.volunteers.splice(id, 1);
                     //console.log(self.volunteers);
 
                     appServices.deleteVolunteer(id);
 
                     swal("Deleted!", "Volunteer has been deleted", "success");
-                    console.log("confirm delete");
 
-                    // redirect back to search page
-                    //$location.path("/search/");
-                    //$route.reload();
+                    // reloads page
+                    $route.reload();
                 } else {
                     swal("Cancelled", "Volunteer was not deleted", "error");
-                    console.log("cancel delete");
                 }
-                console.log(self.volunteers);
-                console.log(isConfirm);
             });
     };
 
@@ -61,7 +54,6 @@
 
     // edit volunteer - will redirect to the editVolunteer page, param1 = id
     self.edit = function (param1) {
-        console.log(param1);
         $location.path("/editVolunteer/" + param1);
     };
 
@@ -79,7 +71,7 @@
         });
     };
 
-    // search volunteer by emergency
+    // search volunteers by emergency group
     self.emergencies = [
         { Name: "Fire", EmergencyID: 1, isChecked: false },
         { Name: "Hurricane", EmergencyID: 2, isChecked: false },
@@ -92,13 +84,10 @@
     ];
     console.log(self.emergencies);
 
-
-    //self.loadEgroup = true;
     self.searchEmergency = function () {
         self.eCount = 0;
         self.selectedEmergencies = [];
         self.emergencyVolunteers = [];
-        //self.loadEgroup= true;
 
         for (var i = 0; i < self.emergencies.length; i++) {
             if (self.emergencies[i].isChecked) {
@@ -109,14 +98,7 @@
                 self.eCount++;
 
                 appServices.getVolunteersByEmergency(self.emergencies[i].Name).then(function (response) {
-                    console.log(response.data);
-
                     self.emergencyVolunteers = response.data;
-                    console.log(self.emergencyVolunteers);
-
-                    //self.volunteerTable.push(self.emergencyVolunteers.filter(function (item) {
-                    //    return item.toString();
-                    //}));
 
                     self.volunteerTable = self.emergencyVolunteers.filter(function (item) {
                         return item.toString();
@@ -126,16 +108,6 @@
         }
         self.loadEgroup = false;
     }
-
-
-    //// load table on seach button click or enter keypress
-    //self.loadTable = false;
-    //self.buttonClick = function () {
-    //    self.searchName();
-    //    self.loadTable = true;
-    //    //self.loadDb = false;
-    //};
-
 
     // set default search by
     self.selectSearch = "name";
@@ -151,7 +123,6 @@
         }
 
         self.loadTable = true;
-        //self.loadDb = false;
     };
 
     self.loadVolunteers();

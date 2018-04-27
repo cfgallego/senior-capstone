@@ -19,8 +19,6 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("newMessage")]
         public IHttpActionResult NewMessage(History h)
         {
-            //var emergencyList = new List<Emergency>();
-
             var hstry = new History();
             {
                 hstry.EmergencyDate = h.EmergencyDate;
@@ -30,7 +28,6 @@ namespace ResponderManagement.Controllers.ApiControllers
                 hstry.State = h.State;
                 hstry.Zip = h.Zip;
                 hstry.Comment = h.Comment;
-                // emergency??
                 hstry.Emergency = h.Emergency;
             }
 
@@ -43,8 +40,6 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("getHistory")]
         public IHttpActionResult GetHistory()
         {
-            //var history = DataContext.Histories.OrderBy(x => x.EmergencyDate).ThenBy(x => x.EmergencyTime).ToList();
-            //var history = DataContext.Histories.OrderByDescending(x => x.EmergencyDate).ThenByDescending(x => x.EmergencyTime).ToList();
             var history = DataContext.Histories.OrderByDescending(x => x.HistoryID).ToList();
             return Ok(history);
         }

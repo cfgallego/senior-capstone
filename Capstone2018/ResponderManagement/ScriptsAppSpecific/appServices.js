@@ -11,13 +11,9 @@
             getVolunteerByID: function (id) {
                 return $http.get("api/ResponderManagement/volunteers/getVolunteerByID?id=" + id);
             },
-
-            //getVolunteersByEmergency
             getVolunteersByEmergency: function (emergency) {
                 return $http.get("api/ResponderManagement/volunteers/GetVolunteersByEmergency?emergency=" + emergency);
             },
-            // end getVolunteerByEmergency
-
             updateVolunteer: function (vol) {
                 return $http.put("api/ResponderManagement/volunteers/updateVolunteer", vol);
             },
@@ -48,21 +44,3 @@
         }
     }
 ]);
-
-
-//// to pass data from one controller to another
-//angular.module("app").factory("Fact", function () {
-//    var data = {
-//        myEmergencies: []
-//    }
-
-//    return {
-//        getEmergencies: function () {
-//            return data.myEmergencies;
-//        },
-
-//        setEmergencies: function (e) {
-//            data.myEmergencies = e;
-//        }
-//    }
-//})

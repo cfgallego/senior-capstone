@@ -1,11 +1,6 @@
 ﻿angular.module("app").controller("addVolController", ['$scope', 'AppServices', '$window', '$location', '$route', function ($scope, appServices, $window, $location, $route) {
     var self = this;
-    console.log("TEST - addVolunteer");
-
     self.volunteer = {};
-    //self.skills = [];
-    //self.test = true;
-    //self.volunteer.state = null;
 
     self.skills = [
         { Name: "Fire Safety", SkillID: 1, isChecked: false },
@@ -15,22 +10,6 @@
         { Name: "Leadership Training", SkillID: 5, isChecked: false },
         { Name: "Redcross Certification", SkillID: 6, isChecked: false }
     ];
-
-    //self.trueSkill = {};
-    //self.finalSkills = [];
-
-    //self.loadSkills = function () {
-    //    appServices.getSkills().then(function (response) {
-    //        console.log(response.data);
-
-    //        self.skills = response.data;
-    //        console.log(self.skills);
-
-    //        self.test = false;
-    //    });
-    //};
-
-    //self.loadSkills();
 
     self.submitForm = function (v) {
         console.log(v, "TEST - submitForm");
@@ -68,11 +47,8 @@
 
         console.log(newReq);
         appServices.addNewVolunteer(newReq).then(function (response) {
-            //self.volunteer = {};
             swal("SUCCESS", "Volunteer added!", "success");
             console.log(response);
-            //refresh page?
-            //$location.path("/addVolunteer/");
             $route.reload();
         });
     };

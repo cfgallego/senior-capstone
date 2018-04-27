@@ -18,7 +18,6 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("addVolunteer")]
         public IHttpActionResult AddVolunteer(Volunteer v)
         {
-            //var skills = DataContext.Skills;
             var skillList = new List<Skill>();
 
             var vol = new Volunteer();
@@ -31,21 +30,20 @@ namespace ResponderManagement.Controllers.ApiControllers
                 vol.City = v.City;
                 vol.State = v.State;
                 vol.ZipCode = v.ZipCode;
-                // vol.Skills = v.Skills;
+
                 foreach (var s in v.Skills)
                 {
                     if (s.Name != null)
                     {
-                        //skillList.Add(new Skill() { Name = s.Name });
                         skillList.Add(DataContext.Skills.Find(s.SkillID));
                     }
                 }
                 vol.Skills = skillList;
             }
 
-            DataContext.Volunteers.Add(vol); // v?
+            DataContext.Volunteers.Add(vol);
             DataContext.SaveChanges();
-            return Ok(vol); // v?
+            return Ok(vol);
         }
 
         // Read (view) Volunteer
@@ -53,10 +51,6 @@ namespace ResponderManagement.Controllers.ApiControllers
         [Route("getVolunteers")]
         public IHttpActionResult GetVolunteers()
         {
-            // pulls all volunteers from database
-            //var volunteers = DataContext.Volunteers.OrderBy(x => x.FirstName).ThenBy(x => x.LastName).ToList();
-            //return Ok(volunteers);
-
             var volunteers = DataContext.Volunteers.ToList();
             var volList = new List<VolunteerDTO>();
             foreach (var v in volunteers)
@@ -92,8 +86,6 @@ namespace ResponderManagement.Controllers.ApiControllers
             return Ok(vol);
         }
 
-
-        // ----------------------
         [HttpGet]
         [Route("getVolunteersByEmergency")]
         public IHttpActionResult GetVolunteersByEmergency(string emergency)
@@ -113,17 +105,12 @@ namespace ResponderManagement.Controllers.ApiControllers
                     if (v.Skills.Contains(s) && !usingVols.Contains(v))
                     {
                         usingVols.Add(v);
-                        //allVols.Remove(v);
                     }
                 }
-                //if (allVols.Count == 0)
-                //    break;
-            }//end foreach
+            }
+
             return Ok(usingVols);
         }
-        // ----------------------
-
-
 
         // Update (edit) Volunteer
         [HttpPut]
@@ -145,17 +132,13 @@ namespace ResponderManagement.Controllers.ApiControllers
             {
                 if (s.Name != null)
                 {
-                    //if (vol.Skills.Contains(s))
-                        //continue;
-
-                    //skillList.Add(new Skill() { Name = s.Name });
                     skillList.Add(DataContext.Skills.Find(s.SkillID));
                 }
             }
             vol.Skills = skillList;
 
             DataContext.SaveChanges();
-            return Ok(vol); // v?
+            return Ok(vol);
         }
 
 
