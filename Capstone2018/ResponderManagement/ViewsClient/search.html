@@ -50,7 +50,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="v in self.volunteerTable | orderBy: '+FirstName'">
+            <tr ng-repeat="v in self.volunteerTable | orderBy: '+FirstName' | startFrom: self.currentPage * self.pageSize | limitTo: self.pageSize">
                 <!--<td>{{v.VolunteerID}}</td>-->
                 <td>{{v.FirstName}} {{v.LastName}}</td>
                 <td>{{v.Email}}</td>
@@ -74,5 +74,16 @@
             <img src="Content/images/loadingtruck2.gif" height="260" width="350" />
             <p style="font-weight:bold;">Fetching results...</p>
         </div>
+    </div>
+
+    <br />
+    <div style="text-align:center;" ng-if="self.loadTable">
+        <button class="btn btn-outline-danger" ng-disabled="self.currentPage == 0" ng-click="self.currentPage = self.currentPage-1">
+            <
+        </button>
+        {{self.currentPage+1}}/{{self.numberOfPages()}}
+        <button class="btn btn-outline-danger" ng-disabled="self.currentPage >= self.volunteerTable.length / self.pageSize-1" ng-click="self.currentPage = self.currentPage+1">
+            >
+        </button>
     </div>
 </div>

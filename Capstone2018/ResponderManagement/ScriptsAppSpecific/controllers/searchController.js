@@ -2,6 +2,10 @@
     var self = this;
     self.loadDb = true;
 
+    // pagination
+    self.currentPage = 0;
+    self.pageSize = 5;
+
     self.volunteers = [];
 
     // load volunteers from server
@@ -68,7 +72,11 @@
                 || item.LastName.toLowerCase().toString().indexOf(self.searchText) > -1
                 || (item.FirstName.toLowerCase().toString() + " " + item.LastName.toLowerCase().toString()).indexOf(self.searchText) > -1
             )
-        });
+        });  
+
+        self.numberOfPages = function () {
+            return Math.ceil(self.volunteerTable.length / self.pageSize); // ceil = rounds up decimal
+        }
     };
 
     // search volunteers by emergency group
@@ -103,6 +111,10 @@
                     self.volunteerTable = self.emergencyVolunteers.filter(function (item) {
                         return item.toString();
                     });
+
+                    self.numberOfPages = function () {
+                        return Math.ceil(self.volunteerTable.length / self.pageSize); // ceil = rounds up decimal
+                    }
                 });
             }
         }
